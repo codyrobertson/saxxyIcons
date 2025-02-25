@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Font Inline Test</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Inline font-face declarations */
+    
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro-bold.eot');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro-bold.svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro-bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro-bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro-bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro-twotone';
+  src: url('saxi-icons-pro-twotone.eot');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro-twotone';
+  src: url('saxi-icons-pro-twotone.svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro-twotone';
+  src: url('saxi-icons-pro-twotone.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro-twotone';
+  src: url('saxi-icons-pro-twotone.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro-twotone';
+  src: url('saxi-icons-pro-twotone.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro.eot');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro.svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'saxi-icons-pro';
+  src: url('saxi-icons-pro.woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+    
+    /* Icon classes */
+    .saxi-solid {
+      font-family: 'saxi-icons-pro';
+      font-weight: 700;
+    }
+    .saxi-regular {
+      font-family: 'saxi-icons-pro';
+      font-weight: 400;
+    }
+    .saxi-light {
+      font-family: 'saxi-icons-pro';
+      font-weight: 300;
+    }
+    .saxi-broken {
+      font-family: 'saxi-icons-pro';
+      font-weight: 400;
+    }
+    .saxi-twotone {
+      font-family: 'saxi-icons-pro-twotone';
+      font-weight: 400;
+    }
+    .saxi-bulk {
+      font-family: 'saxi-icons-pro-twotone';
+      font-weight: 700;
+    }
+    
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
+      text-align: center;
+    }
+    .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Icon Font Inline Test</h1>
+  
+  <h2>Bold Style (saxi-solid)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-solid icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-solid icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-solid icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+  
+  <h2>Linear Style (saxi-regular)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-regular icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-regular icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-regular icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+  
+  <h2>Outline Style (saxi-light)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-light icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-light icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-light icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+  
+  <h2>Broken Style (saxi-broken)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-broken icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-broken icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-broken icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+  
+  <h2>TwoTone Style (saxi-twotone)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-twotone icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-twotone icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-twotone icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+  
+  <h2>Bulk Style (saxi-bulk)</h2>
+  <div class="icon-grid">
+    <div class="icon-card">
+      <i class="saxi-bulk icon">24-support</i>
+      <div>24-support</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-bulk icon">3d-cube-scan</i>
+      <div>3d-cube-scan</div>
+    </div>
+    <div class="icon-card">
+      <i class="saxi-bulk icon">3d-rotate</i>
+      <div>3d-rotate</div>
+    </div>
+  </div>
+</body>
+</html>

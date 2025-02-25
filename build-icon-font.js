@@ -248,16 +248,85 @@ async function generateMappingFromFolder(folderPath, baseCodepoint) {
 }
 
 /**
- * Promisify webfonts-generator.
+ * Generate a font for a specific style.
  */
-function generateFont(options) {
+async function generateFontForStyle(style, files, codepoints) {
+  const fontName = style.outPrefix;
+  const outputPath = path.join(OUTPUT_DIR, fontName);
+  
+  console.log(`Generating font for ${style.style} style (${fontName})...`);
+  console.log(`Found ${files.length} SVG files for this style`);
+  
+  if (files.length === 0) {
+    console.warn(`No SVG files found for ${style.style} style, skipping`);
+    return;
+  }
+  
+  // Log the first few files for debugging
+  console.log('Sample files:', files.slice(0, 3));
+  
+  // Generate the font
   return new Promise((resolve, reject) => {
-    webfontsGenerator(options, function (error) {
-      if (error) {
-        return reject(error);
+    // Log the current working directory and output directory
+    console.log(`Current working directory: ${process.cwd()}`);
+    console.log(`Output directory: ${OUTPUT_DIR}`);
+    
+    // Make sure the output directory exists
+    fs.ensureDirSync(OUTPUT_DIR);
+    
+    // Set options for webfonts-generator
+    const options = {
+      files: files,
+      dest: OUTPUT_DIR,
+      fontName: fontName,
+      types: ['ttf', 'woff', 'woff2', 'eot', 'svg'],
+      fontHeight: 1000,
+      normalize: true,
+      fontWeight: style.weight,
+      centerHorizontally: true,
+      round: 1000,
+      codepoints: codepoints,
+      templateOptions: {
+        baseSelector: `.${style.cssPrefix}`,
+        classPrefix: `${style.cssPrefix}-`
+      },
+      writeFiles: true,
+      callback: async (error, result) => {
+        if (error) {
+          console.error(`Error generating font for ${style.style} style:`, error);
+          reject(error);
+        } else {
+          console.log(`Successfully generated font for ${style.style} style`);
+          
+          // Verify the font files were generated
+          const expectedFiles = [
+            `${fontName}.ttf`,
+            `${fontName}.woff`,
+            `${fontName}.woff2`,
+            `${fontName}.eot`,
+            `${fontName}.svg`,
+            `${fontName}.css`
+          ];
+          
+          for (const file of expectedFiles) {
+            const filePath = path.join(OUTPUT_DIR, file);
+            const exists = await fs.pathExists(filePath);
+            if (exists) {
+              const stats = await fs.stat(filePath);
+              console.log(`Generated file: ${file} (${stats.size} bytes)`);
+            } else {
+              console.warn(`Warning: Expected file ${file} was not generated!`);
+            }
+          }
+          
+          resolve(result);
+        }
       }
-      resolve();
-    });
+    };
+    
+    // Call webfonts-generator
+    console.log(`Calling webfonts-generator for ${style.style} style...`);
+    webfontsGenerator(options);
   });
 }
 
@@ -315,7 +384,7 @@ async function generateFontsForSubStyle(groupFamily, subStyle, mapping) {
   };
 
   console.log(`Generating font for ${groupFamily} - ${subStyle.style} (weight ${subStyle.weight})...`);
-  await generateFont(options);
+  await generateFontForStyle(subStyle, files, mapping);
   console.log(`Generated font for ${groupFamily} - ${subStyle.style}.`);
 }
 
@@ -401,70 +470,212 @@ async function generateCSSAndJSON(group, mapping) {
  * Generate a combined CSS file for all font families
  */
 async function generateCombinedCSS() {
+  console.log('\nGenerating combined CSS file...');
+  
   try {
-    const cssFiles = (await fs.readdir(OUTPUT_DIR))
-      .filter(f => f.endsWith('.css') && !f.includes('all'));
+    const files = await fs.readdir(OUTPUT_DIR);
+    const cssFiles = files.filter(f => f.endsWith('.css'));
     
-    let combinedCSS = [];
+    let combinedContent = '/* Combined SAXI Icons CSS */\n\n';
+    
     for (const cssFile of cssFiles) {
-      const content = await fs.readFile(path.join(OUTPUT_DIR, cssFile), 'utf8');
-      combinedCSS.push(`/* ${cssFile} */\n${content}`);
+      const cssPath = path.join(OUTPUT_DIR, cssFile);
+      const cssContent = await fs.readFile(cssPath, 'utf8');
+      combinedContent += `/* ${cssFile} */\n${cssContent}\n\n`;
     }
     
-    const combinedCssFile = path.join(OUTPUT_DIR, 'saxi-icons-all.css');
-    await fs.writeFile(combinedCssFile, combinedCSS.join('\n\n'));
-    console.log(`Generated combined CSS file: ${combinedCssFile}`);
+    const combinedPath = path.join(OUTPUT_DIR, 'saxi-icons-all.css');
+    await fs.writeFile(combinedPath, combinedContent);
+    console.log('Created combined CSS file: saxi-icons-all.css');
   } catch (error) {
     console.error('Error generating combined CSS:', error);
   }
 }
 
 /**
- * Main build function.
+ * Fix font paths in CSS files to ensure they're correctly referenced.
  */
-async function build() {
-  try {
-    // Ensure output directory exists.
-    await fs.ensureDir(OUTPUT_DIR);
-    // Unzip svg.zip to TEMP_DIR.
-    await unzipSvgZip();
+async function fixFontPaths() {
+  console.log('Fixing font paths in CSS files...');
+  
+  // Get all CSS files in the output directory
+  const files = await fs.readdir(OUTPUT_DIR);
+  const cssFiles = files.filter(f => f.endsWith('.css'));
+  
+  for (const cssFile of cssFiles) {
+    const cssPath = path.join(OUTPUT_DIR, cssFile);
+    let cssContent = await fs.readFile(cssPath, 'utf8');
+    
+    // Fix font paths - make them relative to the CSS file
+    cssContent = cssContent.replace(/url\(['"]?([^'")]+)['"]?\)/g, (match, p1) => {
+      // Get just the filename without path
+      const filename = path.basename(p1);
+      return `url('${filename}')`;
+    });
+    
+    // Ensure the font-family names are consistent
+    if (cssFile.includes('saxi-icons-pro-bold') || 
+        cssFile.includes('saxi-icons-pro-linear') || 
+        cssFile.includes('saxi-icons-pro-outline') || 
+        cssFile.includes('saxi-icons-pro-broken')) {
+      cssContent = cssContent.replace(/font-family: ['"]?([^'";]+)['"]?/g, 
+        `font-family: 'saxi-icons-pro'`);
+    } else if (cssFile.includes('saxi-icons-pro-twotone') || 
+               cssFile.includes('saxi-icons-pro-bulk')) {
+      cssContent = cssContent.replace(/font-family: ['"]?([^'";]+)['"]?/g, 
+        `font-family: 'saxi-icons-pro-twotone'`);
+    }
+    
+    await fs.writeFile(cssPath, cssContent);
+    console.log(`Fixed paths in ${cssFile}`);
+  }
+  
+  // Now create a combined CSS file
+  await createCombinedCss();
+}
 
-    // For each group, generate the mapping from one of its sub-style folders.
+/**
+ * Create a combined CSS file with all styles.
+ */
+async function createCombinedCss() {
+  console.log('Creating combined CSS file...');
+  
+  const files = await fs.readdir(OUTPUT_DIR);
+  const cssFiles = files.filter(f => f.endsWith('.css') && !f.includes('all'));
+  
+  let combinedContent = '/* Combined SAXI Icons CSS */\n\n';
+  
+  for (const cssFile of cssFiles) {
+    const cssPath = path.join(OUTPUT_DIR, cssFile);
+    const cssContent = await fs.readFile(cssPath, 'utf8');
+    combinedContent += `/* ${cssFile} */\n${cssContent}\n\n`;
+  }
+  
+  const combinedPath = path.join(OUTPUT_DIR, 'saxi-icons-all.css');
+  await fs.writeFile(combinedPath, combinedContent);
+  console.log('Created combined CSS file: saxi-icons-all.css');
+}
+
+/**
+ * List all files in the output directory for debugging.
+ */
+async function listGeneratedFiles() {
+  console.log('\n--- Generated Files ---');
+  
+  const files = await fs.readdir(OUTPUT_DIR);
+  files.sort();
+  
+  for (const file of files) {
+    const filePath = path.join(OUTPUT_DIR, file);
+    const stats = await fs.stat(filePath);
+    console.log(`${file} (${formatFileSize(stats.size)})`);
+  }
+  
+  console.log('------------------------\n');
+}
+
+/**
+ * Format file size in a human-readable format.
+ */
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' bytes';
+  else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  else return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+/**
+ * Main build function to generate all icon fonts
+ */
+async function buildIconFont() {
+  try {
+    console.log('Starting icon font build process...');
+    
+    // Extract SVG files from ZIP
+    await unzipSvgZip();
+    
+    console.log('\n=== Starting font generation for all styles ===');
+    
+    // Process each group separately and ensure completion
     for (const group of groups) {
-      // Find the first available style folder
-      let sampleFolder = null;
-      for (const sub of group.subStyles) {
-        const styleFolder = path.join(TEMP_DIR, sub.style);
-        if (await fs.pathExists(styleFolder)) {
-          sampleFolder = styleFolder;
-          break;
+      console.log(`\n=== Processing ${group.family} group ===`);
+      
+      // Create shared codepoints mapping
+      const codepoints = {};
+      let nextCodepoint = BASE_CODEPOINT;
+      
+      // First pass: assign codepoints to all icons in this group
+      for (const style of group.subStyles) {
+        const styleDir = path.join(TEMP_DIR, style.style);
+        if (await fs.pathExists(styleDir)) {
+          const files = await fs.readdir(styleDir);
+          const svgFiles = files.filter(f => f.endsWith('.svg'));
+          
+          // Assign codepoints to icons if not already assigned
+          for (const file of svgFiles) {
+            const iconName = path.basename(file, '.svg');
+            if (!codepoints[iconName]) {
+              codepoints[iconName] = nextCodepoint++;
+            }
+          }
         }
       }
       
-      if (!sampleFolder) {
-        console.warn(`Warning: No style folders found for group ${group.family}, skipping`);
-        continue;
+      console.log(`Assigned codepoints for ${Object.keys(codepoints).length} icons in ${group.family}`);
+      
+      // Second pass: generate font for each style using the shared codepoints
+      for (const style of group.subStyles) {
+        const styleDir = path.join(TEMP_DIR, style.style);
+        if (await fs.pathExists(styleDir)) {
+          const files = await fs.readdir(styleDir);
+          const svgFiles = files.filter(f => f.endsWith('.svg'));
+          const svgPaths = svgFiles.map(f => path.join(styleDir, f));
+          
+          console.log(`\nGenerating ${style.style} font with ${svgPaths.length} icons...`);
+          
+          try {
+            await generateFontForStyle(style, svgPaths, codepoints);
+            console.log(`✅ Successfully generated ${style.style} font`);
+          } catch (error) {
+            console.error(`❌ Error generating ${style.style} font:`, error);
+          }
+        }
       }
       
-      console.log(`Generating mapping for group ${group.family} from folder ${sampleFolder}...`);
-      const mapping = await generateMappingFromFolder(sampleFolder, BASE_CODEPOINT);
-      console.log(`Mapping generated for ${Object.keys(mapping).length} icons.`);
-
-      // Generate fonts for each sub-style in this group.
-      for (const sub of group.subStyles) {
-        await generateFontsForSubStyle(group.family, sub, mapping);
-      }
-      // Generate combined CSS and JSON mapping file.
-      await generateCSSAndJSON(group, mapping);
+      // Save mapping file
+      const mappingPath = path.join(OUTPUT_DIR, group.mappingFile);
+      await fs.writeJson(mappingPath, codepoints, { spaces: 2 });
+      console.log(`Saved codepoint mapping to ${group.mappingFile}`);
     }
     
-    // Generate combined CSS file for all families
+    // Create a combined CSS file
     await generateCombinedCSS();
-
-    console.log('Build complete. Check the Fonts/ directory for output.');
+    
+    // List all generated files for verification
+    await listGeneratedFiles();
+    
+    console.log('\n=== Font generation completed successfully! ===');
+    return true;
   } catch (error) {
-    console.error('Error during build:', error);
+    console.error('Error building icon font:', error);
+    return false;
+  } finally {
+    // Don't clean up the temp directory yet for debugging
+    // await fs.remove(TEMP_DIR);
+    console.log('Note: Keeping temp directory for debugging');
   }
 }
 
-build();
+if (require.main === module) {
+  // This means the script was run directly with node
+  buildIconFont()
+    .then(() => {
+      console.log('Icon font build completed successfully!');
+    })
+    .catch(error => {
+      console.error('Error building icon font:', error);
+      process.exit(1);
+    });
+} else {
+  // The script was required as a module
+  module.exports = buildIconFont;
+}

@@ -1,6 +1,13 @@
 {
   "version": "1.0.0",
-  "timestamp": "2025-02-25T21:27:18.834Z",
-  "buildDate": "2/25/2025",
-  "totalIcons": 1846
+  "buildDate": "2025-02-25T21:43:51.077Z",
+  "iconCount": 1846,
+  "styles": [
+    "bold",
+    "regular",
+    "light",
+    "broken",
+    "twotone",
+    "bulk"
+  ]
 }

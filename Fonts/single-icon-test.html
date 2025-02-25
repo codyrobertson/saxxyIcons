@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Icon Test</title>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .test-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .size-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .size-row {
+      display: flex;
+      align-items: center;
+    }
+    .size-label {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Single Icon Test: "24-support"</h1>
+  
+  <h2>Icon in Different Styles</h2>
+  <div class="test-grid">
+    <div class="test-item">
+      <i class="saxi-solid saxi-24-support icon"></i>
+      <div>Solid</div>
+    </div>
+    <div class="test-item">
+      <i class="saxi-regular saxi-24-support icon"></i>
+      <div>Regular</div>
+    </div>
+    <div class="test-item">
+      <i class="saxi-light saxi-24-support icon"></i>
+      <div>Light</div>
+    </div>
+    <div class="test-item">
+      <i class="saxi-broken saxi-24-support icon"></i>
+      <div>Broken</div>
+    </div>
+    <div class="test-item">
+      <i class="saxi-twotone saxi-24-support icon"></i>
+      <div>TwoTone</div>
+    </div>
+    <div class="test-item">
+      <i class="saxi-bulk saxi-24-support icon"></i>
+      <div>Bulk</div>
+    </div>
+  </div>
+  
+  <h2>Size Variations (Regular Style)</h2>
+  <div class="size-grid">
+    <div class="size-row">
+      <div class="size-label">16px</div>
+      <i class="saxi-regular saxi-24-support" style="font-size: 16px;"></i>
+    </div>
+    <div class="size-row">
+      <div class="size-label">24px</div>
+      <i class="saxi-regular saxi-24-support" style="font-size: 24px;"></i>
+    </div>
+    <div class="size-row">
+      <div class="size-label">32px</div>
+      <i class="saxi-regular saxi-24-support" style="font-size: 32px;"></i>
+    </div>
+    <div class="size-row">
+      <div class="size-label">48px</div>
+      <i class="saxi-regular saxi-24-support" style="font-size: 48px;"></i>
+    </div>
+    <div class="size-row">
+      <div class="size-label">64px</div>
+      <i class="saxi-regular saxi-24-support" style="font-size: 64px;"></i>
+    </div>
+  </div>
+</body>
+</html>
