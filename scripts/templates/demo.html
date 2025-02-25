@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAXI Icon Font Demo</title>
+  
+  <!-- Icon Font CSS -->
+  <link rel="stylesheet" href="../Fonts/saxi-icons-all.css">
+  
+  <style>
+    :root {
+      --primary-color: #3498db;
+      --secondary-color: #2ecc71;
+      --dark-color: #34495e;
+      --light-color: #ecf0f1;
+      --border-color: #e0e0e0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    h1 {
+      color: var(--dark-color);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+    
+    h2 {
+      color: var(--dark-color);
+      margin-top: 30px;
+    }
+    
+    /* Demo sections */
+    .demo-section {
+      margin: 40px 0;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+    
+    .demo-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: var(--dark-color);
+    }
+    
+    .demo-description {
+      margin-bottom: 20px;
+      color: #666;
+    }
+    
+    .demo-example {
+      padding: 15px;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
+    code {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 0.9em;
+    }
+    
+    /* Icon example styles */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    
+    .icon-item:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .icon-display {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: var(--dark-color);
+    }
+    
+    .icon-name {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+    }
+    
+    /* Style variants */
+    .style-section {
+      margin: 30px 0;
+    }
+    
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .style-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+    }
+    
+    .style-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .style-example {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    
+    .style-code {
+      font-size: 12px;
+      color: #666;
+      font-family: monospace;
+    }
+    
+    /* Search bar */
+    .search-container {
+      margin: 20px 0;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+    
+    /* Tabs for different examples */
+    .tabs {
+      display: flex;
+      margin: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-bottom: none;
+      margin-right: 5px;
+      border-radius: 4px 4px 0 0;
+    }
+    
+    .tab.active {
+      background-color: white;
+      border-color: var(--border-color);
+      margin-bottom: -1px;
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SAXI Icon Font Demo</h1>
+    
+    <p>This demo showcases the SAXI Icon Font with various styles and usage examples.</p>
+    
+    <div class="demo-section">
+      <div class="demo-title">CSS Class Usage</div>
+      <div class="demo-description">
+        Use CSS classes to display icons. Follow the FontAwesome-style convention.
+      </div>
+      <div class="demo-example">
+        <pre><code>&lt;i class="saxi-solid saxi-archive-add"&gt;&lt;/i&gt;</code></pre>
+        <div style="margin-top: 15px;">
+          <i class="saxi-solid saxi-archive-add" style="font-size: 24px; margin-right: 10px;"></i>
+          <i class="saxi-solid saxi-activity" style="font-size: 24px; margin-right: 10px;"></i>
+          <i class="saxi-solid saxi-arrow-right" style="font-size: 24px; margin-right: 10px;"></i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <div class="demo-title">Ligature Usage</div>
+      <div class="demo-description">
+        Use ligatures to display icons by simply typing the icon name within the element.
+      </div>
+      <div class="demo-example">
+        <pre><code>&lt;i class="saxi-solid"&gt;archive-add&lt;/i&gt;</code></pre>
+        <div style="margin-top: 15px;">
+          <i class="saxi-solid" style="font-size: 24px; margin-right: 20px;">archive-add</i>
+          <i class="saxi-solid" style="font-size: 24px; margin-right: 20px;">activity</i>
+          <i class="saxi-solid" style="font-size: 24px;">arrow-right</i>
+        </div>
+      </div>
+    </div>
+    
+    <div class="style-section">
+      <h2>Style Variants</h2>
+      <p>SAXI icons come in multiple styles. Here's the same icon in different styles:</p>
+      
+      <div class="style-grid">
+        <div class="style-item">
+          <div class="style-title">Solid (Bold)</div>
+          <div class="style-example"><i class="saxi-solid saxi-archive-add"></i></div>
+          <div class="style-code">saxi-solid</div>
+        </div>
+        
+        <div class="style-item">
+          <div class="style-title">Regular (Linear)</div>
+          <div class="style-example"><i class="saxi-regular saxi-archive-add"></i></div>
+          <div class="style-code">saxi-regular</div>
+        </div>
+        
+        <div class="style-item">
+          <div class="style-title">Light (Outline)</div>
+          <div class="style-example"><i class="saxi-light saxi-archive-add"></i></div>
+          <div class="style-code">saxi-light</div>
+        </div>
+        
+        <div class="style-item">
+          <div class="style-title">Duotone</div>
+          <div class="style-example"><i class="saxi-duotone saxi-archive-add"></i></div>
+          <div class="style-code">saxi-duotone</div>
+        </div>
+        
+        <div class="style-item">
+          <div class="style-title">Broken</div>
+          <div class="style-example"><i class="saxi-broken saxi-archive-add"></i></div>
+          <div class="style-code">saxi-broken</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="demo-section">
+      <div class="demo-title">Design Tool Integration</div>
+      <div class="demo-description">
+        To use these icons in design tools like Figma or Canva:
+      </div>
+      <ol>
+        <li>Install the font files (.ttf) on your system</li>
+        <li>Select text in your design tool and set the font to:
+          <ul>
+            <li><code>saxi-icons-pro</code> (with font weight 700 for Bold, 400 for Linear, 300 for Outline)</li>
+            <li><code>saxi-icons-pro-duotone</code> for Duotone icons</li>
+            <li><code>saxi-icons-pro-broken</code> for Broken icons</li>
+          </ul>
+        </li>
+        <li>Type the icon name (e.g., <code>archive-add</code>) directly to use the ligature</li>
+        <li>Alternatively, paste the Unicode character directly</li>
+      </ol>
+    </div>
+    
+    <div class="demo-section">
+      <div class="demo-title">Interactive Icon Explorer</div>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search icons..." id="icon-search">
+      </div>
+      
+      <div class="tabs">
+        <div class="tab active" data-tab="solid">Solid</div>
+        <div class="tab" data-tab="regular">Regular</div>
+        <div class="tab" data-tab="light">Light</div>
+        <div class="tab" data-tab="duotone">Duotone</div>
+        <div class="tab" data-tab="broken">Broken</div>
+      </div>
+      
+      <div class="tab-content active" id="solid-content">
+        <div class="icon-grid" id="solid-grid">
+          <!-- Will be populated dynamically -->
+        </div>
+      </div>
+      
+      <div class="tab-content" id="regular-content">
+        <div class="icon-grid" id="regular-grid">
+          <!-- Will be populated dynamically -->
+        </div>
+      </div>
+      
+      <div class="tab-content" id="light-content">
+        <div class="icon-grid" id="light-grid">
+          <!-- Will be populated dynamically -->
+        </div>
+      </div>
+      
+      <div class="tab-content" id="duotone-content">
+        <div class="icon-grid" id="duotone-grid">
+          <!-- Will be populated dynamically -->
+        </div>
+      </div>
+      
+      <div class="tab-content" id="broken-content">
+        <div class="icon-grid" id="broken-grid">
+          <!-- Will be populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sample icon names - in real usage, this would be populated from your JSON mappings
+      const sampleIcons = [
+        'archive-add', 'activity', 'arrow-right', 'arrow-left', 'arrow-up', 'arrow-down',
+        'archive', 'archive-1', 'archive-2', 'archive-minus', 'archive-slash', 'archive-tick',
+        'add', 'add-circle', 'add-square', 'airplane', 'alarm', 'align-bottom'
+      ];
+      
+      // Tab functionality
+      const tabs = document.querySelectorAll('.tab');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and content
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add('active');
+          const tabName = tab.getAttribute('data-tab');
+          document.getElementById(`${tabName}-content`).classList.add('active');
+        });
+      });
+      
+      // Populate icon grids
+      function populateIconGrid(gridId, styleClass) {
+        const grid = document.getElementById(gridId);
+        grid.innerHTML = '';
+        
+        sampleIcons.forEach(icon => {
+          const item = document.createElement('div');
+          item.className = 'icon-item';
+          item.dataset.iconName = icon;
+          
+          const iconDisplay = document.createElement('div');
+          iconDisplay.className = 'icon-display';
+          const iconElem = document.createElement('i');
+          iconElem.className = `${styleClass} saxi-${icon}`;
+          iconDisplay.appendChild(iconElem);
+          
+          const iconName = document.createElement('div');
+          iconName.className = 'icon-name';
+          iconName.textContent = icon;
+          
+          item.appendChild(iconDisplay);
+          item.appendChild(iconName);
+          
+          // Add click to copy functionality
+          item.addEventListener('click', () => {
+            const cssClass = `<i class="${styleClass} saxi-${icon}"></i>`;
+            const ligature = `<i class="${styleClass}">${icon}</i>`;
+            
+            // Create a temporary textarea to copy to clipboard
+            const textarea = document.createElement('textarea');
+            textarea.value = cssClass;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            
+            alert(`Copied to clipboard:\n${cssClass}\n\nLigature version:\n${ligature}`);
+          });
+          
+          grid.appendChild(item);
+        });
+      }
+      
+      // Initialize all grids
+      populateIconGrid('solid-grid', 'saxi-solid');
+      populateIconGrid('regular-grid', 'saxi-regular');
+      populateIconGrid('light-grid', 'saxi-light');
+      populateIconGrid('duotone-grid', 'saxi-duotone');
+      populateIconGrid('broken-grid', 'saxi-broken');
+      
+      // Search functionality
+      const searchInput = document.getElementById('icon-search');
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        document.querySelectorAll('.icon-item').forEach(item => {
+          const iconName = item.dataset.iconName;
+          if (iconName.includes(searchTerm)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -7,3 +7,6 @@ npm-debug.log
 coverage/
 dist/
 /svg
+svg.zip
+/.github/
+/temp_svgs

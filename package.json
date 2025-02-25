@@ -1,0 +1,35 @@
+{
+  "name": "stabl-icons",
+  "version": "1.0.0",
+  "description": "icons for stabl based on IconSax by VueSax",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build-icon-font.js",
+    "setup": "node scripts/setup.js",
+    "build": "node scripts/build.js",
+    "watch": "node scripts/watch.js",
+    "clean": "node scripts/clean.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codyrobertson/saxxyIcons.git"
+  },
+  "keywords": [
+    "icons",
+    "vue",
+    "iconsax",
+    "vuesax"
+  ],
+  "author": "CodyRobertson",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/codyrobertson/saxxyIcons/issues"
+  },
+  "homepage": "https://github.com/codyrobertson/saxxyIcons#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "fs-extra": "^11.3.0",
+    "webfonts-generator": "^0.4.0",
+    "chokidar": "^3.5.3"
+  }
+}
