@@ -1,0 +1,2837 @@
+@font-face {
+	font-family: "saxi-icons-pro-linear";
+	src: url("saxi-icons-pro-linear.eot?ca7c2768ce7b66818bc930c9e8f9e956?#iefix") format("embedded-opentype"),
+url("saxi-icons-pro-linear.woff2?ca7c2768ce7b66818bc930c9e8f9e956") format("woff2"),
+url("saxi-icons-pro-linear.woff?ca7c2768ce7b66818bc930c9e8f9e956") format("woff"),
+url("saxi-icons-pro-linear.ttf?ca7c2768ce7b66818bc930c9e8f9e956") format("truetype"),
+url("saxi-icons-pro-linear.svg?ca7c2768ce7b66818bc930c9e8f9e956#saxi-icons-pro-linear") format("svg");
+}
+
+.saxi-regular {
+	line-height: 1;
+}
+
+.saxi-regular:before {
+	font-family: saxi-icons-pro-linear !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.saxi-regular-24-support:before {
+	content: "\e900";
+}
+.saxi-regular-3d-cube-scan:before {
+	content: "\e901";
+}
+.saxi-regular-3d-rotate:before {
+	content: "\e902";
+}
+.saxi-regular-3d-square:before {
+	content: "\e903";
+}
+.saxi-regular-3dcube:before {
+	content: "\e904";
+}
+.saxi-regular-3square:before {
+	content: "\e905";
+}
+.saxi-regular-activity:before {
+	content: "\e906";
+}
+.saxi-regular-add-circle:before {
+	content: "\e907";
+}
+.saxi-regular-add-square:before {
+	content: "\e908";
+}
+.saxi-regular-add:before {
+	content: "\e909";
+}
+.saxi-regular-additem:before {
+	content: "\e90a";
+}
+.saxi-regular-airdrop:before {
+	content: "\e90b";
+}
+.saxi-regular-airplane-square:before {
+	content: "\e90c";
+}
+.saxi-regular-airplane:before {
+	content: "\e90d";
+}
+.saxi-regular-airpod:before {
+	content: "\e90e";
+}
+.saxi-regular-airpods:before {
+	content: "\e90f";
+}
+.saxi-regular-alarm:before {
+	content: "\e910";
+}
+.saxi-regular-align-bottom:before {
+	content: "\e911";
+}
+.saxi-regular-align-horizontally:before {
+	content: "\e912";
+}
+.saxi-regular-align-left:before {
+	content: "\e913";
+}
+.saxi-regular-align-right:before {
+	content: "\e914";
+}
+.saxi-regular-align-vertically:before {
+	content: "\e915";
+}
+.saxi-regular-aquarius:before {
+	content: "\e916";
+}
+.saxi-regular-archive-1:before {
+	content: "\e917";
+}
+.saxi-regular-archive-2:before {
+	content: "\e918";
+}
+.saxi-regular-archive-add:before {
+	content: "\e919";
+}
+.saxi-regular-archive-book:before {
+	content: "\e91a";
+}
+.saxi-regular-archive-minus:before {
+	content: "\e91b";
+}
+.saxi-regular-archive-slash:before {
+	content: "\e91c";
+}
+.saxi-regular-archive-tick:before {
+	content: "\e91d";
+}
+.saxi-regular-archive:before {
+	content: "\e91e";
+}
+.saxi-regular-arrange-circle-2:before {
+	content: "\e91f";
+}
+.saxi-regular-arrange-circle:before {
+	content: "\e920";
+}
+.saxi-regular-arrange-square-2:before {
+	content: "\e921";
+}
+.saxi-regular-arrange-square:before {
+	content: "\e922";
+}
+.saxi-regular-arrow-2:before {
+	content: "\e923";
+}
+.saxi-regular-arrow-3:before {
+	content: "\e924";
+}
+.saxi-regular-arrow-bottom:before {
+	content: "\e925";
+}
+.saxi-regular-arrow-circle-down:before {
+	content: "\e926";
+}
+.saxi-regular-arrow-circle-left:before {
+	content: "\e927";
+}
+.saxi-regular-arrow-circle-right:before {
+	content: "\e928";
+}
+.saxi-regular-arrow-circle-up:before {
+	content: "\e929";
+}
+.saxi-regular-arrow-down-1:before {
+	content: "\e92a";
+}
+.saxi-regular-arrow-down-2:before {
+	content: "\e92b";
+}
+.saxi-regular-arrow-down:before {
+	content: "\e92c";
+}
+.saxi-regular-arrow-left-1:before {
+	content: "\e92d";
+}
+.saxi-regular-arrow-left-2:before {
+	content: "\e92e";
+}
+.saxi-regular-arrow-left-3:before {
+	content: "\e92f";
+}
+.saxi-regular-arrow-left:before {
+	content: "\e930";
+}
+.saxi-regular-arrow-right-1:before {
+	content: "\e931";
+}
+.saxi-regular-arrow-right-2:before {
+	content: "\e932";
+}
+.saxi-regular-arrow-right-3:before {
+	content: "\e933";
+}
+.saxi-regular-arrow-right:before {
+	content: "\e934";
+}
+.saxi-regular-arrow-square-down:before {
+	content: "\e935";
+}
+.saxi-regular-arrow-square-left:before {
+	content: "\e936";
+}
+.saxi-regular-arrow-square-right:before {
+	content: "\e937";
+}
+.saxi-regular-arrow-square-up:before {
+	content: "\e938";
+}
+.saxi-regular-arrow-square:before {
+	content: "\e939";
+}
+.saxi-regular-arrow-swap-horizontal:before {
+	content: "\e93a";
+}
+.saxi-regular-arrow-swap:before {
+	content: "\e93b";
+}
+.saxi-regular-arrow-up-1:before {
+	content: "\e93c";
+}
+.saxi-regular-arrow-up-2:before {
+	content: "\e93d";
+}
+.saxi-regular-arrow-up-3:before {
+	content: "\e93e";
+}
+.saxi-regular-arrow-up:before {
+	content: "\e93f";
+}
+.saxi-regular-arrow:before {
+	content: "\e940";
+}
+.saxi-regular-attach-circle:before {
+	content: "\e941";
+}
+.saxi-regular-attach-square:before {
+	content: "\e942";
+}
+.saxi-regular-audio-square:before {
+	content: "\e943";
+}
+.saxi-regular-autobrightness:before {
+	content: "\e944";
+}
+.saxi-regular-award:before {
+	content: "\e945";
+}
+.saxi-regular-back-square:before {
+	content: "\e946";
+}
+.saxi-regular-backward-10-seconds:before {
+	content: "\e947";
+}
+.saxi-regular-backward-15-seconds:before {
+	content: "\e948";
+}
+.saxi-regular-backward-5-seconds:before {
+	content: "\e949";
+}
+.saxi-regular-backward-item:before {
+	content: "\e94a";
+}
+.saxi-regular-backward:before {
+	content: "\e94b";
+}
+.saxi-regular-bag-2:before {
+	content: "\e94c";
+}
+.saxi-regular-bag-cross-1:before {
+	content: "\e94d";
+}
+.saxi-regular-bag-cross:before {
+	content: "\e94e";
+}
+.saxi-regular-bag-happy:before {
+	content: "\e94f";
+}
+.saxi-regular-bag-tick-2:before {
+	content: "\e950";
+}
+.saxi-regular-bag-tick:before {
+	content: "\e951";
+}
+.saxi-regular-bag-timer:before {
+	content: "\e952";
+}
+.saxi-regular-bag:before {
+	content: "\e953";
+}
+.saxi-regular-bank:before {
+	content: "\e954";
+}
+.saxi-regular-barcode:before {
+	content: "\e955";
+}
+.saxi-regular-battery-3full:before {
+	content: "\e956";
+}
+.saxi-regular-battery-charging:before {
+	content: "\e957";
+}
+.saxi-regular-battery-disable:before {
+	content: "\e958";
+}
+.saxi-regular-battery-empty-1:before {
+	content: "\e959";
+}
+.saxi-regular-battery-empty:before {
+	content: "\e95a";
+}
+.saxi-regular-battery-full:before {
+	content: "\e95b";
+}
+.saxi-regular-bezier:before {
+	content: "\e95c";
+}
+.saxi-regular-bill:before {
+	content: "\e95d";
+}
+.saxi-regular-bitcoin-card:before {
+	content: "\e95e";
+}
+.saxi-regular-bitcoin-convert:before {
+	content: "\e95f";
+}
+.saxi-regular-bitcoin-refresh:before {
+	content: "\e960";
+}
+.saxi-regular-blend-2:before {
+	content: "\e961";
+}
+.saxi-regular-blend:before {
+	content: "\e962";
+}
+.saxi-regular-bluetooth-2:before {
+	content: "\e963";
+}
+.saxi-regular-bluetooth-circle:before {
+	content: "\e964";
+}
+.saxi-regular-bluetooth-rectangle:before {
+	content: "\e965";
+}
+.saxi-regular-bluetooth:before {
+	content: "\e966";
+}
+.saxi-regular-blur:before {
+	content: "\e967";
+}
+.saxi-regular-book-1:before {
+	content: "\e968";
+}
+.saxi-regular-book-saved:before {
+	content: "\e969";
+}
+.saxi-regular-book-square:before {
+	content: "\e96a";
+}
+.saxi-regular-book:before {
+	content: "\e96b";
+}
+.saxi-regular-bookmark-2:before {
+	content: "\e96c";
+}
+.saxi-regular-bookmark:before {
+	content: "\e96d";
+}
+.saxi-regular-box-1:before {
+	content: "\e96e";
+}
+.saxi-regular-box-2:before {
+	content: "\e96f";
+}
+.saxi-regular-box-add:before {
+	content: "\e970";
+}
+.saxi-regular-box-remove:before {
+	content: "\e971";
+}
+.saxi-regular-box-search:before {
+	content: "\e972";
+}
+.saxi-regular-box-tick:before {
+	content: "\e973";
+}
+.saxi-regular-box-time:before {
+	content: "\e974";
+}
+.saxi-regular-box:before {
+	content: "\e975";
+}
+.saxi-regular-briefcase:before {
+	content: "\e976";
+}
+.saxi-regular-brifecase-cross:before {
+	content: "\e977";
+}
+.saxi-regular-brifecase-tick:before {
+	content: "\e978";
+}
+.saxi-regular-brifecase-timer:before {
+	content: "\e979";
+}
+.saxi-regular-broom:before {
+	content: "\e97a";
+}
+.saxi-regular-brush-1:before {
+	content: "\e97b";
+}
+.saxi-regular-brush-2:before {
+	content: "\e97c";
+}
+.saxi-regular-brush-3:before {
+	content: "\e97d";
+}
+.saxi-regular-brush-4:before {
+	content: "\e97e";
+}
+.saxi-regular-brush:before {
+	content: "\e97f";
+}
+.saxi-regular-bubble:before {
+	content: "\e980";
+}
+.saxi-regular-bucket-circle:before {
+	content: "\e981";
+}
+.saxi-regular-bucket-square:before {
+	content: "\e982";
+}
+.saxi-regular-bucket:before {
+	content: "\e983";
+}
+.saxi-regular-building-3:before {
+	content: "\e984";
+}
+.saxi-regular-building-4:before {
+	content: "\e985";
+}
+.saxi-regular-building:before {
+	content: "\e986";
+}
+.saxi-regular-buildings-2:before {
+	content: "\e987";
+}
+.saxi-regular-buildings:before {
+	content: "\e988";
+}
+.saxi-regular-buliding:before {
+	content: "\e989";
+}
+.saxi-regular-bus:before {
+	content: "\e98a";
+}
+.saxi-regular-buy-crypto:before {
+	content: "\e98b";
+}
+.saxi-regular-cake:before {
+	content: "\e98c";
+}
+.saxi-regular-calculator:before {
+	content: "\e98d";
+}
+.saxi-regular-calendar-1:before {
+	content: "\e98e";
+}
+.saxi-regular-calendar-2:before {
+	content: "\e98f";
+}
+.saxi-regular-calendar-add:before {
+	content: "\e990";
+}
+.saxi-regular-calendar-circle:before {
+	content: "\e991";
+}
+.saxi-regular-calendar-edit:before {
+	content: "\e992";
+}
+.saxi-regular-calendar-remove:before {
+	content: "\e993";
+}
+.saxi-regular-calendar-search:before {
+	content: "\e994";
+}
+.saxi-regular-calendar-tick:before {
+	content: "\e995";
+}
+.saxi-regular-calendar:before {
+	content: "\e996";
+}
+.saxi-regular-call-add:before {
+	content: "\e997";
+}
+.saxi-regular-call-calling:before {
+	content: "\e998";
+}
+.saxi-regular-call-incoming:before {
+	content: "\e999";
+}
+.saxi-regular-call-minus:before {
+	content: "\e99a";
+}
+.saxi-regular-call-outgoing:before {
+	content: "\e99b";
+}
+.saxi-regular-call-received:before {
+	content: "\e99c";
+}
+.saxi-regular-call-remove:before {
+	content: "\e99d";
+}
+.saxi-regular-call-slash:before {
+	content: "\e99e";
+}
+.saxi-regular-call:before {
+	content: "\e99f";
+}
+.saxi-regular-camera-slash:before {
+	content: "\e9a0";
+}
+.saxi-regular-camera:before {
+	content: "\e9a1";
+}
+.saxi-regular-candle-2:before {
+	content: "\e9a2";
+}
+.saxi-regular-candle:before {
+	content: "\e9a3";
+}
+.saxi-regular-car:before {
+	content: "\e9a4";
+}
+.saxi-regular-card-add:before {
+	content: "\e9a5";
+}
+.saxi-regular-card-coin:before {
+	content: "\e9a6";
+}
+.saxi-regular-card-edit:before {
+	content: "\e9a7";
+}
+.saxi-regular-card-pos:before {
+	content: "\e9a8";
+}
+.saxi-regular-card-receive:before {
+	content: "\e9a9";
+}
+.saxi-regular-card-remove-1:before {
+	content: "\e9aa";
+}
+.saxi-regular-card-remove:before {
+	content: "\e9ab";
+}
+.saxi-regular-card-send:before {
+	content: "\e9ac";
+}
+.saxi-regular-card-slash:before {
+	content: "\e9ad";
+}
+.saxi-regular-card-tick-1:before {
+	content: "\e9ae";
+}
+.saxi-regular-card-tick:before {
+	content: "\e9af";
+}
+.saxi-regular-card:before {
+	content: "\e9b0";
+}
+.saxi-regular-cards:before {
+	content: "\e9b1";
+}
+.saxi-regular-category-2:before {
+	content: "\e9b2";
+}
+.saxi-regular-category:before {
+	content: "\e9b3";
+}
+.saxi-regular-cd:before {
+	content: "\e9b4";
+}
+.saxi-regular-chart-1:before {
+	content: "\e9b5";
+}
+.saxi-regular-chart-2:before {
+	content: "\e9b6";
+}
+.saxi-regular-chart-21:before {
+	content: "\e9b7";
+}
+.saxi-regular-chart-3:before {
+	content: "\e9b8";
+}
+.saxi-regular-chart-fail:before {
+	content: "\e9b9";
+}
+.saxi-regular-chart-square:before {
+	content: "\e9ba";
+}
+.saxi-regular-chart-success:before {
+	content: "\e9bb";
+}
+.saxi-regular-chart:before {
+	content: "\e9bc";
+}
+.saxi-regular-check:before {
+	content: "\e9bd";
+}
+.saxi-regular-chrome:before {
+	content: "\e9be";
+}
+.saxi-regular-clipboard-close:before {
+	content: "\e9bf";
+}
+.saxi-regular-clipboard-export:before {
+	content: "\e9c0";
+}
+.saxi-regular-clipboard-import:before {
+	content: "\e9c1";
+}
+.saxi-regular-clipboard-text:before {
+	content: "\e9c2";
+}
+.saxi-regular-clipboard-tick:before {
+	content: "\e9c3";
+}
+.saxi-regular-clipboard:before {
+	content: "\e9c4";
+}
+.saxi-regular-clock-1:before {
+	content: "\e9c5";
+}
+.saxi-regular-clock:before {
+	content: "\e9c6";
+}
+.saxi-regular-close-circle:before {
+	content: "\e9c7";
+}
+.saxi-regular-close-square:before {
+	content: "\e9c8";
+}
+.saxi-regular-cloud-add:before {
+	content: "\e9c9";
+}
+.saxi-regular-cloud-change:before {
+	content: "\e9ca";
+}
+.saxi-regular-cloud-connection:before {
+	content: "\e9cb";
+}
+.saxi-regular-cloud-cross:before {
+	content: "\e9cc";
+}
+.saxi-regular-cloud-drizzle:before {
+	content: "\e9cd";
+}
+.saxi-regular-cloud-fog:before {
+	content: "\e9ce";
+}
+.saxi-regular-cloud-lightning:before {
+	content: "\e9cf";
+}
+.saxi-regular-cloud-minus:before {
+	content: "\e9d0";
+}
+.saxi-regular-cloud-notif:before {
+	content: "\e9d1";
+}
+.saxi-regular-cloud-plus:before {
+	content: "\e9d2";
+}
+.saxi-regular-cloud-remove:before {
+	content: "\e9d3";
+}
+.saxi-regular-cloud-snow:before {
+	content: "\e9d4";
+}
+.saxi-regular-cloud-sunny:before {
+	content: "\e9d5";
+}
+.saxi-regular-cloud:before {
+	content: "\e9d6";
+}
+.saxi-regular-code-1:before {
+	content: "\e9d7";
+}
+.saxi-regular-code-circle:before {
+	content: "\e9d8";
+}
+.saxi-regular-code:before {
+	content: "\e9d9";
+}
+.saxi-regular-coffee:before {
+	content: "\e9da";
+}
+.saxi-regular-coin-1:before {
+	content: "\e9db";
+}
+.saxi-regular-coin:before {
+	content: "\e9dc";
+}
+.saxi-regular-color-swatch:before {
+	content: "\e9dd";
+}
+.saxi-regular-colorfilter:before {
+	content: "\e9de";
+}
+.saxi-regular-colors-square:before {
+	content: "\e9df";
+}
+.saxi-regular-command-square:before {
+	content: "\e9e0";
+}
+.saxi-regular-command:before {
+	content: "\e9e1";
+}
+.saxi-regular-component:before {
+	content: "\e9e2";
+}
+.saxi-regular-computing:before {
+	content: "\e9e3";
+}
+.saxi-regular-convert-3d-cube:before {
+	content: "\e9e4";
+}
+.saxi-regular-convert-card:before {
+	content: "\e9e5";
+}
+.saxi-regular-convert:before {
+	content: "\e9e6";
+}
+.saxi-regular-convertshape-2:before {
+	content: "\e9e7";
+}
+.saxi-regular-convertshape:before {
+	content: "\e9e8";
+}
+.saxi-regular-copy-success:before {
+	content: "\e9e9";
+}
+.saxi-regular-copy:before {
+	content: "\e9ea";
+}
+.saxi-regular-copyright:before {
+	content: "\e9eb";
+}
+.saxi-regular-courthouse:before {
+	content: "\e9ec";
+}
+.saxi-regular-cpu-charge:before {
+	content: "\e9ed";
+}
+.saxi-regular-cpu-setting:before {
+	content: "\e9ee";
+}
+.saxi-regular-cpu:before {
+	content: "\e9ef";
+}
+.saxi-regular-creative-commons:before {
+	content: "\e9f0";
+}
+.saxi-regular-crop:before {
+	content: "\e9f1";
+}
+.saxi-regular-crown-1:before {
+	content: "\e9f2";
+}
+.saxi-regular-crown:before {
+	content: "\e9f3";
+}
+.saxi-regular-cup:before {
+	content: "\e9f4";
+}
+.saxi-regular-danger:before {
+	content: "\e9f5";
+}
+.saxi-regular-data-2:before {
+	content: "\e9f6";
+}
+.saxi-regular-data:before {
+	content: "\e9f7";
+}
+.saxi-regular-designtools:before {
+	content: "\e9f8";
+}
+.saxi-regular-device-message:before {
+	content: "\e9f9";
+}
+.saxi-regular-devices-1:before {
+	content: "\e9fa";
+}
+.saxi-regular-devices:before {
+	content: "\e9fb";
+}
+.saxi-regular-diagram:before {
+	content: "\e9fc";
+}
+.saxi-regular-diamonds:before {
+	content: "\e9fd";
+}
+.saxi-regular-direct-down:before {
+	content: "\e9fe";
+}
+.saxi-regular-direct-inbox:before {
+	content: "\e9ff";
+}
+.saxi-regular-direct-left:before {
+	content: "\ea00";
+}
+.saxi-regular-direct-normal:before {
+	content: "\ea01";
+}
+.saxi-regular-direct-notification:before {
+	content: "\ea02";
+}
+.saxi-regular-direct-right:before {
+	content: "\ea03";
+}
+.saxi-regular-direct-send:before {
+	content: "\ea04";
+}
+.saxi-regular-direct-up:before {
+	content: "\ea05";
+}
+.saxi-regular-direct:before {
+	content: "\ea06";
+}
+.saxi-regular-directbox-default:before {
+	content: "\ea07";
+}
+.saxi-regular-directbox-notif:before {
+	content: "\ea08";
+}
+.saxi-regular-directbox-receive:before {
+	content: "\ea09";
+}
+.saxi-regular-directbox-send:before {
+	content: "\ea0a";
+}
+.saxi-regular-discount-circle:before {
+	content: "\ea0b";
+}
+.saxi-regular-discount-shape:before {
+	content: "\ea0c";
+}
+.saxi-regular-discover-1:before {
+	content: "\ea0d";
+}
+.saxi-regular-discover:before {
+	content: "\ea0e";
+}
+.saxi-regular-dislike:before {
+	content: "\ea0f";
+}
+.saxi-regular-document-1:before {
+	content: "\ea10";
+}
+.saxi-regular-document-cloud:before {
+	content: "\ea11";
+}
+.saxi-regular-document-code-2:before {
+	content: "\ea12";
+}
+.saxi-regular-document-code:before {
+	content: "\ea13";
+}
+.saxi-regular-document-copy:before {
+	content: "\ea14";
+}
+.saxi-regular-document-download:before {
+	content: "\ea15";
+}
+.saxi-regular-document-favorite:before {
+	content: "\ea16";
+}
+.saxi-regular-document-filter:before {
+	content: "\ea17";
+}
+.saxi-regular-document-forward:before {
+	content: "\ea18";
+}
+.saxi-regular-document-like:before {
+	content: "\ea19";
+}
+.saxi-regular-document-normal:before {
+	content: "\ea1a";
+}
+.saxi-regular-document-previous:before {
+	content: "\ea1b";
+}
+.saxi-regular-document-sketch:before {
+	content: "\ea1c";
+}
+.saxi-regular-document-text-1:before {
+	content: "\ea1d";
+}
+.saxi-regular-document-text:before {
+	content: "\ea1e";
+}
+.saxi-regular-document-upload:before {
+	content: "\ea1f";
+}
+.saxi-regular-document:before {
+	content: "\ea20";
+}
+.saxi-regular-dollar-circle:before {
+	content: "\ea21";
+}
+.saxi-regular-dollar-square:before {
+	content: "\ea22";
+}
+.saxi-regular-driver-2:before {
+	content: "\ea23";
+}
+.saxi-regular-driver-refresh:before {
+	content: "\ea24";
+}
+.saxi-regular-driver:before {
+	content: "\ea25";
+}
+.saxi-regular-driving:before {
+	content: "\ea26";
+}
+.saxi-regular-drop:before {
+	content: "\ea27";
+}
+.saxi-regular-edit-2:before {
+	content: "\ea28";
+}
+.saxi-regular-edit:before {
+	content: "\ea29";
+}
+.saxi-regular-electricity:before {
+	content: "\ea2a";
+}
+.saxi-regular-element-2:before {
+	content: "\ea2b";
+}
+.saxi-regular-element-3:before {
+	content: "\ea2c";
+}
+.saxi-regular-element-4:before {
+	content: "\ea2d";
+}
+.saxi-regular-element-equal:before {
+	content: "\ea2e";
+}
+.saxi-regular-element-plus:before {
+	content: "\ea2f";
+}
+.saxi-regular-emoji-happy:before {
+	content: "\ea30";
+}
+.saxi-regular-emoji-normal:before {
+	content: "\ea31";
+}
+.saxi-regular-emoji-sad:before {
+	content: "\ea32";
+}
+.saxi-regular-empty-wallet-add:before {
+	content: "\ea33";
+}
+.saxi-regular-empty-wallet-change:before {
+	content: "\ea34";
+}
+.saxi-regular-empty-wallet-remove:before {
+	content: "\ea35";
+}
+.saxi-regular-empty-wallet-tick:before {
+	content: "\ea36";
+}
+.saxi-regular-empty-wallet-time:before {
+	content: "\ea37";
+}
+.saxi-regular-empty-wallet:before {
+	content: "\ea38";
+}
+.saxi-regular-eraser-1:before {
+	content: "\ea39";
+}
+.saxi-regular-eraser:before {
+	content: "\ea3a";
+}
+.saxi-regular-export-1:before {
+	content: "\ea3b";
+}
+.saxi-regular-export-2:before {
+	content: "\ea3c";
+}
+.saxi-regular-export-3:before {
+	content: "\ea3d";
+}
+.saxi-regular-export:before {
+	content: "\ea3e";
+}
+.saxi-regular-external-drive:before {
+	content: "\ea3f";
+}
+.saxi-regular-eye-slash:before {
+	content: "\ea40";
+}
+.saxi-regular-eye:before {
+	content: "\ea41";
+}
+.saxi-regular-fatrows:before {
+	content: "\ea42";
+}
+.saxi-regular-favorite-chart:before {
+	content: "\ea43";
+}
+.saxi-regular-filter-add:before {
+	content: "\ea44";
+}
+.saxi-regular-filter-edit:before {
+	content: "\ea45";
+}
+.saxi-regular-filter-remove:before {
+	content: "\ea46";
+}
+.saxi-regular-filter-search:before {
+	content: "\ea47";
+}
+.saxi-regular-filter-square:before {
+	content: "\ea48";
+}
+.saxi-regular-filter-tick:before {
+	content: "\ea49";
+}
+.saxi-regular-filter:before {
+	content: "\ea4a";
+}
+.saxi-regular-finger-cricle:before {
+	content: "\ea4b";
+}
+.saxi-regular-finger-scan:before {
+	content: "\ea4c";
+}
+.saxi-regular-firstline:before {
+	content: "\ea4d";
+}
+.saxi-regular-flag-2:before {
+	content: "\ea4e";
+}
+.saxi-regular-flag:before {
+	content: "\ea4f";
+}
+.saxi-regular-flash-1:before {
+	content: "\ea50";
+}
+.saxi-regular-flash-circle-1:before {
+	content: "\ea51";
+}
+.saxi-regular-flash-circle:before {
+	content: "\ea52";
+}
+.saxi-regular-flash-slash:before {
+	content: "\ea53";
+}
+.saxi-regular-flash:before {
+	content: "\ea54";
+}
+.saxi-regular-folder-2:before {
+	content: "\ea55";
+}
+.saxi-regular-folder-add:before {
+	content: "\ea56";
+}
+.saxi-regular-folder-cloud:before {
+	content: "\ea57";
+}
+.saxi-regular-folder-connection:before {
+	content: "\ea58";
+}
+.saxi-regular-folder-cross:before {
+	content: "\ea59";
+}
+.saxi-regular-folder-favorite:before {
+	content: "\ea5a";
+}
+.saxi-regular-folder-minus:before {
+	content: "\ea5b";
+}
+.saxi-regular-folder-open:before {
+	content: "\ea5c";
+}
+.saxi-regular-folder:before {
+	content: "\ea5d";
+}
+.saxi-regular-forbidden-2:before {
+	content: "\ea5e";
+}
+.saxi-regular-forbidden:before {
+	content: "\ea5f";
+}
+.saxi-regular-format-circle:before {
+	content: "\ea60";
+}
+.saxi-regular-format-square:before {
+	content: "\ea61";
+}
+.saxi-regular-forward-10-seconds:before {
+	content: "\ea62";
+}
+.saxi-regular-forward-15-seconds:before {
+	content: "\ea63";
+}
+.saxi-regular-forward-5-seconds:before {
+	content: "\ea64";
+}
+.saxi-regular-forward-item:before {
+	content: "\ea65";
+}
+.saxi-regular-forward-square:before {
+	content: "\ea66";
+}
+.saxi-regular-forward:before {
+	content: "\ea67";
+}
+.saxi-regular-frame-1:before {
+	content: "\ea68";
+}
+.saxi-regular-frame-2:before {
+	content: "\ea69";
+}
+.saxi-regular-frame-3:before {
+	content: "\ea6a";
+}
+.saxi-regular-frame-4:before {
+	content: "\ea6b";
+}
+.saxi-regular-frame:before {
+	content: "\ea6c";
+}
+.saxi-regular-gallery-add:before {
+	content: "\ea6d";
+}
+.saxi-regular-gallery-edit:before {
+	content: "\ea6e";
+}
+.saxi-regular-gallery-export:before {
+	content: "\ea6f";
+}
+.saxi-regular-gallery-favorite:before {
+	content: "\ea70";
+}
+.saxi-regular-gallery-import:before {
+	content: "\ea71";
+}
+.saxi-regular-gallery-remove:before {
+	content: "\ea72";
+}
+.saxi-regular-gallery-slash:before {
+	content: "\ea73";
+}
+.saxi-regular-gallery-tick:before {
+	content: "\ea74";
+}
+.saxi-regular-gallery:before {
+	content: "\ea75";
+}
+.saxi-regular-game:before {
+	content: "\ea76";
+}
+.saxi-regular-gameboy:before {
+	content: "\ea77";
+}
+.saxi-regular-gas-station:before {
+	content: "\ea78";
+}
+.saxi-regular-gemini-2:before {
+	content: "\ea79";
+}
+.saxi-regular-gemini:before {
+	content: "\ea7a";
+}
+.saxi-regular-ghost:before {
+	content: "\ea7b";
+}
+.saxi-regular-gift:before {
+	content: "\ea7c";
+}
+.saxi-regular-glass-1:before {
+	content: "\ea7d";
+}
+.saxi-regular-glass:before {
+	content: "\ea7e";
+}
+.saxi-regular-global-edit:before {
+	content: "\ea7f";
+}
+.saxi-regular-global-refresh:before {
+	content: "\ea80";
+}
+.saxi-regular-global-search:before {
+	content: "\ea81";
+}
+.saxi-regular-global:before {
+	content: "\ea82";
+}
+.saxi-regular-gps-slash:before {
+	content: "\ea83";
+}
+.saxi-regular-gps:before {
+	content: "\ea84";
+}
+.saxi-regular-grammerly:before {
+	content: "\ea85";
+}
+.saxi-regular-graph:before {
+	content: "\ea86";
+}
+.saxi-regular-grid-1:before {
+	content: "\ea87";
+}
+.saxi-regular-grid-2:before {
+	content: "\ea88";
+}
+.saxi-regular-grid-3:before {
+	content: "\ea89";
+}
+.saxi-regular-grid-4:before {
+	content: "\ea8a";
+}
+.saxi-regular-grid-5:before {
+	content: "\ea8b";
+}
+.saxi-regular-grid-6:before {
+	content: "\ea8c";
+}
+.saxi-regular-grid-7:before {
+	content: "\ea8d";
+}
+.saxi-regular-grid-8:before {
+	content: "\ea8e";
+}
+.saxi-regular-grid-9:before {
+	content: "\ea8f";
+}
+.saxi-regular-grid-edit:before {
+	content: "\ea90";
+}
+.saxi-regular-grid-eraser:before {
+	content: "\ea91";
+}
+.saxi-regular-grid-lock:before {
+	content: "\ea92";
+}
+.saxi-regular-happyemoji:before {
+	content: "\ea93";
+}
+.saxi-regular-hashtag-1:before {
+	content: "\ea94";
+}
+.saxi-regular-hashtag-down:before {
+	content: "\ea95";
+}
+.saxi-regular-hashtag-up:before {
+	content: "\ea96";
+}
+.saxi-regular-hashtag:before {
+	content: "\ea97";
+}
+.saxi-regular-headphone:before {
+	content: "\ea98";
+}
+.saxi-regular-headphones:before {
+	content: "\ea99";
+}
+.saxi-regular-health:before {
+	content: "\ea9a";
+}
+.saxi-regular-heart-add:before {
+	content: "\ea9b";
+}
+.saxi-regular-heart-circle:before {
+	content: "\ea9c";
+}
+.saxi-regular-heart-edit:before {
+	content: "\ea9d";
+}
+.saxi-regular-heart-remove:before {
+	content: "\ea9e";
+}
+.saxi-regular-heart-search:before {
+	content: "\ea9f";
+}
+.saxi-regular-heart-slash:before {
+	content: "\eaa0";
+}
+.saxi-regular-heart-tick:before {
+	content: "\eaa1";
+}
+.saxi-regular-heart:before {
+	content: "\eaa2";
+}
+.saxi-regular-hierarchy-2:before {
+	content: "\eaa3";
+}
+.saxi-regular-hierarchy-3:before {
+	content: "\eaa4";
+}
+.saxi-regular-hierarchy-square-2:before {
+	content: "\eaa5";
+}
+.saxi-regular-hierarchy-square-3:before {
+	content: "\eaa6";
+}
+.saxi-regular-hierarchy-square:before {
+	content: "\eaa7";
+}
+.saxi-regular-hierarchy:before {
+	content: "\eaa8";
+}
+.saxi-regular-home-1:before {
+	content: "\eaa9";
+}
+.saxi-regular-home-2:before {
+	content: "\eaaa";
+}
+.saxi-regular-home-hashtag:before {
+	content: "\eaab";
+}
+.saxi-regular-home-trend-down:before {
+	content: "\eaac";
+}
+.saxi-regular-home-trend-up:before {
+	content: "\eaad";
+}
+.saxi-regular-home-wifi:before {
+	content: "\eaae";
+}
+.saxi-regular-home:before {
+	content: "\eaaf";
+}
+.saxi-regular-hospital:before {
+	content: "\eab0";
+}
+.saxi-regular-house-2:before {
+	content: "\eab1";
+}
+.saxi-regular-house:before {
+	content: "\eab2";
+}
+.saxi-regular-image:before {
+	content: "\eab3";
+}
+.saxi-regular-import-1:before {
+	content: "\eab4";
+}
+.saxi-regular-import-2:before {
+	content: "\eab5";
+}
+.saxi-regular-import-3:before {
+	content: "\eab6";
+}
+.saxi-regular-import:before {
+	content: "\eab7";
+}
+.saxi-regular-info-circle:before {
+	content: "\eab8";
+}
+.saxi-regular-information:before {
+	content: "\eab9";
+}
+.saxi-regular-instagram:before {
+	content: "\eaba";
+}
+.saxi-regular-judge:before {
+	content: "\eabb";
+}
+.saxi-regular-kanban:before {
+	content: "\eabc";
+}
+.saxi-regular-key-square:before {
+	content: "\eabd";
+}
+.saxi-regular-key:before {
+	content: "\eabe";
+}
+.saxi-regular-keyboard-open:before {
+	content: "\eabf";
+}
+.saxi-regular-keyboard:before {
+	content: "\eac0";
+}
+.saxi-regular-lamp-1:before {
+	content: "\eac1";
+}
+.saxi-regular-lamp-charge:before {
+	content: "\eac2";
+}
+.saxi-regular-lamp-on:before {
+	content: "\eac3";
+}
+.saxi-regular-lamp-slash:before {
+	content: "\eac4";
+}
+.saxi-regular-lamp:before {
+	content: "\eac5";
+}
+.saxi-regular-language-circle:before {
+	content: "\eac6";
+}
+.saxi-regular-language-square:before {
+	content: "\eac7";
+}
+.saxi-regular-layer:before {
+	content: "\eac8";
+}
+.saxi-regular-level:before {
+	content: "\eac9";
+}
+.saxi-regular-lifebuoy:before {
+	content: "\eaca";
+}
+.saxi-regular-like-1:before {
+	content: "\eacb";
+}
+.saxi-regular-like-dislike:before {
+	content: "\eacc";
+}
+.saxi-regular-like-shapes:before {
+	content: "\eacd";
+}
+.saxi-regular-like-tag:before {
+	content: "\eace";
+}
+.saxi-regular-like:before {
+	content: "\eacf";
+}
+.saxi-regular-link-1:before {
+	content: "\ead0";
+}
+.saxi-regular-link-2:before {
+	content: "\ead1";
+}
+.saxi-regular-link-21:before {
+	content: "\ead2";
+}
+.saxi-regular-link-circle:before {
+	content: "\ead3";
+}
+.saxi-regular-link-square:before {
+	content: "\ead4";
+}
+.saxi-regular-link:before {
+	content: "\ead5";
+}
+.saxi-regular-location-add:before {
+	content: "\ead6";
+}
+.saxi-regular-location-cross:before {
+	content: "\ead7";
+}
+.saxi-regular-location-minus:before {
+	content: "\ead8";
+}
+.saxi-regular-location-slash:before {
+	content: "\ead9";
+}
+.saxi-regular-location-tick:before {
+	content: "\eada";
+}
+.saxi-regular-location:before {
+	content: "\eadb";
+}
+.saxi-regular-lock-1:before {
+	content: "\eadc";
+}
+.saxi-regular-lock-circle:before {
+	content: "\eadd";
+}
+.saxi-regular-lock-slash:before {
+	content: "\eade";
+}
+.saxi-regular-lock:before {
+	content: "\eadf";
+}
+.saxi-regular-login-1:before {
+	content: "\eae0";
+}
+.saxi-regular-login:before {
+	content: "\eae1";
+}
+.saxi-regular-logout-1:before {
+	content: "\eae2";
+}
+.saxi-regular-logout:before {
+	content: "\eae3";
+}
+.saxi-regular-lovely:before {
+	content: "\eae4";
+}
+.saxi-regular-magic-star:before {
+	content: "\eae5";
+}
+.saxi-regular-magicpen:before {
+	content: "\eae6";
+}
+.saxi-regular-main-component:before {
+	content: "\eae7";
+}
+.saxi-regular-man:before {
+	content: "\eae8";
+}
+.saxi-regular-map-1:before {
+	content: "\eae9";
+}
+.saxi-regular-map:before {
+	content: "\eaea";
+}
+.saxi-regular-mask-1:before {
+	content: "\eaeb";
+}
+.saxi-regular-mask-2:before {
+	content: "\eaec";
+}
+.saxi-regular-mask:before {
+	content: "\eaed";
+}
+.saxi-regular-math:before {
+	content: "\eaee";
+}
+.saxi-regular-maximize-1:before {
+	content: "\eaef";
+}
+.saxi-regular-maximize-2:before {
+	content: "\eaf0";
+}
+.saxi-regular-maximize-21:before {
+	content: "\eaf1";
+}
+.saxi-regular-maximize-3:before {
+	content: "\eaf2";
+}
+.saxi-regular-maximize-4:before {
+	content: "\eaf3";
+}
+.saxi-regular-maximize-circle:before {
+	content: "\eaf4";
+}
+.saxi-regular-maximize:before {
+	content: "\eaf5";
+}
+.saxi-regular-medal-star:before {
+	content: "\eaf6";
+}
+.saxi-regular-medal:before {
+	content: "\eaf7";
+}
+.saxi-regular-menu-1:before {
+	content: "\eaf8";
+}
+.saxi-regular-menu-board:before {
+	content: "\eaf9";
+}
+.saxi-regular-menu:before {
+	content: "\eafa";
+}
+.saxi-regular-message-2:before {
+	content: "\eafb";
+}
+.saxi-regular-message-add-1:before {
+	content: "\eafc";
+}
+.saxi-regular-message-add:before {
+	content: "\eafd";
+}
+.saxi-regular-message-circle:before {
+	content: "\eafe";
+}
+.saxi-regular-message-edit:before {
+	content: "\eaff";
+}
+.saxi-regular-message-favorite:before {
+	content: "\eb00";
+}
+.saxi-regular-message-minus:before {
+	content: "\eb01";
+}
+.saxi-regular-message-notif:before {
+	content: "\eb02";
+}
+.saxi-regular-message-programming:before {
+	content: "\eb03";
+}
+.saxi-regular-message-question:before {
+	content: "\eb04";
+}
+.saxi-regular-message-remove:before {
+	content: "\eb05";
+}
+.saxi-regular-message-search:before {
+	content: "\eb06";
+}
+.saxi-regular-message-square:before {
+	content: "\eb07";
+}
+.saxi-regular-message-text-1:before {
+	content: "\eb08";
+}
+.saxi-regular-message-text:before {
+	content: "\eb09";
+}
+.saxi-regular-message-tick:before {
+	content: "\eb0a";
+}
+.saxi-regular-message-time:before {
+	content: "\eb0b";
+}
+.saxi-regular-message:before {
+	content: "\eb0c";
+}
+.saxi-regular-messages-1:before {
+	content: "\eb0d";
+}
+.saxi-regular-messages-2:before {
+	content: "\eb0e";
+}
+.saxi-regular-messages-3:before {
+	content: "\eb0f";
+}
+.saxi-regular-messages:before {
+	content: "\eb10";
+}
+.saxi-regular-microphone-2:before {
+	content: "\eb11";
+}
+.saxi-regular-microphone-slash-1:before {
+	content: "\eb12";
+}
+.saxi-regular-microphone-slash:before {
+	content: "\eb13";
+}
+.saxi-regular-microphone:before {
+	content: "\eb14";
+}
+.saxi-regular-microscope:before {
+	content: "\eb15";
+}
+.saxi-regular-milk:before {
+	content: "\eb16";
+}
+.saxi-regular-mini-music-sqaure:before {
+	content: "\eb17";
+}
+.saxi-regular-minus-cirlce:before {
+	content: "\eb18";
+}
+.saxi-regular-minus-square:before {
+	content: "\eb19";
+}
+.saxi-regular-minus:before {
+	content: "\eb1a";
+}
+.saxi-regular-mirror:before {
+	content: "\eb1b";
+}
+.saxi-regular-mirroring-screen:before {
+	content: "\eb1c";
+}
+.saxi-regular-mobile-programming:before {
+	content: "\eb1d";
+}
+.saxi-regular-mobile:before {
+	content: "\eb1e";
+}
+.saxi-regular-money-2:before {
+	content: "\eb1f";
+}
+.saxi-regular-money-3:before {
+	content: "\eb20";
+}
+.saxi-regular-money-4:before {
+	content: "\eb21";
+}
+.saxi-regular-money-add:before {
+	content: "\eb22";
+}
+.saxi-regular-money-change:before {
+	content: "\eb23";
+}
+.saxi-regular-money-forbidden:before {
+	content: "\eb24";
+}
+.saxi-regular-money-recive:before {
+	content: "\eb25";
+}
+.saxi-regular-money-remove:before {
+	content: "\eb26";
+}
+.saxi-regular-money-send:before {
+	content: "\eb27";
+}
+.saxi-regular-money-tick:before {
+	content: "\eb28";
+}
+.saxi-regular-money-time:before {
+	content: "\eb29";
+}
+.saxi-regular-money:before {
+	content: "\eb2a";
+}
+.saxi-regular-moneys:before {
+	content: "\eb2b";
+}
+.saxi-regular-monitor-mobbile:before {
+	content: "\eb2c";
+}
+.saxi-regular-monitor-recorder:before {
+	content: "\eb2d";
+}
+.saxi-regular-monitor:before {
+	content: "\eb2e";
+}
+.saxi-regular-moon:before {
+	content: "\eb2f";
+}
+.saxi-regular-more-2:before {
+	content: "\eb30";
+}
+.saxi-regular-more-circle:before {
+	content: "\eb31";
+}
+.saxi-regular-more-square:before {
+	content: "\eb32";
+}
+.saxi-regular-more:before {
+	content: "\eb33";
+}
+.saxi-regular-mouse-1:before {
+	content: "\eb34";
+}
+.saxi-regular-mouse-circle:before {
+	content: "\eb35";
+}
+.saxi-regular-mouse-square:before {
+	content: "\eb36";
+}
+.saxi-regular-mouse:before {
+	content: "\eb37";
+}
+.saxi-regular-music-circle:before {
+	content: "\eb38";
+}
+.saxi-regular-music-dashboard:before {
+	content: "\eb39";
+}
+.saxi-regular-music-filter:before {
+	content: "\eb3a";
+}
+.saxi-regular-music-library-2:before {
+	content: "\eb3b";
+}
+.saxi-regular-music-play:before {
+	content: "\eb3c";
+}
+.saxi-regular-music-playlist:before {
+	content: "\eb3d";
+}
+.saxi-regular-music-square-add:before {
+	content: "\eb3e";
+}
+.saxi-regular-music-square-remove:before {
+	content: "\eb3f";
+}
+.saxi-regular-music-square-search:before {
+	content: "\eb40";
+}
+.saxi-regular-music-square:before {
+	content: "\eb41";
+}
+.saxi-regular-music:before {
+	content: "\eb42";
+}
+.saxi-regular-musicnote:before {
+	content: "\eb43";
+}
+.saxi-regular-next:before {
+	content: "\eb44";
+}
+.saxi-regular-note-1:before {
+	content: "\eb45";
+}
+.saxi-regular-note-2:before {
+	content: "\eb46";
+}
+.saxi-regular-note-21:before {
+	content: "\eb47";
+}
+.saxi-regular-note-add:before {
+	content: "\eb48";
+}
+.saxi-regular-note-favorite:before {
+	content: "\eb49";
+}
+.saxi-regular-note-remove:before {
+	content: "\eb4a";
+}
+.saxi-regular-note-square:before {
+	content: "\eb4b";
+}
+.saxi-regular-note-text:before {
+	content: "\eb4c";
+}
+.saxi-regular-note:before {
+	content: "\eb4d";
+}
+.saxi-regular-notification-1:before {
+	content: "\eb4e";
+}
+.saxi-regular-notification-bing:before {
+	content: "\eb4f";
+}
+.saxi-regular-notification-favorite:before {
+	content: "\eb50";
+}
+.saxi-regular-notification-status:before {
+	content: "\eb51";
+}
+.saxi-regular-notification:before {
+	content: "\eb52";
+}
+.saxi-regular-omega-circle:before {
+	content: "\eb53";
+}
+.saxi-regular-omega-square:before {
+	content: "\eb54";
+}
+.saxi-regular-paintbucket:before {
+	content: "\eb55";
+}
+.saxi-regular-paperclip-2:before {
+	content: "\eb56";
+}
+.saxi-regular-paperclip:before {
+	content: "\eb57";
+}
+.saxi-regular-password-check:before {
+	content: "\eb58";
+}
+.saxi-regular-path-2:before {
+	content: "\eb59";
+}
+.saxi-regular-path-square:before {
+	content: "\eb5a";
+}
+.saxi-regular-path:before {
+	content: "\eb5b";
+}
+.saxi-regular-pause-circle:before {
+	content: "\eb5c";
+}
+.saxi-regular-pause:before {
+	content: "\eb5d";
+}
+.saxi-regular-pen-add:before {
+	content: "\eb5e";
+}
+.saxi-regular-pen-close:before {
+	content: "\eb5f";
+}
+.saxi-regular-pen-remove:before {
+	content: "\eb60";
+}
+.saxi-regular-pen-tool-2:before {
+	content: "\eb61";
+}
+.saxi-regular-pen-tool:before {
+	content: "\eb62";
+}
+.saxi-regular-people:before {
+	content: "\eb63";
+}
+.saxi-regular-percentage-circle:before {
+	content: "\eb64";
+}
+.saxi-regular-percentage-square:before {
+	content: "\eb65";
+}
+.saxi-regular-personalcard:before {
+	content: "\eb66";
+}
+.saxi-regular-pet:before {
+	content: "\eb67";
+}
+.saxi-regular-pharagraphspacing:before {
+	content: "\eb68";
+}
+.saxi-regular-picture-frame:before {
+	content: "\eb69";
+}
+.saxi-regular-play-add:before {
+	content: "\eb6a";
+}
+.saxi-regular-play-circle:before {
+	content: "\eb6b";
+}
+.saxi-regular-play-cricle:before {
+	content: "\eb6c";
+}
+.saxi-regular-play-remove:before {
+	content: "\eb6d";
+}
+.saxi-regular-play:before {
+	content: "\eb6e";
+}
+.saxi-regular-presention-chart:before {
+	content: "\eb6f";
+}
+.saxi-regular-previous:before {
+	content: "\eb70";
+}
+.saxi-regular-printer-slash:before {
+	content: "\eb71";
+}
+.saxi-regular-printer:before {
+	content: "\eb72";
+}
+.saxi-regular-profile-2user:before {
+	content: "\eb73";
+}
+.saxi-regular-profile-add:before {
+	content: "\eb74";
+}
+.saxi-regular-profile-circle:before {
+	content: "\eb75";
+}
+.saxi-regular-profile-delete:before {
+	content: "\eb76";
+}
+.saxi-regular-profile-remove:before {
+	content: "\eb77";
+}
+.saxi-regular-profile-tick:before {
+	content: "\eb78";
+}
+.saxi-regular-programming-arrow:before {
+	content: "\eb79";
+}
+.saxi-regular-programming-arrows:before {
+	content: "\eb7a";
+}
+.saxi-regular-quote-down-circle:before {
+	content: "\eb7b";
+}
+.saxi-regular-quote-down-square:before {
+	content: "\eb7c";
+}
+.saxi-regular-quote-down:before {
+	content: "\eb7d";
+}
+.saxi-regular-quote-up-circle:before {
+	content: "\eb7e";
+}
+.saxi-regular-quote-up-square:before {
+	content: "\eb7f";
+}
+.saxi-regular-quote-up:before {
+	content: "\eb80";
+}
+.saxi-regular-radar-1:before {
+	content: "\eb81";
+}
+.saxi-regular-radar-2:before {
+	content: "\eb82";
+}
+.saxi-regular-radar:before {
+	content: "\eb83";
+}
+.saxi-regular-radio:before {
+	content: "\eb84";
+}
+.saxi-regular-ram-2:before {
+	content: "\eb85";
+}
+.saxi-regular-ram:before {
+	content: "\eb86";
+}
+.saxi-regular-ranking-1:before {
+	content: "\eb87";
+}
+.saxi-regular-ranking:before {
+	content: "\eb88";
+}
+.saxi-regular-receipt-1:before {
+	content: "\eb89";
+}
+.saxi-regular-receipt-2-1:before {
+	content: "\eb8a";
+}
+.saxi-regular-receipt-2:before {
+	content: "\eb8b";
+}
+.saxi-regular-receipt-add:before {
+	content: "\eb8c";
+}
+.saxi-regular-receipt-discount:before {
+	content: "\eb8d";
+}
+.saxi-regular-receipt-disscount:before {
+	content: "\eb8e";
+}
+.saxi-regular-receipt-edit:before {
+	content: "\eb8f";
+}
+.saxi-regular-receipt-item:before {
+	content: "\eb90";
+}
+.saxi-regular-receipt-minus:before {
+	content: "\eb91";
+}
+.saxi-regular-receipt-search:before {
+	content: "\eb92";
+}
+.saxi-regular-receipt-square:before {
+	content: "\eb93";
+}
+.saxi-regular-receipt-text:before {
+	content: "\eb94";
+}
+.saxi-regular-receipt:before {
+	content: "\eb95";
+}
+.saxi-regular-receive-square-2:before {
+	content: "\eb96";
+}
+.saxi-regular-receive-square:before {
+	content: "\eb97";
+}
+.saxi-regular-received:before {
+	content: "\eb98";
+}
+.saxi-regular-record-circle:before {
+	content: "\eb99";
+}
+.saxi-regular-record:before {
+	content: "\eb9a";
+}
+.saxi-regular-recovery-convert:before {
+	content: "\eb9b";
+}
+.saxi-regular-redo:before {
+	content: "\eb9c";
+}
+.saxi-regular-refresh-2:before {
+	content: "\eb9d";
+}
+.saxi-regular-refresh-circle:before {
+	content: "\eb9e";
+}
+.saxi-regular-refresh-left-square:before {
+	content: "\eb9f";
+}
+.saxi-regular-refresh-right-square:before {
+	content: "\eba0";
+}
+.saxi-regular-refresh-square-2:before {
+	content: "\eba1";
+}
+.saxi-regular-refresh:before {
+	content: "\eba2";
+}
+.saxi-regular-repeat-circle:before {
+	content: "\eba3";
+}
+.saxi-regular-repeat:before {
+	content: "\eba4";
+}
+.saxi-regular-repeate-music:before {
+	content: "\eba5";
+}
+.saxi-regular-repeate-one:before {
+	content: "\eba6";
+}
+.saxi-regular-reserve:before {
+	content: "\eba7";
+}
+.saxi-regular-rotate-left-1:before {
+	content: "\eba8";
+}
+.saxi-regular-rotate-left:before {
+	content: "\eba9";
+}
+.saxi-regular-rotate-right-1:before {
+	content: "\ebaa";
+}
+.saxi-regular-rotate-right:before {
+	content: "\ebab";
+}
+.saxi-regular-route-square:before {
+	content: "\ebac";
+}
+.saxi-regular-routing-2:before {
+	content: "\ebad";
+}
+.saxi-regular-routing:before {
+	content: "\ebae";
+}
+.saxi-regular-row-horizontal:before {
+	content: "\ebaf";
+}
+.saxi-regular-row-vertical:before {
+	content: "\ebb0";
+}
+.saxi-regular-ruler&amp;pen:before {
+	content: "\ebb1";
+}
+.saxi-regular-ruler:before {
+	content: "\ebb2";
+}
+.saxi-regular-safe-home:before {
+	content: "\ebb3";
+}
+.saxi-regular-sagittarius:before {
+	content: "\ebb4";
+}
+.saxi-regular-save-2:before {
+	content: "\ebb5";
+}
+.saxi-regular-save-add:before {
+	content: "\ebb6";
+}
+.saxi-regular-save-minus:before {
+	content: "\ebb7";
+}
+.saxi-regular-save-remove:before {
+	content: "\ebb8";
+}
+.saxi-regular-scan-barcode:before {
+	content: "\ebb9";
+}
+.saxi-regular-scan:before {
+	content: "\ebba";
+}
+.saxi-regular-scanner:before {
+	content: "\ebbb";
+}
+.saxi-regular-scanning:before {
+	content: "\ebbc";
+}
+.saxi-regular-scissor-1:before {
+	content: "\ebbd";
+}
+.saxi-regular-scissor:before {
+	content: "\ebbe";
+}
+.saxi-regular-screenmirroring:before {
+	content: "\ebbf";
+}
+.saxi-regular-scroll:before {
+	content: "\ebc0";
+}
+.saxi-regular-search-favorite-1:before {
+	content: "\ebc1";
+}
+.saxi-regular-search-favorite:before {
+	content: "\ebc2";
+}
+.saxi-regular-search-normal-1:before {
+	content: "\ebc3";
+}
+.saxi-regular-search-normal:before {
+	content: "\ebc4";
+}
+.saxi-regular-search-status-1:before {
+	content: "\ebc5";
+}
+.saxi-regular-search-status:before {
+	content: "\ebc6";
+}
+.saxi-regular-search-zoom-in-1:before {
+	content: "\ebc7";
+}
+.saxi-regular-search-zoom-in:before {
+	content: "\ebc8";
+}
+.saxi-regular-search-zoom-out-1:before {
+	content: "\ebc9";
+}
+.saxi-regular-search-zoom-out:before {
+	content: "\ebca";
+}
+.saxi-regular-security-card:before {
+	content: "\ebcb";
+}
+.saxi-regular-security-safe:before {
+	content: "\ebcc";
+}
+.saxi-regular-security-time:before {
+	content: "\ebcd";
+}
+.saxi-regular-security-user:before {
+	content: "\ebce";
+}
+.saxi-regular-security:before {
+	content: "\ebcf";
+}
+.saxi-regular-send-1:before {
+	content: "\ebd0";
+}
+.saxi-regular-send-2:before {
+	content: "\ebd1";
+}
+.saxi-regular-send-sqaure-2:before {
+	content: "\ebd2";
+}
+.saxi-regular-send-square:before {
+	content: "\ebd3";
+}
+.saxi-regular-send:before {
+	content: "\ebd4";
+}
+.saxi-regular-setting-2:before {
+	content: "\ebd5";
+}
+.saxi-regular-setting-3:before {
+	content: "\ebd6";
+}
+.saxi-regular-setting-4:before {
+	content: "\ebd7";
+}
+.saxi-regular-setting-5:before {
+	content: "\ebd8";
+}
+.saxi-regular-setting:before {
+	content: "\ebd9";
+}
+.saxi-regular-settings:before {
+	content: "\ebda";
+}
+.saxi-regular-shapes-1:before {
+	content: "\ebdb";
+}
+.saxi-regular-shapes:before {
+	content: "\ebdc";
+}
+.saxi-regular-share:before {
+	content: "\ebdd";
+}
+.saxi-regular-shield-cross:before {
+	content: "\ebde";
+}
+.saxi-regular-shield-search:before {
+	content: "\ebdf";
+}
+.saxi-regular-shield-security:before {
+	content: "\ebe0";
+}
+.saxi-regular-shield-slash:before {
+	content: "\ebe1";
+}
+.saxi-regular-shield-tick:before {
+	content: "\ebe2";
+}
+.saxi-regular-ship:before {
+	content: "\ebe3";
+}
+.saxi-regular-shop-add:before {
+	content: "\ebe4";
+}
+.saxi-regular-shop-remove:before {
+	content: "\ebe5";
+}
+.saxi-regular-shop:before {
+	content: "\ebe6";
+}
+.saxi-regular-shopping-bag:before {
+	content: "\ebe7";
+}
+.saxi-regular-shopping-cart:before {
+	content: "\ebe8";
+}
+.saxi-regular-shuffle:before {
+	content: "\ebe9";
+}
+.saxi-regular-sidebar-bottom:before {
+	content: "\ebea";
+}
+.saxi-regular-sidebar-left:before {
+	content: "\ebeb";
+}
+.saxi-regular-sidebar-right:before {
+	content: "\ebec";
+}
+.saxi-regular-sidebar-top:before {
+	content: "\ebed";
+}
+.saxi-regular-signpost:before {
+	content: "\ebee";
+}
+.saxi-regular-simcard-1:before {
+	content: "\ebef";
+}
+.saxi-regular-simcard-2:before {
+	content: "\ebf0";
+}
+.saxi-regular-simcard:before {
+	content: "\ebf1";
+}
+.saxi-regular-size:before {
+	content: "\ebf2";
+}
+.saxi-regular-slash:before {
+	content: "\ebf3";
+}
+.saxi-regular-slider-horizontal-1:before {
+	content: "\ebf4";
+}
+.saxi-regular-slider-horizontal:before {
+	content: "\ebf5";
+}
+.saxi-regular-slider-vertical-1:before {
+	content: "\ebf6";
+}
+.saxi-regular-slider-vertical:before {
+	content: "\ebf7";
+}
+.saxi-regular-slider:before {
+	content: "\ebf8";
+}
+.saxi-regular-smallcaps:before {
+	content: "\ebf9";
+}
+.saxi-regular-smart-car:before {
+	content: "\ebfa";
+}
+.saxi-regular-smart-home:before {
+	content: "\ebfb";
+}
+.saxi-regular-smileys:before {
+	content: "\ebfc";
+}
+.saxi-regular-sms-edit:before {
+	content: "\ebfd";
+}
+.saxi-regular-sms-notification:before {
+	content: "\ebfe";
+}
+.saxi-regular-sms-search:before {
+	content: "\ebff";
+}
+.saxi-regular-sms-star:before {
+	content: "\ec00";
+}
+.saxi-regular-sms-tracking:before {
+	content: "\ec01";
+}
+.saxi-regular-sms:before {
+	content: "\ec02";
+}
+.saxi-regular-sort:before {
+	content: "\ec03";
+}
+.saxi-regular-sound:before {
+	content: "\ec04";
+}
+.saxi-regular-speaker:before {
+	content: "\ec05";
+}
+.saxi-regular-speedometer:before {
+	content: "\ec06";
+}
+.saxi-regular-star-1:before {
+	content: "\ec07";
+}
+.saxi-regular-star-slash:before {
+	content: "\ec08";
+}
+.saxi-regular-star:before {
+	content: "\ec09";
+}
+.saxi-regular-status-up:before {
+	content: "\ec0a";
+}
+.saxi-regular-status:before {
+	content: "\ec0b";
+}
+.saxi-regular-sticker:before {
+	content: "\ec0c";
+}
+.saxi-regular-stickynote:before {
+	content: "\ec0d";
+}
+.saxi-regular-stop-circle:before {
+	content: "\ec0e";
+}
+.saxi-regular-stop:before {
+	content: "\ec0f";
+}
+.saxi-regular-story:before {
+	content: "\ec10";
+}
+.saxi-regular-strongbox-2:before {
+	content: "\ec11";
+}
+.saxi-regular-strongbox:before {
+	content: "\ec12";
+}
+.saxi-regular-subtitle:before {
+	content: "\ec13";
+}
+.saxi-regular-sun-1:before {
+	content: "\ec14";
+}
+.saxi-regular-sun-fog:before {
+	content: "\ec15";
+}
+.saxi-regular-sun:before {
+	content: "\ec16";
+}
+.saxi-regular-tag-2:before {
+	content: "\ec17";
+}
+.saxi-regular-tag-cross:before {
+	content: "\ec18";
+}
+.saxi-regular-tag-right:before {
+	content: "\ec19";
+}
+.saxi-regular-tag-user:before {
+	content: "\ec1a";
+}
+.saxi-regular-tag:before {
+	content: "\ec1b";
+}
+.saxi-regular-task-square:before {
+	content: "\ec1c";
+}
+.saxi-regular-task:before {
+	content: "\ec1d";
+}
+.saxi-regular-teacher:before {
+	content: "\ec1e";
+}
+.saxi-regular-text-block:before {
+	content: "\ec1f";
+}
+.saxi-regular-text-bold:before {
+	content: "\ec20";
+}
+.saxi-regular-text-italic:before {
+	content: "\ec21";
+}
+.saxi-regular-text-underline:before {
+	content: "\ec22";
+}
+.saxi-regular-text:before {
+	content: "\ec23";
+}
+.saxi-regular-textalign-center:before {
+	content: "\ec24";
+}
+.saxi-regular-textalign-justifycenter:before {
+	content: "\ec25";
+}
+.saxi-regular-textalign-justifyleft:before {
+	content: "\ec26";
+}
+.saxi-regular-textalign-justifyright:before {
+	content: "\ec27";
+}
+.saxi-regular-textalign-left:before {
+	content: "\ec28";
+}
+.saxi-regular-textalign-right:before {
+	content: "\ec29";
+}
+.saxi-regular-tick-circle:before {
+	content: "\ec2a";
+}
+.saxi-regular-tick-square:before {
+	content: "\ec2b";
+}
+.saxi-regular-ticket-2:before {
+	content: "\ec2c";
+}
+.saxi-regular-ticket-discount:before {
+	content: "\ec2d";
+}
+.saxi-regular-ticket-expired:before {
+	content: "\ec2e";
+}
+.saxi-regular-ticket-star:before {
+	content: "\ec2f";
+}
+.saxi-regular-ticket:before {
+	content: "\ec30";
+}
+.saxi-regular-timer-1:before {
+	content: "\ec31";
+}
+.saxi-regular-timer-pause:before {
+	content: "\ec32";
+}
+.saxi-regular-timer-start:before {
+	content: "\ec33";
+}
+.saxi-regular-timer:before {
+	content: "\ec34";
+}
+.saxi-regular-toggle-off-circle:before {
+	content: "\ec35";
+}
+.saxi-regular-toggle-off:before {
+	content: "\ec36";
+}
+.saxi-regular-toggle-on-circle:before {
+	content: "\ec37";
+}
+.saxi-regular-toggle-on:before {
+	content: "\ec38";
+}
+.saxi-regular-trade:before {
+	content: "\ec39";
+}
+.saxi-regular-transaction-minus:before {
+	content: "\ec3a";
+}
+.saxi-regular-translate:before {
+	content: "\ec3b";
+}
+.saxi-regular-trash:before {
+	content: "\ec3c";
+}
+.saxi-regular-tree:before {
+	content: "\ec3d";
+}
+.saxi-regular-trend-down:before {
+	content: "\ec3e";
+}
+.saxi-regular-trend-up:before {
+	content: "\ec3f";
+}
+.saxi-regular-triangle:before {
+	content: "\ec40";
+}
+.saxi-regular-truck-fast:before {
+	content: "\ec41";
+}
+.saxi-regular-truck-remove:before {
+	content: "\ec42";
+}
+.saxi-regular-truck-tick:before {
+	content: "\ec43";
+}
+.saxi-regular-truck-time:before {
+	content: "\ec44";
+}
+.saxi-regular-truck:before {
+	content: "\ec45";
+}
+.saxi-regular-trush-square:before {
+	content: "\ec46";
+}
+.saxi-regular-undo:before {
+	content: "\ec47";
+}
+.saxi-regular-unlimited:before {
+	content: "\ec48";
+}
+.saxi-regular-unlock:before {
+	content: "\ec49";
+}
+.saxi-regular-user-add:before {
+	content: "\ec4a";
+}
+.saxi-regular-user-cirlce-add:before {
+	content: "\ec4b";
+}
+.saxi-regular-user-edit:before {
+	content: "\ec4c";
+}
+.saxi-regular-user-minus:before {
+	content: "\ec4d";
+}
+.saxi-regular-user-octagon:before {
+	content: "\ec4e";
+}
+.saxi-regular-user-remove:before {
+	content: "\ec4f";
+}
+.saxi-regular-user-search:before {
+	content: "\ec50";
+}
+.saxi-regular-user-square:before {
+	content: "\ec51";
+}
+.saxi-regular-user-tag:before {
+	content: "\ec52";
+}
+.saxi-regular-user-tick:before {
+	content: "\ec53";
+}
+.saxi-regular-user:before {
+	content: "\ec54";
+}
+.saxi-regular-verify:before {
+	content: "\ec55";
+}
+.saxi-regular-video-add:before {
+	content: "\ec56";
+}
+.saxi-regular-video-circle:before {
+	content: "\ec57";
+}
+.saxi-regular-video-horizontal:before {
+	content: "\ec58";
+}
+.saxi-regular-video-octagon:before {
+	content: "\ec59";
+}
+.saxi-regular-video-play:before {
+	content: "\ec5a";
+}
+.saxi-regular-video-remove:before {
+	content: "\ec5b";
+}
+.saxi-regular-video-slash:before {
+	content: "\ec5c";
+}
+.saxi-regular-video-square:before {
+	content: "\ec5d";
+}
+.saxi-regular-video-tick:before {
+	content: "\ec5e";
+}
+.saxi-regular-video-time:before {
+	content: "\ec5f";
+}
+.saxi-regular-video-vertical:before {
+	content: "\ec60";
+}
+.saxi-regular-video:before {
+	content: "\ec61";
+}
+.saxi-regular-voice-cricle:before {
+	content: "\ec62";
+}
+.saxi-regular-voice-square:before {
+	content: "\ec63";
+}
+.saxi-regular-volume-cross:before {
+	content: "\ec64";
+}
+.saxi-regular-volume-high:before {
+	content: "\ec65";
+}
+.saxi-regular-volume-low-1:before {
+	content: "\ec66";
+}
+.saxi-regular-volume-low:before {
+	content: "\ec67";
+}
+.saxi-regular-volume-mute:before {
+	content: "\ec68";
+}
+.saxi-regular-volume-slash:before {
+	content: "\ec69";
+}
+.saxi-regular-volume-up:before {
+	content: "\ec6a";
+}
+.saxi-regular-wallet-1:before {
+	content: "\ec6b";
+}
+.saxi-regular-wallet-2:before {
+	content: "\ec6c";
+}
+.saxi-regular-wallet-3:before {
+	content: "\ec6d";
+}
+.saxi-regular-wallet-add-1:before {
+	content: "\ec6e";
+}
+.saxi-regular-wallet-add:before {
+	content: "\ec6f";
+}
+.saxi-regular-wallet-check:before {
+	content: "\ec70";
+}
+.saxi-regular-wallet-minus:before {
+	content: "\ec71";
+}
+.saxi-regular-wallet-money:before {
+	content: "\ec72";
+}
+.saxi-regular-wallet-remove:before {
+	content: "\ec73";
+}
+.saxi-regular-wallet-search:before {
+	content: "\ec74";
+}
+.saxi-regular-wallet:before {
+	content: "\ec75";
+}
+.saxi-regular-warning-2:before {
+	content: "\ec76";
+}
+.saxi-regular-watch-status:before {
+	content: "\ec77";
+}
+.saxi-regular-watch:before {
+	content: "\ec78";
+}
+.saxi-regular-weight-1:before {
+	content: "\ec79";
+}
+.saxi-regular-weight:before {
+	content: "\ec7a";
+}
+.saxi-regular-wifi-square:before {
+	content: "\ec7b";
+}
+.saxi-regular-wifi:before {
+	content: "\ec7c";
+}
+.saxi-regular-wind-2:before {
+	content: "\ec7d";
+}
+.saxi-regular-wind:before {
+	content: "\ec7e";
+}
+.saxi-regular-woman:before {
+	content: "\ec7f";
+}
+.saxi-regular-backward-item-1:before {
+	content: "\ec80";
+}
+.saxi-regular-bezier-1:before {
+	content: "\ec81";
+}
+.saxi-regular-blur-1:before {
+	content: "\ec82";
+}
+.saxi-regular-bucket-circle-1:before {
+	content: "\ec83";
+}
+.saxi-regular-bucket-square-1:before {
+	content: "\ec84";
+}
+.saxi-regular-colors-square-1:before {
+	content: "\ec85";
+}
+.saxi-regular-component-1:before {
+	content: "\ec86";
+}
+.saxi-regular-element-1:before {
+	content: "\ec87";
+}
+.saxi-regular-eraser-2:before {
+	content: "\ec88";
+}
+.saxi-regular-flash-circle-2:before {
+	content: "\ec89";
+}
+.saxi-regular-forward-item-1:before {
+	content: "\ec8a";
+}
+.saxi-regular-frame-5:before {
+	content: "\ec8b";
+}
+.saxi-regular-group-1:before {
+	content: "\ec8c";
+}
+.saxi-regular-group-10:before {
+	content: "\ec8d";
+}
+.saxi-regular-group-11:before {
+	content: "\ec8e";
+}
+.saxi-regular-group-2:before {
+	content: "\ec8f";
+}
+.saxi-regular-group-3:before {
+	content: "\ec90";
+}
+.saxi-regular-group-4:before {
+	content: "\ec91";
+}
+.saxi-regular-group-5:before {
+	content: "\ec92";
+}
+.saxi-regular-group-6:before {
+	content: "\ec93";
+}
+.saxi-regular-group-7:before {
+	content: "\ec94";
+}
+.saxi-regular-group-8:before {
+	content: "\ec95";
+}
+.saxi-regular-group-9:before {
+	content: "\ec96";
+}
+.saxi-regular-group:before {
+	content: "\ec97";
+}
+.saxi-regular-main-component-1:before {
+	content: "\ec98";
+}
+.saxi-regular-mask-3:before {
+	content: "\ec99";
+}
+.saxi-regular-notification-circle:before {
+	content: "\ec9a";
+}
+.saxi-regular-omega-circle-1:before {
+	content: "\ec9b";
+}
+.saxi-regular-omega-square-1:before {
+	content: "\ec9c";
+}
+.saxi-regular-pen-add-1:before {
+	content: "\ec9d";
+}
+.saxi-regular-pen-close-1:before {
+	content: "\ec9e";
+}
+.saxi-regular-pen-remove-1:before {
+	content: "\ec9f";
+}
+.saxi-regular-pen-tool-1:before {
+	content: "\eca0";
+}
+.saxi-regular-pen-tool-2-1:before {
+	content: "\eca1";
+}
+.saxi-regular-profile:before {
+	content: "\eca2";
+}
+.saxi-regular-scissor-2:before {
+	content: "\eca3";
+}
+.saxi-regular-shapes-2:before {
+	content: "\eca4";
+}
+.saxi-regular-shield:before {
+	content: "\eca5";
+}
+.saxi-regular-arrow-right-4:before {
+	content: "\eca6";
+}
+.saxi-regular-icon:before {
+	content: "\eca7";
+}
+.saxi-regular-frame-6:before {
+	content: "\eca8";
+}
+.saxi-regular-frame-7:before {
+	content: "\eca9";
+}
+.saxi-regular-icon-1:before {
+	content: "\ecaa";
+}

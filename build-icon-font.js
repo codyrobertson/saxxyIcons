@@ -16,7 +16,7 @@ const fs = require('fs-extra');
 const path = require('path');
 
 // Configuration
-const ZIP_FILE = path.join(__dirname, 'svg.zip');
+const ZIP_FILE = path.join(__dirname, 'input', 'svg.zip');
 const TEMP_DIR = path.join(__dirname, 'temp_svgs');
 const OUTPUT_DIR = path.join(__dirname, 'Fonts');
 
@@ -291,35 +291,40 @@ async function generateFontForStyle(style, files, codepoints) {
         classPrefix: `${style.cssPrefix}-`
       },
       writeFiles: true,
-      callback: async (error, result) => {
+      callback: (error, result) => {
         if (error) {
           console.error(`Error generating font for ${style.style} style:`, error);
           reject(error);
-        } else {
-          console.log(`Successfully generated font for ${style.style} style`);
-          
-          // Verify the font files were generated
-          const expectedFiles = [
-            `${fontName}.ttf`,
-            `${fontName}.woff`,
-            `${fontName}.woff2`,
-            `${fontName}.eot`,
-            `${fontName}.svg`,
-            `${fontName}.css`
-          ];
-          
-          for (const file of expectedFiles) {
-            const filePath = path.join(OUTPUT_DIR, file);
-            const exists = await fs.pathExists(filePath);
-            if (exists) {
-              const stats = await fs.stat(filePath);
-              console.log(`Generated file: ${file} (${stats.size} bytes)`);
-            } else {
-              console.warn(`Warning: Expected file ${file} was not generated!`);
-            }
+          return;
+        }
+        
+        console.log(`Successfully generated font for ${style.style} style`);
+        
+        // Verify the font files were generated
+        const expectedFiles = [
+          `${fontName}.ttf`,
+          `${fontName}.woff`,
+          `${fontName}.woff2`,
+          `${fontName}.eot`,
+          `${fontName}.svg`
+        ];
+        
+        let allFilesExist = true;
+        for (const file of expectedFiles) {
+          const filePath = path.join(OUTPUT_DIR, file);
+          if (fs.existsSync(filePath)) {
+            const stats = fs.statSync(filePath);
+            console.log(`Generated file: ${file} (${stats.size} bytes)`);
+          } else {
+            console.warn(`Warning: Expected file ${file} was not generated!`);
+            allFilesExist = false;
           }
-          
+        }
+        
+        if (allFilesExist) {
           resolve(result);
+        } else {
+          reject(new Error(`Some expected files for ${style.style} style were not generated`));
         }
       }
     };
@@ -327,6 +332,22 @@ async function generateFontForStyle(style, files, codepoints) {
     // Call webfonts-generator
     console.log(`Calling webfonts-generator for ${style.style} style...`);
     webfontsGenerator(options);
+    
+    // Add a timeout to prevent hanging
+    const timeoutMs = 60000; // 1 minute timeout
+    const timeout = setTimeout(() => {
+      console.error(`Timeout (${timeoutMs}ms) reached while generating ${style.style} font`);
+      reject(new Error(`Timeout generating ${style.style} font`));
+    }, timeoutMs);
+    
+    // Clear the timeout when the promise resolves or rejects
+    const clearTimeoutWrapper = (fn) => (...args) => {
+      clearTimeout(timeout);
+      return fn(...args);
+    };
+    
+    resolve = clearTimeoutWrapper(resolve);
+    reject = clearTimeoutWrapper(reject);
   });
 }
 
@@ -408,7 +429,7 @@ async function generateCSSAndJSON(group, mapping) {
     cssLines.push(`  font-family: '${group.family}';`);
     cssLines.push(`  src: ${formats.join(",\n       ")};`);
     cssLines.push(`  font-weight: ${sub.weight};`);
-    cssLines.push(`  font-style: normal;`);
+    cssLines.push(`  font-style: normal !important;`);
     cssLines.push(`  font-display: block;`);
     cssLines.push(`}\n`);
   });
@@ -417,7 +438,7 @@ async function generateCSSAndJSON(group, mapping) {
   cssLines.push(`.saxi {`);
   cssLines.push(`  font-family: '${group.family}' !important;`);
   cssLines.push(`  speak: never;`);
-  cssLines.push(`  font-style: normal;`);
+  cssLines.push(`  font-style: normal !important;`);
   cssLines.push(`  font-weight: normal;`);
   cssLines.push(`  font-variant: normal;`);
   cssLines.push(`  text-transform: none;`);
@@ -474,15 +495,62 @@ async function generateCombinedCSS() {
   
   try {
     const files = await fs.readdir(OUTPUT_DIR);
-    const cssFiles = files.filter(f => f.endsWith('.css'));
+    const cssFiles = files.filter(f => f.endsWith('.css') && f !== 'saxi-icons-all.css');
     
     let combinedContent = '/* Combined SAXI Icons CSS */\n\n';
     
     for (const cssFile of cssFiles) {
       const cssPath = path.join(OUTPUT_DIR, cssFile);
-      const cssContent = await fs.readFile(cssPath, 'utf8');
+      let cssContent = await fs.readFile(cssPath, 'utf8');
+      
+      // Ensure font URLs are relative and don't have quotes
+      cssContent = cssContent.replace(/url\(['"]?(.*?)['"]?\)/g, (match, url) => {
+        return `url(${path.basename(url)})`;
+      });
+      
+      // Add !important to font-style properties
+      cssContent = cssContent.replace(/font-style:\s*normal;/g, 'font-style: normal !important;');
+      
       combinedContent += `/* ${cssFile} */\n${cssContent}\n\n`;
     }
+    
+    // Add utility classes for consistent usage
+    combinedContent += `/* Utility Classes */
+.saxi {
+  font-family: 'saxi-icons-pro' !important;
+  font-style: normal !important;
+  speak: never;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Font-weight utilities */
+.saxi-bold, .saxi-solid {
+  font-weight: 700 !important;
+}
+
+.saxi-regular, .saxi-linear, .saxi-broken, .saxi-twotone {
+  font-weight: 400 !important;
+}
+
+.saxi-light, .saxi-outline {
+  font-weight: 300 !important;
+}
+
+.saxi-bulk {
+  font-weight: 700 !important;
+  font-family: 'saxi-icons-pro-twotone' !important;
+}
+
+/* Ensure all icons have the correct baseline */
+[class^="saxi-"], [class*=" saxi-"] {
+  font-style: normal !important;
+  line-height: 1;
+}
+`;
     
     const combinedPath = path.join(OUTPUT_DIR, 'saxi-icons-all.css');
     await fs.writeFile(combinedPath, combinedContent);

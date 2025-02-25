@@ -69,6 +69,8 @@ async function build() {
     await createSvgTestHtml();
     await createSingleIconTest();
     
+    await createDemoHtml();
+    
   } catch (error) {
     console.error('Build failed:', error);
     process.exit(1);
@@ -705,6 +707,312 @@ async function createSingleIconTest() {
 
   await fs.writeFile(testHtmlPath, content);
   console.log('Created single icon test HTML file at:', testHtmlPath);
+}
+
+async function createDemoHtml() {
+  console.log('Creating demo HTML file...');
+  
+  try {
+    // Get icon mapping from JSON files
+    const mainMapping = await fs.readJson(path.join(__dirname, '..', 'Fonts', 'saxi-icons-pro.json'));
+    const twotoneMapping = await fs.readJson(path.join(__dirname, '..', 'Fonts', 'saxi-icons-pro-twotone.json'));
+    
+    // Combine mappings and sort alphabetically
+    const allIcons = Array.from(new Set([...Object.keys(mainMapping), ...Object.keys(twotoneMapping)])).sort();
+    
+    // Select a subset of icons to display (to keep the file size reasonable)
+    const sampleIcons = allIcons.slice(0, 100);
+    
+    // Create HTML content
+    let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAXI Icons Font Demo</title>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      padding: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+    
+    .styles-container {
+      margin-bottom: 40px;
+    }
+    
+    .style-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    
+    .style-header {
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      font-weight: bold;
+      font-size: 18px;
+      color: #555;
+    }
+    
+    .icon-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      background-color: white;
+      position: relative;
+    }
+    
+    .icon-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-name {
+      font-size: 11px;
+      text-align: center;
+      word-break: break-word;
+      color: #666;
+    }
+    
+    .style-badge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-size: 8px;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: white;
+      background-color: #7b68ee;
+    }
+    
+    .search-container {
+      margin-bottom: 30px;
+    }
+    
+    .search-input {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px 15px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    
+    .style-switcher {
+      display: flex;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .style-button {
+      padding: 8px 15px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: none;
+      background-color: #f1f1f1;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .style-button.active {
+      background-color: #7b68ee;
+      color: white;
+    }
+    
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .no-results {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .icon-card {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .icon {
+        font-size: 24px;
+      }
+      
+      .icon-name {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SAXI Icons Font Demo</h1>
+  <p>All icon styles should display correctly. Test the fonts below to verify they're working properly.</p>
+  
+  <div class="search-container">
+    <input type="text" class="search-input" placeholder="Search icons..." id="searchInput">
+  </div>
+  
+  <div class="style-switcher">
+    <button class="style-button active" data-style="all">All Styles</button>
+    <button class="style-button" data-style="solid">Solid</button>
+    <button class="style-button" data-style="regular">Regular</button>
+    <button class="style-button" data-style="light">Light</button>
+    <button class="style-button" data-style="broken">Broken</button>
+    <button class="style-button" data-style="twotone">TwoTone</button>
+    <button class="style-button" data-style="bulk">Bulk</button>
+  </div>
+  
+  <div class="styles-container">
+    <!-- Icon Grid will be inserted here by JavaScript -->
+    <div id="icon-grid" class="icon-grid"></div>
+  </div>
+  
+  <script>
+    // Icon data
+    const icons = ${JSON.stringify(sampleIcons)};
+    
+    // DOM Elements
+    const iconGrid = document.getElementById('icon-grid');
+    const searchInput = document.getElementById('searchInput');
+    const styleButtons = document.querySelectorAll('.style-button');
+    
+    // State
+    let currentStyle = 'all';
+    let searchTerm = '';
+    
+    // Render icons based on current state
+    function renderIcons() {
+      iconGrid.innerHTML = '';
+      
+      const filteredIcons = icons.filter(icon => 
+        icon.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      
+      if (filteredIcons.length === 0) {
+        iconGrid.innerHTML = '<div class="no-results">No icons found matching your search</div>';
+        return;
+      }
+      
+      filteredIcons.forEach(icon => {
+        if (currentStyle === 'all') {
+          // Create a card for each style
+          createIconCard(icon, 'solid');
+          createIconCard(icon, 'regular');
+          createIconCard(icon, 'light');
+          createIconCard(icon, 'broken');
+          createIconCard(icon, 'twotone');
+          createIconCard(icon, 'bulk');
+        } else {
+          createIconCard(icon, currentStyle);
+        }
+      });
+    }
+    
+    // Create an icon card for a specific style
+    function createIconCard(icon, style) {
+      const card = document.createElement('div');
+      card.className = 'icon-card';
+      
+      const iconSpan = document.createElement('span');
+      iconSpan.className = 'icon';
+      
+      // Map style to appropriate CSS class
+      const styleCssClass = 
+        style === 'solid' ? 'saxi-solid' : 
+        style === 'regular' ? 'saxi-regular' : 
+        style === 'light' ? 'saxi-light' : 
+        style === 'broken' ? 'saxi-broken' : 
+        style === 'twotone' ? 'saxi-twotone' : 
+        style === 'bulk' ? 'saxi-bulk' : '';
+      
+      iconSpan.className = \`icon \${styleCssClass} saxi-\${icon}\`;
+      
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'icon-name';
+      nameSpan.textContent = icon;
+      
+      const styleBadge = document.createElement('span');
+      styleBadge.className = 'style-badge';
+      styleBadge.textContent = style;
+      
+      card.appendChild(styleBadge);
+      card.appendChild(iconSpan);
+      card.appendChild(nameSpan);
+      
+      iconGrid.appendChild(card);
+    }
+    
+    // Event Handlers
+    searchInput.addEventListener('input', e => {
+      searchTerm = e.target.value;
+      renderIcons();
+    });
+    
+    styleButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        styleButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        currentStyle = button.dataset.style;
+        renderIcons();
+      });
+    });
+    
+    // Initial render
+    renderIcons();
+  </script>
+</body>
+</html>`;
+    
+    // Create the demo HTML file in the Fonts directory
+    const outputPath = path.join(__dirname, '..', 'Fonts', 'demo.html');
+    await fs.writeFile(outputPath, html);
+    
+    console.log(`Demo HTML file created at: ${outputPath}`);
+    return true;
+  } catch (error) {
+    console.error('Error creating demo HTML:', error);
+    return false;
+  }
 }
 
 /**

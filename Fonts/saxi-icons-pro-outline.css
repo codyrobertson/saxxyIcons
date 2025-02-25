@@ -1,0 +1,2837 @@
+@font-face {
+	font-family: "saxi-icons-pro-outline";
+	src: url("saxi-icons-pro-outline.eot?bfe8982f800b102368e9119d13d3e91f?#iefix") format("embedded-opentype"),
+url("saxi-icons-pro-outline.woff2?bfe8982f800b102368e9119d13d3e91f") format("woff2"),
+url("saxi-icons-pro-outline.woff?bfe8982f800b102368e9119d13d3e91f") format("woff"),
+url("saxi-icons-pro-outline.ttf?bfe8982f800b102368e9119d13d3e91f") format("truetype"),
+url("saxi-icons-pro-outline.svg?bfe8982f800b102368e9119d13d3e91f#saxi-icons-pro-outline") format("svg");
+}
+
+.saxi-light {
+	line-height: 1;
+}
+
+.saxi-light:before {
+	font-family: saxi-icons-pro-outline !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.saxi-light-24-support:before {
+	content: "\e900";
+}
+.saxi-light-3d-cube-scan:before {
+	content: "\e901";
+}
+.saxi-light-3d-rotate:before {
+	content: "\e902";
+}
+.saxi-light-3d-square:before {
+	content: "\e903";
+}
+.saxi-light-3dcube:before {
+	content: "\e904";
+}
+.saxi-light-3square:before {
+	content: "\e905";
+}
+.saxi-light-activity:before {
+	content: "\e906";
+}
+.saxi-light-add-circle:before {
+	content: "\e907";
+}
+.saxi-light-add-square:before {
+	content: "\e908";
+}
+.saxi-light-add:before {
+	content: "\e909";
+}
+.saxi-light-additem:before {
+	content: "\e90a";
+}
+.saxi-light-airdrop:before {
+	content: "\e90b";
+}
+.saxi-light-airplane-square:before {
+	content: "\e90c";
+}
+.saxi-light-airplane:before {
+	content: "\e90d";
+}
+.saxi-light-airpod:before {
+	content: "\e90e";
+}
+.saxi-light-airpods:before {
+	content: "\e90f";
+}
+.saxi-light-alarm:before {
+	content: "\e910";
+}
+.saxi-light-align-bottom:before {
+	content: "\e911";
+}
+.saxi-light-align-horizontally:before {
+	content: "\e912";
+}
+.saxi-light-align-left:before {
+	content: "\e913";
+}
+.saxi-light-align-right:before {
+	content: "\e914";
+}
+.saxi-light-align-vertically:before {
+	content: "\e915";
+}
+.saxi-light-aquarius:before {
+	content: "\e916";
+}
+.saxi-light-archive-1:before {
+	content: "\e917";
+}
+.saxi-light-archive-2:before {
+	content: "\e918";
+}
+.saxi-light-archive-add:before {
+	content: "\e919";
+}
+.saxi-light-archive-book:before {
+	content: "\e91a";
+}
+.saxi-light-archive-minus:before {
+	content: "\e91b";
+}
+.saxi-light-archive-slash:before {
+	content: "\e91c";
+}
+.saxi-light-archive-tick:before {
+	content: "\e91d";
+}
+.saxi-light-archive:before {
+	content: "\e91e";
+}
+.saxi-light-arrange-circle-2:before {
+	content: "\e91f";
+}
+.saxi-light-arrange-circle:before {
+	content: "\e920";
+}
+.saxi-light-arrange-square-2:before {
+	content: "\e921";
+}
+.saxi-light-arrange-square:before {
+	content: "\e922";
+}
+.saxi-light-arrow-2:before {
+	content: "\e923";
+}
+.saxi-light-arrow-3:before {
+	content: "\e924";
+}
+.saxi-light-arrow-bottom:before {
+	content: "\e925";
+}
+.saxi-light-arrow-circle-down:before {
+	content: "\e926";
+}
+.saxi-light-arrow-circle-left:before {
+	content: "\e927";
+}
+.saxi-light-arrow-circle-right:before {
+	content: "\e928";
+}
+.saxi-light-arrow-circle-up:before {
+	content: "\e929";
+}
+.saxi-light-arrow-down-1:before {
+	content: "\e92a";
+}
+.saxi-light-arrow-down-2:before {
+	content: "\e92b";
+}
+.saxi-light-arrow-down:before {
+	content: "\e92c";
+}
+.saxi-light-arrow-left-1:before {
+	content: "\e92d";
+}
+.saxi-light-arrow-left-2:before {
+	content: "\e92e";
+}
+.saxi-light-arrow-left-3:before {
+	content: "\e92f";
+}
+.saxi-light-arrow-left:before {
+	content: "\e930";
+}
+.saxi-light-arrow-right-1:before {
+	content: "\e931";
+}
+.saxi-light-arrow-right-2:before {
+	content: "\e932";
+}
+.saxi-light-arrow-right-3:before {
+	content: "\e933";
+}
+.saxi-light-arrow-right:before {
+	content: "\e934";
+}
+.saxi-light-arrow-square-down:before {
+	content: "\e935";
+}
+.saxi-light-arrow-square-left:before {
+	content: "\e936";
+}
+.saxi-light-arrow-square-right:before {
+	content: "\e937";
+}
+.saxi-light-arrow-square-up:before {
+	content: "\e938";
+}
+.saxi-light-arrow-square:before {
+	content: "\e939";
+}
+.saxi-light-arrow-swap-horizontal:before {
+	content: "\e93a";
+}
+.saxi-light-arrow-swap:before {
+	content: "\e93b";
+}
+.saxi-light-arrow-up-1:before {
+	content: "\e93c";
+}
+.saxi-light-arrow-up-2:before {
+	content: "\e93d";
+}
+.saxi-light-arrow-up-3:before {
+	content: "\e93e";
+}
+.saxi-light-arrow-up:before {
+	content: "\e93f";
+}
+.saxi-light-arrow:before {
+	content: "\e940";
+}
+.saxi-light-attach-circle:before {
+	content: "\e941";
+}
+.saxi-light-attach-square:before {
+	content: "\e942";
+}
+.saxi-light-audio-square:before {
+	content: "\e943";
+}
+.saxi-light-autobrightness:before {
+	content: "\e944";
+}
+.saxi-light-award:before {
+	content: "\e945";
+}
+.saxi-light-back-square:before {
+	content: "\e946";
+}
+.saxi-light-backward-10-seconds:before {
+	content: "\e947";
+}
+.saxi-light-backward-15-seconds:before {
+	content: "\e948";
+}
+.saxi-light-backward-5-seconds:before {
+	content: "\e949";
+}
+.saxi-light-backward-item:before {
+	content: "\e94a";
+}
+.saxi-light-backward:before {
+	content: "\e94b";
+}
+.saxi-light-bag-2:before {
+	content: "\e94c";
+}
+.saxi-light-bag-cross-1:before {
+	content: "\e94d";
+}
+.saxi-light-bag-cross:before {
+	content: "\e94e";
+}
+.saxi-light-bag-happy:before {
+	content: "\e94f";
+}
+.saxi-light-bag-tick-2:before {
+	content: "\e950";
+}
+.saxi-light-bag-tick:before {
+	content: "\e951";
+}
+.saxi-light-bag-timer:before {
+	content: "\e952";
+}
+.saxi-light-bag:before {
+	content: "\e953";
+}
+.saxi-light-bank:before {
+	content: "\e954";
+}
+.saxi-light-barcode:before {
+	content: "\e955";
+}
+.saxi-light-battery-3full:before {
+	content: "\e956";
+}
+.saxi-light-battery-charging:before {
+	content: "\e957";
+}
+.saxi-light-battery-disable:before {
+	content: "\e958";
+}
+.saxi-light-battery-empty-1:before {
+	content: "\e959";
+}
+.saxi-light-battery-empty:before {
+	content: "\e95a";
+}
+.saxi-light-battery-full:before {
+	content: "\e95b";
+}
+.saxi-light-bezier:before {
+	content: "\e95c";
+}
+.saxi-light-bill:before {
+	content: "\e95d";
+}
+.saxi-light-bitcoin-card:before {
+	content: "\e95e";
+}
+.saxi-light-bitcoin-convert:before {
+	content: "\e95f";
+}
+.saxi-light-bitcoin-refresh:before {
+	content: "\e960";
+}
+.saxi-light-blend-2:before {
+	content: "\e961";
+}
+.saxi-light-blend:before {
+	content: "\e962";
+}
+.saxi-light-bluetooth-2:before {
+	content: "\e963";
+}
+.saxi-light-bluetooth-circle:before {
+	content: "\e964";
+}
+.saxi-light-bluetooth-rectangle:before {
+	content: "\e965";
+}
+.saxi-light-bluetooth:before {
+	content: "\e966";
+}
+.saxi-light-blur:before {
+	content: "\e967";
+}
+.saxi-light-book-1:before {
+	content: "\e968";
+}
+.saxi-light-book-saved:before {
+	content: "\e969";
+}
+.saxi-light-book-square:before {
+	content: "\e96a";
+}
+.saxi-light-book:before {
+	content: "\e96b";
+}
+.saxi-light-bookmark-2:before {
+	content: "\e96c";
+}
+.saxi-light-bookmark:before {
+	content: "\e96d";
+}
+.saxi-light-box-1:before {
+	content: "\e96e";
+}
+.saxi-light-box-2:before {
+	content: "\e96f";
+}
+.saxi-light-box-add:before {
+	content: "\e970";
+}
+.saxi-light-box-remove:before {
+	content: "\e971";
+}
+.saxi-light-box-search:before {
+	content: "\e972";
+}
+.saxi-light-box-tick:before {
+	content: "\e973";
+}
+.saxi-light-box-time:before {
+	content: "\e974";
+}
+.saxi-light-box:before {
+	content: "\e975";
+}
+.saxi-light-briefcase:before {
+	content: "\e976";
+}
+.saxi-light-brifecase-cross:before {
+	content: "\e977";
+}
+.saxi-light-brifecase-tick:before {
+	content: "\e978";
+}
+.saxi-light-brifecase-timer:before {
+	content: "\e979";
+}
+.saxi-light-broom:before {
+	content: "\e97a";
+}
+.saxi-light-brush-1:before {
+	content: "\e97b";
+}
+.saxi-light-brush-2:before {
+	content: "\e97c";
+}
+.saxi-light-brush-3:before {
+	content: "\e97d";
+}
+.saxi-light-brush-4:before {
+	content: "\e97e";
+}
+.saxi-light-brush:before {
+	content: "\e97f";
+}
+.saxi-light-bubble:before {
+	content: "\e980";
+}
+.saxi-light-bucket-circle:before {
+	content: "\e981";
+}
+.saxi-light-bucket-square:before {
+	content: "\e982";
+}
+.saxi-light-bucket:before {
+	content: "\e983";
+}
+.saxi-light-building-3:before {
+	content: "\e984";
+}
+.saxi-light-building-4:before {
+	content: "\e985";
+}
+.saxi-light-building:before {
+	content: "\e986";
+}
+.saxi-light-buildings-2:before {
+	content: "\e987";
+}
+.saxi-light-buildings:before {
+	content: "\e988";
+}
+.saxi-light-buliding:before {
+	content: "\e989";
+}
+.saxi-light-bus:before {
+	content: "\e98a";
+}
+.saxi-light-buy-crypto:before {
+	content: "\e98b";
+}
+.saxi-light-cake:before {
+	content: "\e98c";
+}
+.saxi-light-calculator:before {
+	content: "\e98d";
+}
+.saxi-light-calendar-1:before {
+	content: "\e98e";
+}
+.saxi-light-calendar-2:before {
+	content: "\e98f";
+}
+.saxi-light-calendar-add:before {
+	content: "\e990";
+}
+.saxi-light-calendar-circle:before {
+	content: "\e991";
+}
+.saxi-light-calendar-edit:before {
+	content: "\e992";
+}
+.saxi-light-calendar-remove:before {
+	content: "\e993";
+}
+.saxi-light-calendar-search:before {
+	content: "\e994";
+}
+.saxi-light-calendar-tick:before {
+	content: "\e995";
+}
+.saxi-light-calendar:before {
+	content: "\e996";
+}
+.saxi-light-call-add:before {
+	content: "\e997";
+}
+.saxi-light-call-calling:before {
+	content: "\e998";
+}
+.saxi-light-call-incoming:before {
+	content: "\e999";
+}
+.saxi-light-call-minus:before {
+	content: "\e99a";
+}
+.saxi-light-call-outgoing:before {
+	content: "\e99b";
+}
+.saxi-light-call-received:before {
+	content: "\e99c";
+}
+.saxi-light-call-remove:before {
+	content: "\e99d";
+}
+.saxi-light-call-slash:before {
+	content: "\e99e";
+}
+.saxi-light-call:before {
+	content: "\e99f";
+}
+.saxi-light-camera-slash:before {
+	content: "\e9a0";
+}
+.saxi-light-camera:before {
+	content: "\e9a1";
+}
+.saxi-light-candle-2:before {
+	content: "\e9a2";
+}
+.saxi-light-candle:before {
+	content: "\e9a3";
+}
+.saxi-light-car:before {
+	content: "\e9a4";
+}
+.saxi-light-card-add:before {
+	content: "\e9a5";
+}
+.saxi-light-card-coin:before {
+	content: "\e9a6";
+}
+.saxi-light-card-edit:before {
+	content: "\e9a7";
+}
+.saxi-light-card-pos:before {
+	content: "\e9a8";
+}
+.saxi-light-card-receive:before {
+	content: "\e9a9";
+}
+.saxi-light-card-remove-1:before {
+	content: "\e9aa";
+}
+.saxi-light-card-remove:before {
+	content: "\e9ab";
+}
+.saxi-light-card-send:before {
+	content: "\e9ac";
+}
+.saxi-light-card-slash:before {
+	content: "\e9ad";
+}
+.saxi-light-card-tick-1:before {
+	content: "\e9ae";
+}
+.saxi-light-card-tick:before {
+	content: "\e9af";
+}
+.saxi-light-card:before {
+	content: "\e9b0";
+}
+.saxi-light-cards:before {
+	content: "\e9b1";
+}
+.saxi-light-category-2:before {
+	content: "\e9b2";
+}
+.saxi-light-category:before {
+	content: "\e9b3";
+}
+.saxi-light-cd:before {
+	content: "\e9b4";
+}
+.saxi-light-chart-1:before {
+	content: "\e9b5";
+}
+.saxi-light-chart-2:before {
+	content: "\e9b6";
+}
+.saxi-light-chart-21:before {
+	content: "\e9b7";
+}
+.saxi-light-chart-3:before {
+	content: "\e9b8";
+}
+.saxi-light-chart-fail:before {
+	content: "\e9b9";
+}
+.saxi-light-chart-square:before {
+	content: "\e9ba";
+}
+.saxi-light-chart-success:before {
+	content: "\e9bb";
+}
+.saxi-light-chart:before {
+	content: "\e9bc";
+}
+.saxi-light-check:before {
+	content: "\e9bd";
+}
+.saxi-light-chrome:before {
+	content: "\e9be";
+}
+.saxi-light-clipboard-close:before {
+	content: "\e9bf";
+}
+.saxi-light-clipboard-export:before {
+	content: "\e9c0";
+}
+.saxi-light-clipboard-import:before {
+	content: "\e9c1";
+}
+.saxi-light-clipboard-text:before {
+	content: "\e9c2";
+}
+.saxi-light-clipboard-tick:before {
+	content: "\e9c3";
+}
+.saxi-light-clipboard:before {
+	content: "\e9c4";
+}
+.saxi-light-clock-1:before {
+	content: "\e9c5";
+}
+.saxi-light-clock:before {
+	content: "\e9c6";
+}
+.saxi-light-close-circle:before {
+	content: "\e9c7";
+}
+.saxi-light-close-square:before {
+	content: "\e9c8";
+}
+.saxi-light-cloud-add:before {
+	content: "\e9c9";
+}
+.saxi-light-cloud-change:before {
+	content: "\e9ca";
+}
+.saxi-light-cloud-connection:before {
+	content: "\e9cb";
+}
+.saxi-light-cloud-cross:before {
+	content: "\e9cc";
+}
+.saxi-light-cloud-drizzle:before {
+	content: "\e9cd";
+}
+.saxi-light-cloud-fog:before {
+	content: "\e9ce";
+}
+.saxi-light-cloud-lightning:before {
+	content: "\e9cf";
+}
+.saxi-light-cloud-minus:before {
+	content: "\e9d0";
+}
+.saxi-light-cloud-notif:before {
+	content: "\e9d1";
+}
+.saxi-light-cloud-plus:before {
+	content: "\e9d2";
+}
+.saxi-light-cloud-remove:before {
+	content: "\e9d3";
+}
+.saxi-light-cloud-snow:before {
+	content: "\e9d4";
+}
+.saxi-light-cloud-sunny:before {
+	content: "\e9d5";
+}
+.saxi-light-cloud:before {
+	content: "\e9d6";
+}
+.saxi-light-code-1:before {
+	content: "\e9d7";
+}
+.saxi-light-code-circle:before {
+	content: "\e9d8";
+}
+.saxi-light-code:before {
+	content: "\e9d9";
+}
+.saxi-light-coffee:before {
+	content: "\e9da";
+}
+.saxi-light-coin-1:before {
+	content: "\e9db";
+}
+.saxi-light-coin:before {
+	content: "\e9dc";
+}
+.saxi-light-color-swatch:before {
+	content: "\e9dd";
+}
+.saxi-light-colorfilter:before {
+	content: "\e9de";
+}
+.saxi-light-colors-square:before {
+	content: "\e9df";
+}
+.saxi-light-command-square:before {
+	content: "\e9e0";
+}
+.saxi-light-command:before {
+	content: "\e9e1";
+}
+.saxi-light-component:before {
+	content: "\e9e2";
+}
+.saxi-light-computing:before {
+	content: "\e9e3";
+}
+.saxi-light-convert-3d-cube:before {
+	content: "\e9e4";
+}
+.saxi-light-convert-card:before {
+	content: "\e9e5";
+}
+.saxi-light-convert:before {
+	content: "\e9e6";
+}
+.saxi-light-convertshape-2:before {
+	content: "\e9e7";
+}
+.saxi-light-convertshape:before {
+	content: "\e9e8";
+}
+.saxi-light-copy-success:before {
+	content: "\e9e9";
+}
+.saxi-light-copy:before {
+	content: "\e9ea";
+}
+.saxi-light-copyright:before {
+	content: "\e9eb";
+}
+.saxi-light-courthouse:before {
+	content: "\e9ec";
+}
+.saxi-light-cpu-charge:before {
+	content: "\e9ed";
+}
+.saxi-light-cpu-setting:before {
+	content: "\e9ee";
+}
+.saxi-light-cpu:before {
+	content: "\e9ef";
+}
+.saxi-light-creative-commons:before {
+	content: "\e9f0";
+}
+.saxi-light-crop:before {
+	content: "\e9f1";
+}
+.saxi-light-crown-1:before {
+	content: "\e9f2";
+}
+.saxi-light-crown:before {
+	content: "\e9f3";
+}
+.saxi-light-cup:before {
+	content: "\e9f4";
+}
+.saxi-light-danger:before {
+	content: "\e9f5";
+}
+.saxi-light-data-2:before {
+	content: "\e9f6";
+}
+.saxi-light-data:before {
+	content: "\e9f7";
+}
+.saxi-light-designtools:before {
+	content: "\e9f8";
+}
+.saxi-light-device-message:before {
+	content: "\e9f9";
+}
+.saxi-light-devices-1:before {
+	content: "\e9fa";
+}
+.saxi-light-devices:before {
+	content: "\e9fb";
+}
+.saxi-light-diagram:before {
+	content: "\e9fc";
+}
+.saxi-light-diamonds:before {
+	content: "\e9fd";
+}
+.saxi-light-direct-down:before {
+	content: "\e9fe";
+}
+.saxi-light-direct-inbox:before {
+	content: "\e9ff";
+}
+.saxi-light-direct-left:before {
+	content: "\ea00";
+}
+.saxi-light-direct-normal:before {
+	content: "\ea01";
+}
+.saxi-light-direct-notification:before {
+	content: "\ea02";
+}
+.saxi-light-direct-right:before {
+	content: "\ea03";
+}
+.saxi-light-direct-send:before {
+	content: "\ea04";
+}
+.saxi-light-direct-up:before {
+	content: "\ea05";
+}
+.saxi-light-direct:before {
+	content: "\ea06";
+}
+.saxi-light-directbox-default:before {
+	content: "\ea07";
+}
+.saxi-light-directbox-notif:before {
+	content: "\ea08";
+}
+.saxi-light-directbox-receive:before {
+	content: "\ea09";
+}
+.saxi-light-directbox-send:before {
+	content: "\ea0a";
+}
+.saxi-light-discount-circle:before {
+	content: "\ea0b";
+}
+.saxi-light-discount-shape:before {
+	content: "\ea0c";
+}
+.saxi-light-discover-1:before {
+	content: "\ea0d";
+}
+.saxi-light-discover:before {
+	content: "\ea0e";
+}
+.saxi-light-dislike:before {
+	content: "\ea0f";
+}
+.saxi-light-document-1:before {
+	content: "\ea10";
+}
+.saxi-light-document-cloud:before {
+	content: "\ea11";
+}
+.saxi-light-document-code-2:before {
+	content: "\ea12";
+}
+.saxi-light-document-code:before {
+	content: "\ea13";
+}
+.saxi-light-document-copy:before {
+	content: "\ea14";
+}
+.saxi-light-document-download:before {
+	content: "\ea15";
+}
+.saxi-light-document-favorite:before {
+	content: "\ea16";
+}
+.saxi-light-document-filter:before {
+	content: "\ea17";
+}
+.saxi-light-document-forward:before {
+	content: "\ea18";
+}
+.saxi-light-document-like:before {
+	content: "\ea19";
+}
+.saxi-light-document-normal:before {
+	content: "\ea1a";
+}
+.saxi-light-document-previous:before {
+	content: "\ea1b";
+}
+.saxi-light-document-sketch:before {
+	content: "\ea1c";
+}
+.saxi-light-document-text-1:before {
+	content: "\ea1d";
+}
+.saxi-light-document-text:before {
+	content: "\ea1e";
+}
+.saxi-light-document-upload:before {
+	content: "\ea1f";
+}
+.saxi-light-document:before {
+	content: "\ea20";
+}
+.saxi-light-dollar-circle:before {
+	content: "\ea21";
+}
+.saxi-light-dollar-square:before {
+	content: "\ea22";
+}
+.saxi-light-driver-2:before {
+	content: "\ea23";
+}
+.saxi-light-driver-refresh:before {
+	content: "\ea24";
+}
+.saxi-light-driver:before {
+	content: "\ea25";
+}
+.saxi-light-driving:before {
+	content: "\ea26";
+}
+.saxi-light-drop:before {
+	content: "\ea27";
+}
+.saxi-light-edit-2:before {
+	content: "\ea28";
+}
+.saxi-light-edit:before {
+	content: "\ea29";
+}
+.saxi-light-electricity:before {
+	content: "\ea2a";
+}
+.saxi-light-element-2:before {
+	content: "\ea2b";
+}
+.saxi-light-element-3:before {
+	content: "\ea2c";
+}
+.saxi-light-element-4:before {
+	content: "\ea2d";
+}
+.saxi-light-element-equal:before {
+	content: "\ea2e";
+}
+.saxi-light-element-plus:before {
+	content: "\ea2f";
+}
+.saxi-light-emoji-happy:before {
+	content: "\ea30";
+}
+.saxi-light-emoji-normal:before {
+	content: "\ea31";
+}
+.saxi-light-emoji-sad:before {
+	content: "\ea32";
+}
+.saxi-light-empty-wallet-add:before {
+	content: "\ea33";
+}
+.saxi-light-empty-wallet-change:before {
+	content: "\ea34";
+}
+.saxi-light-empty-wallet-remove:before {
+	content: "\ea35";
+}
+.saxi-light-empty-wallet-tick:before {
+	content: "\ea36";
+}
+.saxi-light-empty-wallet-time:before {
+	content: "\ea37";
+}
+.saxi-light-empty-wallet:before {
+	content: "\ea38";
+}
+.saxi-light-eraser-1:before {
+	content: "\ea39";
+}
+.saxi-light-eraser:before {
+	content: "\ea3a";
+}
+.saxi-light-export-1:before {
+	content: "\ea3b";
+}
+.saxi-light-export-2:before {
+	content: "\ea3c";
+}
+.saxi-light-export-3:before {
+	content: "\ea3d";
+}
+.saxi-light-export:before {
+	content: "\ea3e";
+}
+.saxi-light-external-drive:before {
+	content: "\ea3f";
+}
+.saxi-light-eye-slash:before {
+	content: "\ea40";
+}
+.saxi-light-eye:before {
+	content: "\ea41";
+}
+.saxi-light-fatrows:before {
+	content: "\ea42";
+}
+.saxi-light-favorite-chart:before {
+	content: "\ea43";
+}
+.saxi-light-filter-add:before {
+	content: "\ea44";
+}
+.saxi-light-filter-edit:before {
+	content: "\ea45";
+}
+.saxi-light-filter-remove:before {
+	content: "\ea46";
+}
+.saxi-light-filter-search:before {
+	content: "\ea47";
+}
+.saxi-light-filter-square:before {
+	content: "\ea48";
+}
+.saxi-light-filter-tick:before {
+	content: "\ea49";
+}
+.saxi-light-filter:before {
+	content: "\ea4a";
+}
+.saxi-light-finger-cricle:before {
+	content: "\ea4b";
+}
+.saxi-light-finger-scan:before {
+	content: "\ea4c";
+}
+.saxi-light-firstline:before {
+	content: "\ea4d";
+}
+.saxi-light-flag-2:before {
+	content: "\ea4e";
+}
+.saxi-light-flag:before {
+	content: "\ea4f";
+}
+.saxi-light-flash-1:before {
+	content: "\ea50";
+}
+.saxi-light-flash-circle-1:before {
+	content: "\ea51";
+}
+.saxi-light-flash-circle:before {
+	content: "\ea52";
+}
+.saxi-light-flash-slash:before {
+	content: "\ea53";
+}
+.saxi-light-flash:before {
+	content: "\ea54";
+}
+.saxi-light-folder-2:before {
+	content: "\ea55";
+}
+.saxi-light-folder-add:before {
+	content: "\ea56";
+}
+.saxi-light-folder-cloud:before {
+	content: "\ea57";
+}
+.saxi-light-folder-connection:before {
+	content: "\ea58";
+}
+.saxi-light-folder-cross:before {
+	content: "\ea59";
+}
+.saxi-light-folder-favorite:before {
+	content: "\ea5a";
+}
+.saxi-light-folder-minus:before {
+	content: "\ea5b";
+}
+.saxi-light-folder-open:before {
+	content: "\ea5c";
+}
+.saxi-light-folder:before {
+	content: "\ea5d";
+}
+.saxi-light-forbidden-2:before {
+	content: "\ea5e";
+}
+.saxi-light-forbidden:before {
+	content: "\ea5f";
+}
+.saxi-light-format-circle:before {
+	content: "\ea60";
+}
+.saxi-light-format-square:before {
+	content: "\ea61";
+}
+.saxi-light-forward-10-seconds:before {
+	content: "\ea62";
+}
+.saxi-light-forward-15-seconds:before {
+	content: "\ea63";
+}
+.saxi-light-forward-5-seconds:before {
+	content: "\ea64";
+}
+.saxi-light-forward-item:before {
+	content: "\ea65";
+}
+.saxi-light-forward-square:before {
+	content: "\ea66";
+}
+.saxi-light-forward:before {
+	content: "\ea67";
+}
+.saxi-light-frame-1:before {
+	content: "\ea68";
+}
+.saxi-light-frame-2:before {
+	content: "\ea69";
+}
+.saxi-light-frame-3:before {
+	content: "\ea6a";
+}
+.saxi-light-frame-4:before {
+	content: "\ea6b";
+}
+.saxi-light-frame:before {
+	content: "\ea6c";
+}
+.saxi-light-gallery-add:before {
+	content: "\ea6d";
+}
+.saxi-light-gallery-edit:before {
+	content: "\ea6e";
+}
+.saxi-light-gallery-export:before {
+	content: "\ea6f";
+}
+.saxi-light-gallery-favorite:before {
+	content: "\ea70";
+}
+.saxi-light-gallery-import:before {
+	content: "\ea71";
+}
+.saxi-light-gallery-remove:before {
+	content: "\ea72";
+}
+.saxi-light-gallery-slash:before {
+	content: "\ea73";
+}
+.saxi-light-gallery-tick:before {
+	content: "\ea74";
+}
+.saxi-light-gallery:before {
+	content: "\ea75";
+}
+.saxi-light-game:before {
+	content: "\ea76";
+}
+.saxi-light-gameboy:before {
+	content: "\ea77";
+}
+.saxi-light-gas-station:before {
+	content: "\ea78";
+}
+.saxi-light-gemini-2:before {
+	content: "\ea79";
+}
+.saxi-light-gemini:before {
+	content: "\ea7a";
+}
+.saxi-light-ghost:before {
+	content: "\ea7b";
+}
+.saxi-light-gift:before {
+	content: "\ea7c";
+}
+.saxi-light-glass-1:before {
+	content: "\ea7d";
+}
+.saxi-light-glass:before {
+	content: "\ea7e";
+}
+.saxi-light-global-edit:before {
+	content: "\ea7f";
+}
+.saxi-light-global-refresh:before {
+	content: "\ea80";
+}
+.saxi-light-global-search:before {
+	content: "\ea81";
+}
+.saxi-light-global:before {
+	content: "\ea82";
+}
+.saxi-light-gps-slash:before {
+	content: "\ea83";
+}
+.saxi-light-gps:before {
+	content: "\ea84";
+}
+.saxi-light-grammerly:before {
+	content: "\ea85";
+}
+.saxi-light-graph:before {
+	content: "\ea86";
+}
+.saxi-light-grid-1:before {
+	content: "\ea87";
+}
+.saxi-light-grid-2:before {
+	content: "\ea88";
+}
+.saxi-light-grid-3:before {
+	content: "\ea89";
+}
+.saxi-light-grid-4:before {
+	content: "\ea8a";
+}
+.saxi-light-grid-5:before {
+	content: "\ea8b";
+}
+.saxi-light-grid-6:before {
+	content: "\ea8c";
+}
+.saxi-light-grid-7:before {
+	content: "\ea8d";
+}
+.saxi-light-grid-8:before {
+	content: "\ea8e";
+}
+.saxi-light-grid-9:before {
+	content: "\ea8f";
+}
+.saxi-light-grid-edit:before {
+	content: "\ea90";
+}
+.saxi-light-grid-eraser:before {
+	content: "\ea91";
+}
+.saxi-light-grid-lock:before {
+	content: "\ea92";
+}
+.saxi-light-happyemoji:before {
+	content: "\ea93";
+}
+.saxi-light-hashtag-1:before {
+	content: "\ea94";
+}
+.saxi-light-hashtag-down:before {
+	content: "\ea95";
+}
+.saxi-light-hashtag-up:before {
+	content: "\ea96";
+}
+.saxi-light-hashtag:before {
+	content: "\ea97";
+}
+.saxi-light-headphone:before {
+	content: "\ea98";
+}
+.saxi-light-headphones:before {
+	content: "\ea99";
+}
+.saxi-light-health:before {
+	content: "\ea9a";
+}
+.saxi-light-heart-add:before {
+	content: "\ea9b";
+}
+.saxi-light-heart-circle:before {
+	content: "\ea9c";
+}
+.saxi-light-heart-edit:before {
+	content: "\ea9d";
+}
+.saxi-light-heart-remove:before {
+	content: "\ea9e";
+}
+.saxi-light-heart-search:before {
+	content: "\ea9f";
+}
+.saxi-light-heart-slash:before {
+	content: "\eaa0";
+}
+.saxi-light-heart-tick:before {
+	content: "\eaa1";
+}
+.saxi-light-heart:before {
+	content: "\eaa2";
+}
+.saxi-light-hierarchy-2:before {
+	content: "\eaa3";
+}
+.saxi-light-hierarchy-3:before {
+	content: "\eaa4";
+}
+.saxi-light-hierarchy-square-2:before {
+	content: "\eaa5";
+}
+.saxi-light-hierarchy-square-3:before {
+	content: "\eaa6";
+}
+.saxi-light-hierarchy-square:before {
+	content: "\eaa7";
+}
+.saxi-light-hierarchy:before {
+	content: "\eaa8";
+}
+.saxi-light-home-1:before {
+	content: "\eaa9";
+}
+.saxi-light-home-2:before {
+	content: "\eaaa";
+}
+.saxi-light-home-hashtag:before {
+	content: "\eaab";
+}
+.saxi-light-home-trend-down:before {
+	content: "\eaac";
+}
+.saxi-light-home-trend-up:before {
+	content: "\eaad";
+}
+.saxi-light-home-wifi:before {
+	content: "\eaae";
+}
+.saxi-light-home:before {
+	content: "\eaaf";
+}
+.saxi-light-hospital:before {
+	content: "\eab0";
+}
+.saxi-light-house-2:before {
+	content: "\eab1";
+}
+.saxi-light-house:before {
+	content: "\eab2";
+}
+.saxi-light-image:before {
+	content: "\eab3";
+}
+.saxi-light-import-1:before {
+	content: "\eab4";
+}
+.saxi-light-import-2:before {
+	content: "\eab5";
+}
+.saxi-light-import-3:before {
+	content: "\eab6";
+}
+.saxi-light-import:before {
+	content: "\eab7";
+}
+.saxi-light-info-circle:before {
+	content: "\eab8";
+}
+.saxi-light-information:before {
+	content: "\eab9";
+}
+.saxi-light-instagram:before {
+	content: "\eaba";
+}
+.saxi-light-judge:before {
+	content: "\eabb";
+}
+.saxi-light-kanban:before {
+	content: "\eabc";
+}
+.saxi-light-key-square:before {
+	content: "\eabd";
+}
+.saxi-light-key:before {
+	content: "\eabe";
+}
+.saxi-light-keyboard-open:before {
+	content: "\eabf";
+}
+.saxi-light-keyboard:before {
+	content: "\eac0";
+}
+.saxi-light-lamp-1:before {
+	content: "\eac1";
+}
+.saxi-light-lamp-charge:before {
+	content: "\eac2";
+}
+.saxi-light-lamp-on:before {
+	content: "\eac3";
+}
+.saxi-light-lamp-slash:before {
+	content: "\eac4";
+}
+.saxi-light-lamp:before {
+	content: "\eac5";
+}
+.saxi-light-language-circle:before {
+	content: "\eac6";
+}
+.saxi-light-language-square:before {
+	content: "\eac7";
+}
+.saxi-light-layer:before {
+	content: "\eac8";
+}
+.saxi-light-level:before {
+	content: "\eac9";
+}
+.saxi-light-lifebuoy:before {
+	content: "\eaca";
+}
+.saxi-light-like-1:before {
+	content: "\eacb";
+}
+.saxi-light-like-dislike:before {
+	content: "\eacc";
+}
+.saxi-light-like-shapes:before {
+	content: "\eacd";
+}
+.saxi-light-like-tag:before {
+	content: "\eace";
+}
+.saxi-light-like:before {
+	content: "\eacf";
+}
+.saxi-light-link-1:before {
+	content: "\ead0";
+}
+.saxi-light-link-2:before {
+	content: "\ead1";
+}
+.saxi-light-link-21:before {
+	content: "\ead2";
+}
+.saxi-light-link-circle:before {
+	content: "\ead3";
+}
+.saxi-light-link-square:before {
+	content: "\ead4";
+}
+.saxi-light-link:before {
+	content: "\ead5";
+}
+.saxi-light-location-add:before {
+	content: "\ead6";
+}
+.saxi-light-location-cross:before {
+	content: "\ead7";
+}
+.saxi-light-location-minus:before {
+	content: "\ead8";
+}
+.saxi-light-location-slash:before {
+	content: "\ead9";
+}
+.saxi-light-location-tick:before {
+	content: "\eada";
+}
+.saxi-light-location:before {
+	content: "\eadb";
+}
+.saxi-light-lock-1:before {
+	content: "\eadc";
+}
+.saxi-light-lock-circle:before {
+	content: "\eadd";
+}
+.saxi-light-lock-slash:before {
+	content: "\eade";
+}
+.saxi-light-lock:before {
+	content: "\eadf";
+}
+.saxi-light-login-1:before {
+	content: "\eae0";
+}
+.saxi-light-login:before {
+	content: "\eae1";
+}
+.saxi-light-logout-1:before {
+	content: "\eae2";
+}
+.saxi-light-logout:before {
+	content: "\eae3";
+}
+.saxi-light-lovely:before {
+	content: "\eae4";
+}
+.saxi-light-magic-star:before {
+	content: "\eae5";
+}
+.saxi-light-magicpen:before {
+	content: "\eae6";
+}
+.saxi-light-main-component:before {
+	content: "\eae7";
+}
+.saxi-light-man:before {
+	content: "\eae8";
+}
+.saxi-light-map-1:before {
+	content: "\eae9";
+}
+.saxi-light-map:before {
+	content: "\eaea";
+}
+.saxi-light-mask-1:before {
+	content: "\eaeb";
+}
+.saxi-light-mask-2:before {
+	content: "\eaec";
+}
+.saxi-light-mask:before {
+	content: "\eaed";
+}
+.saxi-light-math:before {
+	content: "\eaee";
+}
+.saxi-light-maximize-1:before {
+	content: "\eaef";
+}
+.saxi-light-maximize-2:before {
+	content: "\eaf0";
+}
+.saxi-light-maximize-21:before {
+	content: "\eaf1";
+}
+.saxi-light-maximize-3:before {
+	content: "\eaf2";
+}
+.saxi-light-maximize-4:before {
+	content: "\eaf3";
+}
+.saxi-light-maximize-circle:before {
+	content: "\eaf4";
+}
+.saxi-light-maximize:before {
+	content: "\eaf5";
+}
+.saxi-light-medal-star:before {
+	content: "\eaf6";
+}
+.saxi-light-medal:before {
+	content: "\eaf7";
+}
+.saxi-light-menu-1:before {
+	content: "\eaf8";
+}
+.saxi-light-menu-board:before {
+	content: "\eaf9";
+}
+.saxi-light-menu:before {
+	content: "\eafa";
+}
+.saxi-light-message-2:before {
+	content: "\eafb";
+}
+.saxi-light-message-add-1:before {
+	content: "\eafc";
+}
+.saxi-light-message-add:before {
+	content: "\eafd";
+}
+.saxi-light-message-circle:before {
+	content: "\eafe";
+}
+.saxi-light-message-edit:before {
+	content: "\eaff";
+}
+.saxi-light-message-favorite:before {
+	content: "\eb00";
+}
+.saxi-light-message-minus:before {
+	content: "\eb01";
+}
+.saxi-light-message-notif:before {
+	content: "\eb02";
+}
+.saxi-light-message-programming:before {
+	content: "\eb03";
+}
+.saxi-light-message-question:before {
+	content: "\eb04";
+}
+.saxi-light-message-remove:before {
+	content: "\eb05";
+}
+.saxi-light-message-search:before {
+	content: "\eb06";
+}
+.saxi-light-message-square:before {
+	content: "\eb07";
+}
+.saxi-light-message-text-1:before {
+	content: "\eb08";
+}
+.saxi-light-message-text:before {
+	content: "\eb09";
+}
+.saxi-light-message-tick:before {
+	content: "\eb0a";
+}
+.saxi-light-message-time:before {
+	content: "\eb0b";
+}
+.saxi-light-message:before {
+	content: "\eb0c";
+}
+.saxi-light-messages-1:before {
+	content: "\eb0d";
+}
+.saxi-light-messages-2:before {
+	content: "\eb0e";
+}
+.saxi-light-messages-3:before {
+	content: "\eb0f";
+}
+.saxi-light-messages:before {
+	content: "\eb10";
+}
+.saxi-light-microphone-2:before {
+	content: "\eb11";
+}
+.saxi-light-microphone-slash-1:before {
+	content: "\eb12";
+}
+.saxi-light-microphone-slash:before {
+	content: "\eb13";
+}
+.saxi-light-microphone:before {
+	content: "\eb14";
+}
+.saxi-light-microscope:before {
+	content: "\eb15";
+}
+.saxi-light-milk:before {
+	content: "\eb16";
+}
+.saxi-light-mini-music-sqaure:before {
+	content: "\eb17";
+}
+.saxi-light-minus-cirlce:before {
+	content: "\eb18";
+}
+.saxi-light-minus-square:before {
+	content: "\eb19";
+}
+.saxi-light-minus:before {
+	content: "\eb1a";
+}
+.saxi-light-mirror:before {
+	content: "\eb1b";
+}
+.saxi-light-mirroring-screen:before {
+	content: "\eb1c";
+}
+.saxi-light-mobile-programming:before {
+	content: "\eb1d";
+}
+.saxi-light-mobile:before {
+	content: "\eb1e";
+}
+.saxi-light-money-2:before {
+	content: "\eb1f";
+}
+.saxi-light-money-3:before {
+	content: "\eb20";
+}
+.saxi-light-money-4:before {
+	content: "\eb21";
+}
+.saxi-light-money-add:before {
+	content: "\eb22";
+}
+.saxi-light-money-change:before {
+	content: "\eb23";
+}
+.saxi-light-money-forbidden:before {
+	content: "\eb24";
+}
+.saxi-light-money-recive:before {
+	content: "\eb25";
+}
+.saxi-light-money-remove:before {
+	content: "\eb26";
+}
+.saxi-light-money-send:before {
+	content: "\eb27";
+}
+.saxi-light-money-tick:before {
+	content: "\eb28";
+}
+.saxi-light-money-time:before {
+	content: "\eb29";
+}
+.saxi-light-money:before {
+	content: "\eb2a";
+}
+.saxi-light-moneys:before {
+	content: "\eb2b";
+}
+.saxi-light-monitor-mobbile:before {
+	content: "\eb2c";
+}
+.saxi-light-monitor-recorder:before {
+	content: "\eb2d";
+}
+.saxi-light-monitor:before {
+	content: "\eb2e";
+}
+.saxi-light-moon:before {
+	content: "\eb2f";
+}
+.saxi-light-more-2:before {
+	content: "\eb30";
+}
+.saxi-light-more-circle:before {
+	content: "\eb31";
+}
+.saxi-light-more-square:before {
+	content: "\eb32";
+}
+.saxi-light-more:before {
+	content: "\eb33";
+}
+.saxi-light-mouse-1:before {
+	content: "\eb34";
+}
+.saxi-light-mouse-circle:before {
+	content: "\eb35";
+}
+.saxi-light-mouse-square:before {
+	content: "\eb36";
+}
+.saxi-light-mouse:before {
+	content: "\eb37";
+}
+.saxi-light-music-circle:before {
+	content: "\eb38";
+}
+.saxi-light-music-dashboard:before {
+	content: "\eb39";
+}
+.saxi-light-music-filter:before {
+	content: "\eb3a";
+}
+.saxi-light-music-library-2:before {
+	content: "\eb3b";
+}
+.saxi-light-music-play:before {
+	content: "\eb3c";
+}
+.saxi-light-music-playlist:before {
+	content: "\eb3d";
+}
+.saxi-light-music-square-add:before {
+	content: "\eb3e";
+}
+.saxi-light-music-square-remove:before {
+	content: "\eb3f";
+}
+.saxi-light-music-square-search:before {
+	content: "\eb40";
+}
+.saxi-light-music-square:before {
+	content: "\eb41";
+}
+.saxi-light-music:before {
+	content: "\eb42";
+}
+.saxi-light-musicnote:before {
+	content: "\eb43";
+}
+.saxi-light-next:before {
+	content: "\eb44";
+}
+.saxi-light-note-1:before {
+	content: "\eb45";
+}
+.saxi-light-note-2:before {
+	content: "\eb46";
+}
+.saxi-light-note-21:before {
+	content: "\eb47";
+}
+.saxi-light-note-add:before {
+	content: "\eb48";
+}
+.saxi-light-note-favorite:before {
+	content: "\eb49";
+}
+.saxi-light-note-remove:before {
+	content: "\eb4a";
+}
+.saxi-light-note-square:before {
+	content: "\eb4b";
+}
+.saxi-light-note-text:before {
+	content: "\eb4c";
+}
+.saxi-light-note:before {
+	content: "\eb4d";
+}
+.saxi-light-notification-1:before {
+	content: "\eb4e";
+}
+.saxi-light-notification-bing:before {
+	content: "\eb4f";
+}
+.saxi-light-notification-favorite:before {
+	content: "\eb50";
+}
+.saxi-light-notification-status:before {
+	content: "\eb51";
+}
+.saxi-light-notification:before {
+	content: "\eb52";
+}
+.saxi-light-omega-circle:before {
+	content: "\eb53";
+}
+.saxi-light-omega-square:before {
+	content: "\eb54";
+}
+.saxi-light-paintbucket:before {
+	content: "\eb55";
+}
+.saxi-light-paperclip-2:before {
+	content: "\eb56";
+}
+.saxi-light-paperclip:before {
+	content: "\eb57";
+}
+.saxi-light-password-check:before {
+	content: "\eb58";
+}
+.saxi-light-path-2:before {
+	content: "\eb59";
+}
+.saxi-light-path-square:before {
+	content: "\eb5a";
+}
+.saxi-light-path:before {
+	content: "\eb5b";
+}
+.saxi-light-pause-circle:before {
+	content: "\eb5c";
+}
+.saxi-light-pause:before {
+	content: "\eb5d";
+}
+.saxi-light-pen-add:before {
+	content: "\eb5e";
+}
+.saxi-light-pen-close:before {
+	content: "\eb5f";
+}
+.saxi-light-pen-remove:before {
+	content: "\eb60";
+}
+.saxi-light-pen-tool-2:before {
+	content: "\eb61";
+}
+.saxi-light-pen-tool:before {
+	content: "\eb62";
+}
+.saxi-light-people:before {
+	content: "\eb63";
+}
+.saxi-light-percentage-circle:before {
+	content: "\eb64";
+}
+.saxi-light-percentage-square:before {
+	content: "\eb65";
+}
+.saxi-light-personalcard:before {
+	content: "\eb66";
+}
+.saxi-light-pet:before {
+	content: "\eb67";
+}
+.saxi-light-pharagraphspacing:before {
+	content: "\eb68";
+}
+.saxi-light-picture-frame:before {
+	content: "\eb69";
+}
+.saxi-light-play-add:before {
+	content: "\eb6a";
+}
+.saxi-light-play-circle:before {
+	content: "\eb6b";
+}
+.saxi-light-play-cricle:before {
+	content: "\eb6c";
+}
+.saxi-light-play-remove:before {
+	content: "\eb6d";
+}
+.saxi-light-play:before {
+	content: "\eb6e";
+}
+.saxi-light-presention-chart:before {
+	content: "\eb6f";
+}
+.saxi-light-previous:before {
+	content: "\eb70";
+}
+.saxi-light-printer-slash:before {
+	content: "\eb71";
+}
+.saxi-light-printer:before {
+	content: "\eb72";
+}
+.saxi-light-profile-2user:before {
+	content: "\eb73";
+}
+.saxi-light-profile-add:before {
+	content: "\eb74";
+}
+.saxi-light-profile-circle:before {
+	content: "\eb75";
+}
+.saxi-light-profile-delete:before {
+	content: "\eb76";
+}
+.saxi-light-profile-remove:before {
+	content: "\eb77";
+}
+.saxi-light-profile-tick:before {
+	content: "\eb78";
+}
+.saxi-light-programming-arrow:before {
+	content: "\eb79";
+}
+.saxi-light-programming-arrows:before {
+	content: "\eb7a";
+}
+.saxi-light-quote-down-circle:before {
+	content: "\eb7b";
+}
+.saxi-light-quote-down-square:before {
+	content: "\eb7c";
+}
+.saxi-light-quote-down:before {
+	content: "\eb7d";
+}
+.saxi-light-quote-up-circle:before {
+	content: "\eb7e";
+}
+.saxi-light-quote-up-square:before {
+	content: "\eb7f";
+}
+.saxi-light-quote-up:before {
+	content: "\eb80";
+}
+.saxi-light-radar-1:before {
+	content: "\eb81";
+}
+.saxi-light-radar-2:before {
+	content: "\eb82";
+}
+.saxi-light-radar:before {
+	content: "\eb83";
+}
+.saxi-light-radio:before {
+	content: "\eb84";
+}
+.saxi-light-ram-2:before {
+	content: "\eb85";
+}
+.saxi-light-ram:before {
+	content: "\eb86";
+}
+.saxi-light-ranking-1:before {
+	content: "\eb87";
+}
+.saxi-light-ranking:before {
+	content: "\eb88";
+}
+.saxi-light-receipt-1:before {
+	content: "\eb89";
+}
+.saxi-light-receipt-2-1:before {
+	content: "\eb8a";
+}
+.saxi-light-receipt-2:before {
+	content: "\eb8b";
+}
+.saxi-light-receipt-add:before {
+	content: "\eb8c";
+}
+.saxi-light-receipt-discount:before {
+	content: "\eb8d";
+}
+.saxi-light-receipt-disscount:before {
+	content: "\eb8e";
+}
+.saxi-light-receipt-edit:before {
+	content: "\eb8f";
+}
+.saxi-light-receipt-item:before {
+	content: "\eb90";
+}
+.saxi-light-receipt-minus:before {
+	content: "\eb91";
+}
+.saxi-light-receipt-search:before {
+	content: "\eb92";
+}
+.saxi-light-receipt-square:before {
+	content: "\eb93";
+}
+.saxi-light-receipt-text:before {
+	content: "\eb94";
+}
+.saxi-light-receipt:before {
+	content: "\eb95";
+}
+.saxi-light-receive-square-2:before {
+	content: "\eb96";
+}
+.saxi-light-receive-square:before {
+	content: "\eb97";
+}
+.saxi-light-received:before {
+	content: "\eb98";
+}
+.saxi-light-record-circle:before {
+	content: "\eb99";
+}
+.saxi-light-record:before {
+	content: "\eb9a";
+}
+.saxi-light-recovery-convert:before {
+	content: "\eb9b";
+}
+.saxi-light-redo:before {
+	content: "\eb9c";
+}
+.saxi-light-refresh-2:before {
+	content: "\eb9d";
+}
+.saxi-light-refresh-circle:before {
+	content: "\eb9e";
+}
+.saxi-light-refresh-left-square:before {
+	content: "\eb9f";
+}
+.saxi-light-refresh-right-square:before {
+	content: "\eba0";
+}
+.saxi-light-refresh-square-2:before {
+	content: "\eba1";
+}
+.saxi-light-refresh:before {
+	content: "\eba2";
+}
+.saxi-light-repeat-circle:before {
+	content: "\eba3";
+}
+.saxi-light-repeat:before {
+	content: "\eba4";
+}
+.saxi-light-repeate-music:before {
+	content: "\eba5";
+}
+.saxi-light-repeate-one:before {
+	content: "\eba6";
+}
+.saxi-light-reserve:before {
+	content: "\eba7";
+}
+.saxi-light-rotate-left-1:before {
+	content: "\eba8";
+}
+.saxi-light-rotate-left:before {
+	content: "\eba9";
+}
+.saxi-light-rotate-right-1:before {
+	content: "\ebaa";
+}
+.saxi-light-rotate-right:before {
+	content: "\ebab";
+}
+.saxi-light-route-square:before {
+	content: "\ebac";
+}
+.saxi-light-routing-2:before {
+	content: "\ebad";
+}
+.saxi-light-routing:before {
+	content: "\ebae";
+}
+.saxi-light-row-horizontal:before {
+	content: "\ebaf";
+}
+.saxi-light-row-vertical:before {
+	content: "\ebb0";
+}
+.saxi-light-ruler&amp;pen:before {
+	content: "\ebb1";
+}
+.saxi-light-ruler:before {
+	content: "\ebb2";
+}
+.saxi-light-safe-home:before {
+	content: "\ebb3";
+}
+.saxi-light-sagittarius:before {
+	content: "\ebb4";
+}
+.saxi-light-save-2:before {
+	content: "\ebb5";
+}
+.saxi-light-save-add:before {
+	content: "\ebb6";
+}
+.saxi-light-save-minus:before {
+	content: "\ebb7";
+}
+.saxi-light-save-remove:before {
+	content: "\ebb8";
+}
+.saxi-light-scan-barcode:before {
+	content: "\ebb9";
+}
+.saxi-light-scan:before {
+	content: "\ebba";
+}
+.saxi-light-scanner:before {
+	content: "\ebbb";
+}
+.saxi-light-scanning:before {
+	content: "\ebbc";
+}
+.saxi-light-scissor-1:before {
+	content: "\ebbd";
+}
+.saxi-light-scissor:before {
+	content: "\ebbe";
+}
+.saxi-light-screenmirroring:before {
+	content: "\ebbf";
+}
+.saxi-light-scroll:before {
+	content: "\ebc0";
+}
+.saxi-light-search-favorite-1:before {
+	content: "\ebc1";
+}
+.saxi-light-search-favorite:before {
+	content: "\ebc2";
+}
+.saxi-light-search-normal-1:before {
+	content: "\ebc3";
+}
+.saxi-light-search-normal:before {
+	content: "\ebc4";
+}
+.saxi-light-search-status-1:before {
+	content: "\ebc5";
+}
+.saxi-light-search-status:before {
+	content: "\ebc6";
+}
+.saxi-light-search-zoom-in-1:before {
+	content: "\ebc7";
+}
+.saxi-light-search-zoom-in:before {
+	content: "\ebc8";
+}
+.saxi-light-search-zoom-out-1:before {
+	content: "\ebc9";
+}
+.saxi-light-search-zoom-out:before {
+	content: "\ebca";
+}
+.saxi-light-security-card:before {
+	content: "\ebcb";
+}
+.saxi-light-security-safe:before {
+	content: "\ebcc";
+}
+.saxi-light-security-time:before {
+	content: "\ebcd";
+}
+.saxi-light-security-user:before {
+	content: "\ebce";
+}
+.saxi-light-security:before {
+	content: "\ebcf";
+}
+.saxi-light-send-1:before {
+	content: "\ebd0";
+}
+.saxi-light-send-2:before {
+	content: "\ebd1";
+}
+.saxi-light-send-sqaure-2:before {
+	content: "\ebd2";
+}
+.saxi-light-send-square:before {
+	content: "\ebd3";
+}
+.saxi-light-send:before {
+	content: "\ebd4";
+}
+.saxi-light-setting-2:before {
+	content: "\ebd5";
+}
+.saxi-light-setting-3:before {
+	content: "\ebd6";
+}
+.saxi-light-setting-4:before {
+	content: "\ebd7";
+}
+.saxi-light-setting-5:before {
+	content: "\ebd8";
+}
+.saxi-light-setting:before {
+	content: "\ebd9";
+}
+.saxi-light-settings:before {
+	content: "\ebda";
+}
+.saxi-light-shapes-1:before {
+	content: "\ebdb";
+}
+.saxi-light-shapes:before {
+	content: "\ebdc";
+}
+.saxi-light-share:before {
+	content: "\ebdd";
+}
+.saxi-light-shield-cross:before {
+	content: "\ebde";
+}
+.saxi-light-shield-search:before {
+	content: "\ebdf";
+}
+.saxi-light-shield-security:before {
+	content: "\ebe0";
+}
+.saxi-light-shield-slash:before {
+	content: "\ebe1";
+}
+.saxi-light-shield-tick:before {
+	content: "\ebe2";
+}
+.saxi-light-ship:before {
+	content: "\ebe3";
+}
+.saxi-light-shop-add:before {
+	content: "\ebe4";
+}
+.saxi-light-shop-remove:before {
+	content: "\ebe5";
+}
+.saxi-light-shop:before {
+	content: "\ebe6";
+}
+.saxi-light-shopping-bag:before {
+	content: "\ebe7";
+}
+.saxi-light-shopping-cart:before {
+	content: "\ebe8";
+}
+.saxi-light-shuffle:before {
+	content: "\ebe9";
+}
+.saxi-light-sidebar-bottom:before {
+	content: "\ebea";
+}
+.saxi-light-sidebar-left:before {
+	content: "\ebeb";
+}
+.saxi-light-sidebar-right:before {
+	content: "\ebec";
+}
+.saxi-light-sidebar-top:before {
+	content: "\ebed";
+}
+.saxi-light-signpost:before {
+	content: "\ebee";
+}
+.saxi-light-simcard-1:before {
+	content: "\ebef";
+}
+.saxi-light-simcard-2:before {
+	content: "\ebf0";
+}
+.saxi-light-simcard:before {
+	content: "\ebf1";
+}
+.saxi-light-size:before {
+	content: "\ebf2";
+}
+.saxi-light-slash:before {
+	content: "\ebf3";
+}
+.saxi-light-slider-horizontal-1:before {
+	content: "\ebf4";
+}
+.saxi-light-slider-horizontal:before {
+	content: "\ebf5";
+}
+.saxi-light-slider-vertical-1:before {
+	content: "\ebf6";
+}
+.saxi-light-slider-vertical:before {
+	content: "\ebf7";
+}
+.saxi-light-slider:before {
+	content: "\ebf8";
+}
+.saxi-light-smallcaps:before {
+	content: "\ebf9";
+}
+.saxi-light-smart-car:before {
+	content: "\ebfa";
+}
+.saxi-light-smart-home:before {
+	content: "\ebfb";
+}
+.saxi-light-smileys:before {
+	content: "\ebfc";
+}
+.saxi-light-sms-edit:before {
+	content: "\ebfd";
+}
+.saxi-light-sms-notification:before {
+	content: "\ebfe";
+}
+.saxi-light-sms-search:before {
+	content: "\ebff";
+}
+.saxi-light-sms-star:before {
+	content: "\ec00";
+}
+.saxi-light-sms-tracking:before {
+	content: "\ec01";
+}
+.saxi-light-sms:before {
+	content: "\ec02";
+}
+.saxi-light-sort:before {
+	content: "\ec03";
+}
+.saxi-light-sound:before {
+	content: "\ec04";
+}
+.saxi-light-speaker:before {
+	content: "\ec05";
+}
+.saxi-light-speedometer:before {
+	content: "\ec06";
+}
+.saxi-light-star-1:before {
+	content: "\ec07";
+}
+.saxi-light-star-slash:before {
+	content: "\ec08";
+}
+.saxi-light-star:before {
+	content: "\ec09";
+}
+.saxi-light-status-up:before {
+	content: "\ec0a";
+}
+.saxi-light-status:before {
+	content: "\ec0b";
+}
+.saxi-light-sticker:before {
+	content: "\ec0c";
+}
+.saxi-light-stickynote:before {
+	content: "\ec0d";
+}
+.saxi-light-stop-circle:before {
+	content: "\ec0e";
+}
+.saxi-light-stop:before {
+	content: "\ec0f";
+}
+.saxi-light-story:before {
+	content: "\ec10";
+}
+.saxi-light-strongbox-2:before {
+	content: "\ec11";
+}
+.saxi-light-strongbox:before {
+	content: "\ec12";
+}
+.saxi-light-subtitle:before {
+	content: "\ec13";
+}
+.saxi-light-sun-1:before {
+	content: "\ec14";
+}
+.saxi-light-sun-fog:before {
+	content: "\ec15";
+}
+.saxi-light-sun:before {
+	content: "\ec16";
+}
+.saxi-light-tag-2:before {
+	content: "\ec17";
+}
+.saxi-light-tag-cross:before {
+	content: "\ec18";
+}
+.saxi-light-tag-right:before {
+	content: "\ec19";
+}
+.saxi-light-tag-user:before {
+	content: "\ec1a";
+}
+.saxi-light-tag:before {
+	content: "\ec1b";
+}
+.saxi-light-task-square:before {
+	content: "\ec1c";
+}
+.saxi-light-task:before {
+	content: "\ec1d";
+}
+.saxi-light-teacher:before {
+	content: "\ec1e";
+}
+.saxi-light-text-block:before {
+	content: "\ec1f";
+}
+.saxi-light-text-bold:before {
+	content: "\ec20";
+}
+.saxi-light-text-italic:before {
+	content: "\ec21";
+}
+.saxi-light-text-underline:before {
+	content: "\ec22";
+}
+.saxi-light-text:before {
+	content: "\ec23";
+}
+.saxi-light-textalign-center:before {
+	content: "\ec24";
+}
+.saxi-light-textalign-justifycenter:before {
+	content: "\ec25";
+}
+.saxi-light-textalign-justifyleft:before {
+	content: "\ec26";
+}
+.saxi-light-textalign-justifyright:before {
+	content: "\ec27";
+}
+.saxi-light-textalign-left:before {
+	content: "\ec28";
+}
+.saxi-light-textalign-right:before {
+	content: "\ec29";
+}
+.saxi-light-tick-circle:before {
+	content: "\ec2a";
+}
+.saxi-light-tick-square:before {
+	content: "\ec2b";
+}
+.saxi-light-ticket-2:before {
+	content: "\ec2c";
+}
+.saxi-light-ticket-discount:before {
+	content: "\ec2d";
+}
+.saxi-light-ticket-expired:before {
+	content: "\ec2e";
+}
+.saxi-light-ticket-star:before {
+	content: "\ec2f";
+}
+.saxi-light-ticket:before {
+	content: "\ec30";
+}
+.saxi-light-timer-1:before {
+	content: "\ec31";
+}
+.saxi-light-timer-pause:before {
+	content: "\ec32";
+}
+.saxi-light-timer-start:before {
+	content: "\ec33";
+}
+.saxi-light-timer:before {
+	content: "\ec34";
+}
+.saxi-light-toggle-off-circle:before {
+	content: "\ec35";
+}
+.saxi-light-toggle-off:before {
+	content: "\ec36";
+}
+.saxi-light-toggle-on-circle:before {
+	content: "\ec37";
+}
+.saxi-light-toggle-on:before {
+	content: "\ec38";
+}
+.saxi-light-trade:before {
+	content: "\ec39";
+}
+.saxi-light-transaction-minus:before {
+	content: "\ec3a";
+}
+.saxi-light-translate:before {
+	content: "\ec3b";
+}
+.saxi-light-trash:before {
+	content: "\ec3c";
+}
+.saxi-light-tree:before {
+	content: "\ec3d";
+}
+.saxi-light-trend-down:before {
+	content: "\ec3e";
+}
+.saxi-light-trend-up:before {
+	content: "\ec3f";
+}
+.saxi-light-triangle:before {
+	content: "\ec40";
+}
+.saxi-light-truck-fast:before {
+	content: "\ec41";
+}
+.saxi-light-truck-remove:before {
+	content: "\ec42";
+}
+.saxi-light-truck-tick:before {
+	content: "\ec43";
+}
+.saxi-light-truck-time:before {
+	content: "\ec44";
+}
+.saxi-light-truck:before {
+	content: "\ec45";
+}
+.saxi-light-trush-square:before {
+	content: "\ec46";
+}
+.saxi-light-undo:before {
+	content: "\ec47";
+}
+.saxi-light-unlimited:before {
+	content: "\ec48";
+}
+.saxi-light-unlock:before {
+	content: "\ec49";
+}
+.saxi-light-user-add:before {
+	content: "\ec4a";
+}
+.saxi-light-user-cirlce-add:before {
+	content: "\ec4b";
+}
+.saxi-light-user-edit:before {
+	content: "\ec4c";
+}
+.saxi-light-user-minus:before {
+	content: "\ec4d";
+}
+.saxi-light-user-octagon:before {
+	content: "\ec4e";
+}
+.saxi-light-user-remove:before {
+	content: "\ec4f";
+}
+.saxi-light-user-search:before {
+	content: "\ec50";
+}
+.saxi-light-user-square:before {
+	content: "\ec51";
+}
+.saxi-light-user-tag:before {
+	content: "\ec52";
+}
+.saxi-light-user-tick:before {
+	content: "\ec53";
+}
+.saxi-light-user:before {
+	content: "\ec54";
+}
+.saxi-light-verify:before {
+	content: "\ec55";
+}
+.saxi-light-video-add:before {
+	content: "\ec56";
+}
+.saxi-light-video-circle:before {
+	content: "\ec57";
+}
+.saxi-light-video-horizontal:before {
+	content: "\ec58";
+}
+.saxi-light-video-octagon:before {
+	content: "\ec59";
+}
+.saxi-light-video-play:before {
+	content: "\ec5a";
+}
+.saxi-light-video-remove:before {
+	content: "\ec5b";
+}
+.saxi-light-video-slash:before {
+	content: "\ec5c";
+}
+.saxi-light-video-square:before {
+	content: "\ec5d";
+}
+.saxi-light-video-tick:before {
+	content: "\ec5e";
+}
+.saxi-light-video-time:before {
+	content: "\ec5f";
+}
+.saxi-light-video-vertical:before {
+	content: "\ec60";
+}
+.saxi-light-video:before {
+	content: "\ec61";
+}
+.saxi-light-voice-cricle:before {
+	content: "\ec62";
+}
+.saxi-light-voice-square:before {
+	content: "\ec63";
+}
+.saxi-light-volume-cross:before {
+	content: "\ec64";
+}
+.saxi-light-volume-high:before {
+	content: "\ec65";
+}
+.saxi-light-volume-low-1:before {
+	content: "\ec66";
+}
+.saxi-light-volume-low:before {
+	content: "\ec67";
+}
+.saxi-light-volume-mute:before {
+	content: "\ec68";
+}
+.saxi-light-volume-slash:before {
+	content: "\ec69";
+}
+.saxi-light-volume-up:before {
+	content: "\ec6a";
+}
+.saxi-light-wallet-1:before {
+	content: "\ec6b";
+}
+.saxi-light-wallet-2:before {
+	content: "\ec6c";
+}
+.saxi-light-wallet-3:before {
+	content: "\ec6d";
+}
+.saxi-light-wallet-add-1:before {
+	content: "\ec6e";
+}
+.saxi-light-wallet-add:before {
+	content: "\ec6f";
+}
+.saxi-light-wallet-check:before {
+	content: "\ec70";
+}
+.saxi-light-wallet-minus:before {
+	content: "\ec71";
+}
+.saxi-light-wallet-money:before {
+	content: "\ec72";
+}
+.saxi-light-wallet-remove:before {
+	content: "\ec73";
+}
+.saxi-light-wallet-search:before {
+	content: "\ec74";
+}
+.saxi-light-wallet:before {
+	content: "\ec75";
+}
+.saxi-light-warning-2:before {
+	content: "\ec76";
+}
+.saxi-light-watch-status:before {
+	content: "\ec77";
+}
+.saxi-light-watch:before {
+	content: "\ec78";
+}
+.saxi-light-weight-1:before {
+	content: "\ec79";
+}
+.saxi-light-weight:before {
+	content: "\ec7a";
+}
+.saxi-light-wifi-square:before {
+	content: "\ec7b";
+}
+.saxi-light-wifi:before {
+	content: "\ec7c";
+}
+.saxi-light-wind-2:before {
+	content: "\ec7d";
+}
+.saxi-light-wind:before {
+	content: "\ec7e";
+}
+.saxi-light-woman:before {
+	content: "\ec7f";
+}
+.saxi-light-backward-item-1:before {
+	content: "\ec80";
+}
+.saxi-light-bezier-1:before {
+	content: "\ec81";
+}
+.saxi-light-blur-1:before {
+	content: "\ec82";
+}
+.saxi-light-bucket-circle-1:before {
+	content: "\ec83";
+}
+.saxi-light-bucket-square-1:before {
+	content: "\ec84";
+}
+.saxi-light-colors-square-1:before {
+	content: "\ec85";
+}
+.saxi-light-component-1:before {
+	content: "\ec86";
+}
+.saxi-light-element-1:before {
+	content: "\ec87";
+}
+.saxi-light-eraser-2:before {
+	content: "\ec88";
+}
+.saxi-light-flash-circle-2:before {
+	content: "\ec89";
+}
+.saxi-light-forward-item-1:before {
+	content: "\ec8a";
+}
+.saxi-light-frame-5:before {
+	content: "\ec8b";
+}
+.saxi-light-group-1:before {
+	content: "\ec8c";
+}
+.saxi-light-group-10:before {
+	content: "\ec8d";
+}
+.saxi-light-group-11:before {
+	content: "\ec8e";
+}
+.saxi-light-group-2:before {
+	content: "\ec8f";
+}
+.saxi-light-group-3:before {
+	content: "\ec90";
+}
+.saxi-light-group-4:before {
+	content: "\ec91";
+}
+.saxi-light-group-5:before {
+	content: "\ec92";
+}
+.saxi-light-group-6:before {
+	content: "\ec93";
+}
+.saxi-light-group-7:before {
+	content: "\ec94";
+}
+.saxi-light-group-8:before {
+	content: "\ec95";
+}
+.saxi-light-group-9:before {
+	content: "\ec96";
+}
+.saxi-light-group:before {
+	content: "\ec97";
+}
+.saxi-light-main-component-1:before {
+	content: "\ec98";
+}
+.saxi-light-mask-3:before {
+	content: "\ec99";
+}
+.saxi-light-notification-circle:before {
+	content: "\ec9a";
+}
+.saxi-light-omega-circle-1:before {
+	content: "\ec9b";
+}
+.saxi-light-omega-square-1:before {
+	content: "\ec9c";
+}
+.saxi-light-pen-add-1:before {
+	content: "\ec9d";
+}
+.saxi-light-pen-close-1:before {
+	content: "\ec9e";
+}
+.saxi-light-pen-remove-1:before {
+	content: "\ec9f";
+}
+.saxi-light-pen-tool-1:before {
+	content: "\eca0";
+}
+.saxi-light-pen-tool-2-1:before {
+	content: "\eca1";
+}
+.saxi-light-profile:before {
+	content: "\eca2";
+}
+.saxi-light-scissor-2:before {
+	content: "\eca3";
+}
+.saxi-light-shapes-2:before {
+	content: "\eca4";
+}
+.saxi-light-shield:before {
+	content: "\eca5";
+}
+.saxi-light-arrow-right-4:before {
+	content: "\eca6";
+}
+.saxi-light-icon:before {
+	content: "\eca7";
+}
+.saxi-light-frame-6:before {
+	content: "\eca8";
+}
+.saxi-light-frame-7:before {
+	content: "\eca9";
+}
+.saxi-light-icon-1:before {
+	content: "\ecaa";
+}
