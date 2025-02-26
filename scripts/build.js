@@ -67,7 +67,7 @@ async function build() {
     await createTestHtml();
     await createInlineTestHtml();
     await createSvgTestHtml();
-    await createSingleIconTest();
+    await createSingleIconTestHtml();
     
     await createDemoHtml();
     
@@ -111,14 +111,34 @@ async function createTestHtml() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Icon Font Test</title>
-  <link rel="stylesheet" href="saxi-icons-all.css">
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
+    
+    /* Hide content until fonts are loaded */
+    .fonts-loaded body {
+      opacity: 1;
+    }
+  </style>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  </script>
+  <style>
     .icon-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -134,114 +154,162 @@ async function createTestHtml() {
       border-radius: 8px;
       background-color: #f5f5f5;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .icon {
       font-size: 32px;
       margin-bottom: 10px;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      line-height: 1;
     }
     h2 {
       margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .font-error-message {
+      display: none;
+      padding: 15px;
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
+    /* Ensure all icons have normal font-style */
+    [class^="saxi-"], [class*=" saxi-"] {
+      font-style: normal !important;
     }
   </style>
 </head>
 <body>
-  <h1>Icon Font Test</h1>
-  
-  <h2>Bold Style (saxi-solid)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-solid saxi-24-support icon"></i>
-      <div>24-support</div>
+  <div class="page-container">
+    <h1>Icon Font Test</h1>
+    
+    <div id="font-error" class="font-error-message">
+      Some icon fonts may not be loading correctly. Please ensure the font files are properly generated.
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
+    
+    <h2>Bold Style (saxi-solid)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-solid saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
+    
+    <h2>Linear Style (saxi-regular)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-regular saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Outline Style (saxi-light)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-light saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Broken Style (saxi-broken)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-broken saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>TwoTone Style (saxi-twotone)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Bulk Style (saxi-bulk)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
     </div>
   </div>
   
-  <h2>Linear Style (saxi-regular)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-regular saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Outline Style (saxi-light)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-light saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Broken Style (saxi-broken)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-broken saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>TwoTone Style (saxi-twotone)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Bulk Style (saxi-bulk)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
+  <script>
+    // Font loading detection
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if fonts loaded successfully
+      setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'saxi-solid saxi-user';
+        testIcon.style.visibility = 'hidden';
+        document.body.appendChild(testIcon);
+        
+        const fontLoaded = window.getComputedStyle(testIcon).fontFamily.includes('saxi-icons');
+        if (!fontLoaded) {
+          document.getElementById('font-error').style.display = 'block';
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 1000);
+    });
+  </script>
 </body>
 </html>`;
 
@@ -254,25 +322,48 @@ async function createInlineTestHtml() {
   
   // Get the font files that were actually generated
   const files = await fs.readdir(path.join(__dirname, '..', 'Fonts'));
-  const fontFiles = files.filter(f => 
-    f.endsWith('.ttf') || f.endsWith('.woff') || f.endsWith('.woff2') || f.endsWith('.eot') || f.endsWith('.svg')
-  );
+  const woffFiles = files.filter(f => f.endsWith('.woff') || f.endsWith('.woff2'));
   
-  // Create font-face declarations for each font file
+  // Create font-face declarations for each font file (using only WOFF/WOFF2)
   let fontFaces = '';
-  for (const fontFile of fontFiles) {
-    const fontName = fontFile.replace(/\.(ttf|woff|woff2|eot|svg)$/, '');
+  const processedFamilies = new Set();
+  
+  for (const fontFile of woffFiles) {
+    // Skip processing if not a font file
+    if (!fontFile.includes('-pro-')) continue;
+    
+    const fontName = fontFile.replace(/\.(woff|woff2)$/, '');
     const fontFamily = fontName.includes('twotone') ? 'saxi-icons-pro-twotone' : 'saxi-icons-pro';
     const fontWeight = fontName.includes('bold') || fontName.includes('bulk') ? 700 : 
                       fontName.includes('outline') ? 300 : 400;
     
-    fontFaces += `
+    // Create a unique key for this family+weight combination
+    const familyKey = `${fontFamily}-${fontWeight}`;
+    
+    // Only add each family+weight combo once
+    if (!processedFamilies.has(familyKey)) {
+      processedFamilies.add(familyKey);
+      
+      // Find matching woff2 and woff files
+      const woff2File = files.find(f => f.startsWith(fontName) && f.endsWith('.woff2'));
+      const woffFile = files.find(f => f.startsWith(fontName) && f.endsWith('.woff'));
+      
+      // Build the src attribute with format
+      let src = [];
+      if (woff2File) src.push(`url('${woff2File}') format('woff2')`);
+      if (woffFile) src.push(`url('${woffFile}') format('woff')`);
+      
+      if (src.length > 0) {
+        fontFaces += `
 @font-face {
   font-family: '${fontFamily}';
-  src: url('${fontFile}');
+  src: ${src.join(',\n       ')};
   font-weight: ${fontWeight};
-  font-style: normal;
+  font-style: normal !important;
+  font-display: block;
 }`;
+      }
+    }
   }
   
   const content = `<!DOCTYPE html>
@@ -282,13 +373,32 @@ async function createInlineTestHtml() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Icon Font Inline Test</title>
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
     
+    /* Hide content until fonts are loaded */
+    .fonts-loaded body {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  </script>
+  <style>
     /* Inline font-face declarations */
     ${fontFaces}
     
@@ -296,26 +406,32 @@ async function createInlineTestHtml() {
     .saxi-solid {
       font-family: 'saxi-icons-pro';
       font-weight: 700;
+      font-style: normal !important;
     }
     .saxi-regular {
       font-family: 'saxi-icons-pro';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-light {
       font-family: 'saxi-icons-pro';
       font-weight: 300;
+      font-style: normal !important;
     }
     .saxi-broken {
       font-family: 'saxi-icons-pro';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-twotone {
       font-family: 'saxi-icons-pro-twotone';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-bulk {
       font-family: 'saxi-icons-pro-twotone';
       font-weight: 700;
+      font-style: normal !important;
     }
     
     .icon-grid {
@@ -333,114 +449,158 @@ async function createInlineTestHtml() {
       border-radius: 8px;
       background-color: #f5f5f5;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .icon {
       font-size: 32px;
       margin-bottom: 10px;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      line-height: 1;
     }
     h2 {
       margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .font-error-message {
+      display: none;
+      padding: 15px;
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Icon Font Inline Test</h1>
-  
-  <h2>Bold Style (saxi-solid)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-solid icon">24-support</i>
-      <div>24-support</div>
+  <div class="page-container">
+    <h1>Icon Font Inline Test</h1>
+    
+    <div id="font-error" class="font-error-message">
+      Some icon fonts may not be loading correctly. Please ensure the font files are properly generated.
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
+    
+    <h2>Bold Style (saxi-solid)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-solid icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid icon">3d-rotate</i>
-      <div>3d-rotate</div>
+    
+    <h2>Linear Style (saxi-regular)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-regular icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Outline Style (saxi-light)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-light icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Broken Style (saxi-broken)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-broken icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>TwoTone Style (saxi-twotone)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-twotone icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Bulk Style (saxi-bulk)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-bulk icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
     </div>
   </div>
   
-  <h2>Linear Style (saxi-regular)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-regular icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Outline Style (saxi-light)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-light icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Broken Style (saxi-broken)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-broken icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>TwoTone Style (saxi-twotone)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-twotone icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Bulk Style (saxi-bulk)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-bulk icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
+  <script>
+    // Font loading detection
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if fonts loaded successfully
+      setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'saxi-solid';
+        testIcon.textContent = 'user';
+        testIcon.style.visibility = 'hidden';
+        document.body.appendChild(testIcon);
+        
+        const fontLoaded = window.getComputedStyle(testIcon).fontFamily.includes('saxi-icons');
+        if (!fontLoaded) {
+          document.getElementById('font-error').style.display = 'block';
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 1000);
+    });
+  </script>
 </body>
 </html>`;
 
@@ -449,32 +609,8 @@ async function createInlineTestHtml() {
 }
 
 async function createSvgTestHtml() {
-  // Get a few SVG files from each style
-  const svgSamples = {};
-  const styles = ['Bold', 'Linear', 'Outline', 'Broken', 'TwoTone', 'Bulk'];
-  
-  for (const style of styles) {
-    const styleDir = path.join(__dirname, '..', 'temp_svgs', style);
-    if (await fs.pathExists(styleDir)) {
-      const files = await fs.readdir(styleDir);
-      const svgFiles = files.filter(f => f.endsWith('.svg')).slice(0, 3);
-      
-      svgSamples[style.toLowerCase()] = [];
-      
-      for (const file of svgFiles) {
-        const filePath = path.join(styleDir, file);
-        const svgContent = await fs.readFile(filePath, 'utf8');
-        svgSamples[style.toLowerCase()].push({
-          name: path.basename(file, '.svg'),
-          content: svgContent
-        });
-      }
-    }
-  }
-  
-  // Create HTML with inline SVGs
-  const testHtmlPath = path.join(__dirname, '..', 'Fonts', 'svg-test.html');
-  let content = `<!DOCTYPE html>
+  const svgTestHtmlPath = path.join(__dirname, '..', 'Fonts', 'svg-test.html');
+  const content = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -483,6 +619,10 @@ async function createSvgTestHtml() {
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
@@ -502,6 +642,7 @@ async function createSvgTestHtml() {
       border-radius: 8px;
       background-color: #f5f5f5;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .icon {
       width: 32px;
@@ -510,36 +651,53 @@ async function createSvgTestHtml() {
     }
     h2 {
       margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>SVG Icon Test</h1>`;
-  
-  // Add sections for each style
-  for (const [style, icons] of Object.entries(svgSamples)) {
-    content += `
-  <h2>${style.charAt(0).toUpperCase() + style.slice(1)} Style</h2>
-  <div class="icon-grid">`;
+  <div class="page-container">
+    <h1>SVG Icon Test</h1>
+    <p>This page tests the original SVG files to ensure they display correctly.</p>
     
-    for (const icon of icons) {
-      content += `
-    <div class="icon-card">
-      <div class="icon">${icon.content}</div>
-      <div>${icon.name}</div>
-    </div>`;
-    }
+    <h2>Bold Style</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <img src="../temp_svgs/Bold/24-support.svg" class="icon" alt="24-support">
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <img src="../temp_svgs/Bold/3d-cube-scan.svg" class="icon" alt="3d-cube-scan">
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <img src="../temp_svgs/Bold/3d-rotate.svg" class="icon" alt="3d-rotate">
+        <div>3d-rotate</div>
+      </div>
+    </div>
     
-    content += `
-  </div>`;
-  }
-  
-  content += `
+    <h2>Linear Style</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <img src="../temp_svgs/Linear/24-support.svg" class="icon" alt="24-support">
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <img src="../temp_svgs/Linear/3d-cube-scan.svg" class="icon" alt="3d-cube-scan">
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <img src="../temp_svgs/Linear/3d-rotate.svg" class="icon" alt="3d-rotate">
+        <div>3d-rotate</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>`;
 
-  await fs.writeFile(testHtmlPath, content);
-  console.log('Created SVG test HTML file at:', testHtmlPath);
+  await fs.writeFile(svgTestHtmlPath, content);
+  console.log('Created SVG test HTML file at:', svgTestHtmlPath);
 }
 
 async function generateDocumentation() {
@@ -576,137 +734,213 @@ async function saveBuildInfo(iconCount) {
 /**
  * Create a single icon test page
  */
-async function createSingleIconTest() {
-  console.log('Creating single icon test page...');
-  const testHtmlPath = path.join(__dirname, '..', 'Fonts', 'single-icon-test.html');
-  
-  // Find one icon name that exists in all styles
-  const fontsDir = path.join(__dirname, '..', 'Fonts');
-  const files = await fs.readdir(fontsDir);
-  
-  // Look for JSON mapping file
-  const jsonFile = files.find(f => f.endsWith('.json') && f !== 'build-info.json');
-  
-  if (!jsonFile) {
-    console.error('No icon mapping JSON file found.');
-    return;
-  }
-  
-  const mapping = await fs.readJson(path.join(fontsDir, jsonFile));
-  const iconNames = Object.keys(mapping);
-  
-  if (iconNames.length === 0) {
-    console.error('No icons found in mapping.');
-    return;
-  }
-  
-  // Use the first icon for the test
-  const testIcon = iconNames[0];
-  
+async function createSingleIconTestHtml() {
+  const singleIconTestHtmlPath = path.join(__dirname, '..', 'Fonts', 'single-icon-test.html');
   const content = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Icon Test</title>
-  <link rel="stylesheet" href="saxi-icons-all.css">
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 800px;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .fonts-loaded body {
+      opacity: 1;
+    }
+    .page-container {
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+    .test-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
     }
-    .test-item {
+    .icon-row {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: white;
+    }
+    .icon-demo {
+      font-size: 32px;
+      margin-right: 20px;
+      min-width: 40px;
       text-align: center;
     }
-    .icon {
-      font-size: 48px;
-      margin-bottom: 16px;
+    .icon-code {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-left: auto;
     }
-    .size-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 40px;
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
-    .size-row {
-      display: flex;
-      align-items: center;
+    
+    /* Ensure all icons have normal font-style */
+    [class^="saxi-"], [class*=" saxi-"] {
+      font-style: normal !important;
+      line-height: 1;
     }
-    .size-label {
-      width: 100px;
+    
+    .debug-info {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow: auto;
     }
   </style>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+      
+      // Debug font information
+      const debugInfo = document.getElementById('debug-fonts');
+      if (debugInfo) {
+        const loadedFonts = [];
+        document.fonts.forEach(font => {
+          loadedFonts.push(font.family + ' - ' + font.style + ' - ' + font.weight + ' - ' + font.status);
+        });
+        debugInfo.textContent = loadedFonts.join('\\n');
+      }
+    });
+  </script>
 </head>
 <body>
-  <h1>Single Icon Test: "${testIcon}"</h1>
-  
-  <h2>Icon in Different Styles</h2>
-  <div class="test-grid">
-    <div class="test-item">
-      <i class="saxi-solid saxi-${testIcon} icon"></i>
-      <div>Solid</div>
+  <div class="page-container">
+    <h1>Single Icon Test</h1>
+    <p>This page tests a single icon across all available styles and formats.</p>
+    
+    <h2>Font Loading Debug</h2>
+    <div id="debug-fonts" class="debug-info">Loading font information...</div>
+    
+    <h2>Using Class-Based Approach</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-solid saxi-home"></i></div>
+        <div>Bold Style (saxi-solid)</div>
+        <div class="icon-code">&lt;i class="saxi-solid saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-regular saxi-home"></i></div>
+        <div>Linear Style (saxi-regular)</div>
+        <div class="icon-code">&lt;i class="saxi-regular saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-light saxi-home"></i></div>
+        <div>Outline Style (saxi-light)</div>
+        <div class="icon-code">&lt;i class="saxi-light saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-broken saxi-home"></i></div>
+        <div>Broken Style (saxi-broken)</div>
+        <div class="icon-code">&lt;i class="saxi-broken saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-twotone saxi-home"></i></div>
+        <div>TwoTone Style (saxi-twotone)</div>
+        <div class="icon-code">&lt;i class="saxi-twotone saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-bulk saxi-home"></i></div>
+        <div>Bulk Style (saxi-bulk)</div>
+        <div class="icon-code">&lt;i class="saxi-bulk saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
-    <div class="test-item">
-      <i class="saxi-regular saxi-${testIcon} icon"></i>
-      <div>Regular</div>
+    
+    <h2>Using Font Weight Approach</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-bold saxi-home"></i></div>
+        <div>Bold Style (font-weight: 700)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-bold saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-regular saxi-home"></i></div>
+        <div>Linear Style (font-weight: 400)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-regular saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-light saxi-home"></i></div>
+        <div>Outline Style (font-weight: 300)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-light saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-broken saxi-home"></i></div>
+        <div>Broken Style (font-weight: 100)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-broken saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-twotone saxi-home"></i></div>
+        <div>TwoTone Style (font-weight: 500)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-twotone saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-bulk saxi-home"></i></div>
+        <div>Bulk Style (font-weight: 600)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-bulk saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
-    <div class="test-item">
-      <i class="saxi-light saxi-${testIcon} icon"></i>
-      <div>Light</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-broken saxi-${testIcon} icon"></i>
-      <div>Broken</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-twotone saxi-${testIcon} icon"></i>
-      <div>TwoTone</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-bulk saxi-${testIcon} icon"></i>
-      <div>Bulk</div>
-    </div>
-  </div>
-  
-  <h2>Size Variations (Regular Style)</h2>
-  <div class="size-grid">
-    <div class="size-row">
-      <div class="size-label">16px</div>
-      <i class="saxi-regular saxi-${testIcon}" style="font-size: 16px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">24px</div>
-      <i class="saxi-regular saxi-${testIcon}" style="font-size: 24px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">32px</div>
-      <i class="saxi-regular saxi-${testIcon}" style="font-size: 32px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">48px</div>
-      <i class="saxi-regular saxi-${testIcon}" style="font-size: 48px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">64px</div>
-      <i class="saxi-regular saxi-${testIcon}" style="font-size: 64px;"></i>
+    
+    <h2>Using Inline Styles</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 700;" class="saxi-home"></i></div>
+        <div>Bold Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 700;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 400;" class="saxi-home"></i></div>
+        <div>Linear Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 400;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 300;" class="saxi-home"></i></div>
+        <div>Outline Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 300;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
   </div>
 </body>
 </html>`;
 
-  await fs.writeFile(testHtmlPath, content);
-  console.log('Created single icon test HTML file at:', testHtmlPath);
+  await fs.writeFile(singleIconTestHtmlPath, content);
+  console.log('Created single icon test HTML file at:', singleIconTestHtmlPath);
 }
 
 async function createDemoHtml() {
@@ -730,21 +964,41 @@ async function createDemoHtml() {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAXI Icons Font Demo</title>
-  <link rel="stylesheet" href="saxi-icons-all.css">
   <style>
-    * {
-      box-sizing: border-box;
+    /* Critical CSS to prevent layout shifts */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
       padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
     }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      line-height: 1.6;
-      color: #333;
+    .page-container {
       padding: 30px;
       max-width: 1400px;
       margin: 0 auto;
+    }
+    
+    /* Hide content until fonts are loaded */
+    .fonts-loaded body {
+      opacity: 1;
+    }
+  </style>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      line-height: 1.6;
+      color: #333;
     }
     
     h1, h2, h3 {
@@ -868,6 +1122,16 @@ async function createDemoHtml() {
       color: #666;
     }
     
+    .font-error-message {
+      display: none;
+      padding: 15px;
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
     @media (max-width: 768px) {
       .icon-card {
         width: 100px;
@@ -885,29 +1149,53 @@ async function createDemoHtml() {
   </style>
 </head>
 <body>
-  <h1>SAXI Icons Font Demo</h1>
-  <p>All icon styles should display correctly. Test the fonts below to verify they're working properly.</p>
-  
-  <div class="search-container">
-    <input type="text" class="search-input" placeholder="Search icons..." id="searchInput">
-  </div>
-  
-  <div class="style-switcher">
-    <button class="style-button active" data-style="all">All Styles</button>
-    <button class="style-button" data-style="solid">Solid</button>
-    <button class="style-button" data-style="regular">Regular</button>
-    <button class="style-button" data-style="light">Light</button>
-    <button class="style-button" data-style="broken">Broken</button>
-    <button class="style-button" data-style="twotone">TwoTone</button>
-    <button class="style-button" data-style="bulk">Bulk</button>
-  </div>
-  
-  <div class="styles-container">
-    <!-- Icon Grid will be inserted here by JavaScript -->
-    <div id="icon-grid" class="icon-grid"></div>
+  <div class="page-container">
+    <h1>SAXI Icons Font Demo</h1>
+    <p>All icon styles should display correctly. Test the fonts below to verify they're working properly.</p>
+    
+    <div id="font-error" class="font-error-message">
+      Some icon fonts may not be loading correctly. Please ensure the font files are properly generated.
+    </div>
+    
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search icons..." id="searchInput">
+    </div>
+    
+    <div class="style-switcher">
+      <button class="style-button active" data-style="all">All Styles</button>
+      <button class="style-button" data-style="solid">Solid</button>
+      <button class="style-button" data-style="regular">Regular</button>
+      <button class="style-button" data-style="light">Light</button>
+      <button class="style-button" data-style="broken">Broken</button>
+      <button class="style-button" data-style="twotone">TwoTone</button>
+      <button class="style-button" data-style="bulk">Bulk</button>
+    </div>
+    
+    <div class="styles-container">
+      <!-- Icon Grid will be inserted here by JavaScript -->
+      <div id="icon-grid" class="icon-grid"></div>
+    </div>
   </div>
   
   <script>
+    // Font loading detection
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if fonts loaded successfully
+      setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'saxi-solid saxi-user';
+        testIcon.style.visibility = 'hidden';
+        document.body.appendChild(testIcon);
+        
+        const fontLoaded = window.getComputedStyle(testIcon).fontFamily.includes('saxi-icons');
+        if (!fontLoaded) {
+          document.getElementById('font-error').style.display = 'block';
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 1000);
+    });
+
     // Icon data
     const icons = ${JSON.stringify(sampleIcons)};
     

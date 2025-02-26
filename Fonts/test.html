@@ -4,14 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Icon Font Test</title>
-  <link rel="stylesheet" href="saxi-icons-all.css">
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
+    
+    /* Hide content until fonts are loaded */
+    .fonts-loaded body {
+      opacity: 1;
+    }
+  </style>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  </script>
+  <style>
     .icon-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -27,113 +47,161 @@
       border-radius: 8px;
       background-color: #f5f5f5;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .icon {
       font-size: 32px;
       margin-bottom: 10px;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      line-height: 1;
     }
     h2 {
       margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .font-error-message {
+      display: none;
+      padding: 15px;
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    
+    /* Ensure all icons have normal font-style */
+    [class^="saxi-"], [class*=" saxi-"] {
+      font-style: normal !important;
     }
   </style>
 </head>
 <body>
-  <h1>Icon Font Test</h1>
-  
-  <h2>Bold Style (saxi-solid)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-solid saxi-24-support icon"></i>
-      <div>24-support</div>
+  <div class="page-container">
+    <h1>Icon Font Test</h1>
+    
+    <div id="font-error" class="font-error-message">
+      Some icon fonts may not be loading correctly. Please ensure the font files are properly generated.
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
+    
+    <h2>Bold Style (saxi-solid)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-solid saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
+    
+    <h2>Linear Style (saxi-regular)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-regular saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Outline Style (saxi-light)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-light saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Broken Style (saxi-broken)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-broken saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>TwoTone Style (saxi-twotone)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Bulk Style (saxi-bulk)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-24-support icon"></i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-3d-cube-scan icon"></i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk saxi-3d-rotate icon"></i>
+        <div>3d-rotate</div>
+      </div>
     </div>
   </div>
   
-  <h2>Linear Style (saxi-regular)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-regular saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Outline Style (saxi-light)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-light saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Broken Style (saxi-broken)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-broken saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>TwoTone Style (saxi-twotone)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Bulk Style (saxi-bulk)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-24-support icon"></i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-3d-cube-scan icon"></i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk saxi-3d-rotate icon"></i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
+  <script>
+    // Font loading detection
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if fonts loaded successfully
+      setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'saxi-solid saxi-user';
+        testIcon.style.visibility = 'hidden';
+        document.body.appendChild(testIcon);
+        
+        const fontLoaded = window.getComputedStyle(testIcon).fontFamily.includes('saxi-icons');
+        if (!fontLoaded) {
+          document.getElementById('font-error').style.display = 'block';
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 1000);
+    });
+  </script>
 </body>
 </html>

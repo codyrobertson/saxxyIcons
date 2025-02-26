@@ -5,220 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Icon Font Inline Test</title>
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
     
+    /* Hide content until fonts are loaded */
+    .fonts-loaded body {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+    });
+  </script>
+  <style>
     /* Inline font-face declarations */
     
 @font-face {
   font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bold.eot');
+  src: url('saxi-icons-pro-bold.woff2') format('woff2'),
+       url('saxi-icons-pro-bold.woff') format('woff');
   font-weight: 700;
-  font-style: normal;
+  font-style: normal !important;
+  font-display: block;
 }
 @font-face {
   font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bold.svg');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bold.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bold.woff');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bold.woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-broken.eot');
+  src: url('saxi-icons-pro-broken.woff2') format('woff2'),
+       url('saxi-icons-pro-broken.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
+  font-style: normal !important;
+  font-display: block;
 }
 @font-face {
   font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-broken.svg');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-broken.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-broken.woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-broken.woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bulk.eot');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bulk.svg');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bulk.ttf');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bulk.woff');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-bulk.woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-linear.eot');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-linear.svg');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-linear.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-linear.woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-linear.woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-outline.eot');
+  src: url('saxi-icons-pro-outline.woff2') format('woff2'),
+       url('saxi-icons-pro-outline.woff') format('woff');
   font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-outline.svg');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-outline.ttf');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-outline.woff');
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro';
-  src: url('saxi-icons-pro-outline.woff2');
-  font-weight: 300;
-  font-style: normal;
+  font-style: normal !important;
+  font-display: block;
 }
 @font-face {
   font-family: 'saxi-icons-pro-twotone';
-  src: url('saxi-icons-pro-twotone.eot');
+  src: url('saxi-icons-pro-twotone.woff2') format('woff2'),
+       url('saxi-icons-pro-twotone.woff') format('woff');
   font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro-twotone';
-  src: url('saxi-icons-pro-twotone.svg');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro-twotone';
-  src: url('saxi-icons-pro-twotone.ttf');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro-twotone';
-  src: url('saxi-icons-pro-twotone.woff');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'saxi-icons-pro-twotone';
-  src: url('saxi-icons-pro-twotone.woff2');
-  font-weight: 400;
-  font-style: normal;
+  font-style: normal !important;
+  font-display: block;
 }
     
     /* Icon classes */
     .saxi-solid {
       font-family: 'saxi-icons-pro';
       font-weight: 700;
+      font-style: normal !important;
     }
     .saxi-regular {
       font-family: 'saxi-icons-pro';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-light {
       font-family: 'saxi-icons-pro';
       font-weight: 300;
+      font-style: normal !important;
     }
     .saxi-broken {
       font-family: 'saxi-icons-pro';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-twotone {
       font-family: 'saxi-icons-pro-twotone';
       font-weight: 400;
+      font-style: normal !important;
     }
     .saxi-bulk {
       font-family: 'saxi-icons-pro-twotone';
       font-weight: 700;
+      font-style: normal !important;
     }
     
     .icon-grid {
@@ -236,113 +113,157 @@
       border-radius: 8px;
       background-color: #f5f5f5;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .icon {
       font-size: 32px;
       margin-bottom: 10px;
+      display: inline-block;
+      height: 32px;
+      width: 32px;
+      line-height: 1;
     }
     h2 {
       margin-top: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+    
+    .font-error-message {
+      display: none;
+      padding: 15px;
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>Icon Font Inline Test</h1>
-  
-  <h2>Bold Style (saxi-solid)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-solid icon">24-support</i>
-      <div>24-support</div>
+  <div class="page-container">
+    <h1>Icon Font Inline Test</h1>
+    
+    <div id="font-error" class="font-error-message">
+      Some icon fonts may not be loading correctly. Please ensure the font files are properly generated.
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
+    
+    <h2>Bold Style (saxi-solid)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-solid icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-solid icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
     </div>
-    <div class="icon-card">
-      <i class="saxi-solid icon">3d-rotate</i>
-      <div>3d-rotate</div>
+    
+    <h2>Linear Style (saxi-regular)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-regular icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-regular icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Outline Style (saxi-light)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-light icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-light icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Broken Style (saxi-broken)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-broken icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-broken icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>TwoTone Style (saxi-twotone)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-twotone icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-twotone icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
+    </div>
+    
+    <h2>Bulk Style (saxi-bulk)</h2>
+    <div class="icon-grid">
+      <div class="icon-card">
+        <i class="saxi-bulk icon">24-support</i>
+        <div>24-support</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk icon">3d-cube-scan</i>
+        <div>3d-cube-scan</div>
+      </div>
+      <div class="icon-card">
+        <i class="saxi-bulk icon">3d-rotate</i>
+        <div>3d-rotate</div>
+      </div>
     </div>
   </div>
   
-  <h2>Linear Style (saxi-regular)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-regular icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-regular icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Outline Style (saxi-light)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-light icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-light icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Broken Style (saxi-broken)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-broken icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-broken icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>TwoTone Style (saxi-twotone)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-twotone icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-twotone icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
-  
-  <h2>Bulk Style (saxi-bulk)</h2>
-  <div class="icon-grid">
-    <div class="icon-card">
-      <i class="saxi-bulk icon">24-support</i>
-      <div>24-support</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk icon">3d-cube-scan</i>
-      <div>3d-cube-scan</div>
-    </div>
-    <div class="icon-card">
-      <i class="saxi-bulk icon">3d-rotate</i>
-      <div>3d-rotate</div>
-    </div>
-  </div>
+  <script>
+    // Font loading detection
+    window.addEventListener('DOMContentLoaded', () => {
+      // Check if fonts loaded successfully
+      setTimeout(() => {
+        const testIcon = document.createElement('i');
+        testIcon.className = 'saxi-solid';
+        testIcon.textContent = 'user';
+        testIcon.style.visibility = 'hidden';
+        document.body.appendChild(testIcon);
+        
+        const fontLoaded = window.getComputedStyle(testIcon).fontFamily.includes('saxi-icons');
+        if (!fontLoaded) {
+          document.getElementById('font-error').style.display = 'block';
+        }
+        
+        document.body.removeChild(testIcon);
+      }, 1000);
+    });
+  </script>
 </body>
 </html>

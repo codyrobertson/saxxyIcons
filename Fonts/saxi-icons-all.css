@@ -2,12 +2,12 @@
 
 /* saxi-icons-pro-bold.css */
 @font-face {
-	font-family: "saxi-icons-pro-bold";
-	src: url(saxi-icons-pro-bold.eot?ef4784122097745e0a484fdff955d946?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-bold.woff2?ef4784122097745e0a484fdff955d946) format("woff2"),
-url(saxi-icons-pro-bold.woff?ef4784122097745e0a484fdff955d946) format("woff"),
-url(saxi-icons-pro-bold.ttf?ef4784122097745e0a484fdff955d946) format("truetype"),
-url(saxi-icons-pro-bold.svg?ef4784122097745e0a484fdff955d946#saxi-icons-pro-bold) format("svg");
+  font-family: 'saxi-icons-pro-bold';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-bold.woff2') format('woff2'),
+       url('saxi-icons-pro-bold.woff') format('woff');
 }
 
 .saxi-solid {
@@ -2842,12 +2842,12 @@ url(saxi-icons-pro-bold.svg?ef4784122097745e0a484fdff955d946#saxi-icons-pro-bold
 
 /* saxi-icons-pro-broken.css */
 @font-face {
-	font-family: "saxi-icons-pro-broken";
-	src: url(saxi-icons-pro-broken.eot?b785e8b564518331f6776ced6c4308d6?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-broken.woff2?b785e8b564518331f6776ced6c4308d6) format("woff2"),
-url(saxi-icons-pro-broken.woff?b785e8b564518331f6776ced6c4308d6) format("woff"),
-url(saxi-icons-pro-broken.ttf?b785e8b564518331f6776ced6c4308d6) format("truetype"),
-url(saxi-icons-pro-broken.svg?b785e8b564518331f6776ced6c4308d6#saxi-icons-pro-broken) format("svg");
+  font-family: 'saxi-icons-pro-broken';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-broken.woff2') format('woff2'),
+       url('saxi-icons-pro-broken.woff') format('woff');
 }
 
 .saxi-broken {
@@ -5682,12 +5682,12 @@ url(saxi-icons-pro-broken.svg?b785e8b564518331f6776ced6c4308d6#saxi-icons-pro-br
 
 /* saxi-icons-pro-bulk.css */
 @font-face {
-	font-family: "saxi-icons-pro-bulk";
-	src: url(saxi-icons-pro-bulk.eot?317d2b0aa9cd69b68a46cb7bd9234383?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-bulk.woff2?317d2b0aa9cd69b68a46cb7bd9234383) format("woff2"),
-url(saxi-icons-pro-bulk.woff?317d2b0aa9cd69b68a46cb7bd9234383) format("woff"),
-url(saxi-icons-pro-bulk.ttf?317d2b0aa9cd69b68a46cb7bd9234383) format("truetype"),
-url(saxi-icons-pro-bulk.svg?317d2b0aa9cd69b68a46cb7bd9234383#saxi-icons-pro-bulk) format("svg");
+  font-family: 'saxi-icons-pro-bulk';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-bulk.woff2') format('woff2'),
+       url('saxi-icons-pro-bulk.woff') format('woff');
 }
 
 .saxi-bulk {
@@ -8426,12 +8426,12 @@ url(saxi-icons-pro-bulk.svg?317d2b0aa9cd69b68a46cb7bd9234383#saxi-icons-pro-bulk
 
 /* saxi-icons-pro-linear.css */
 @font-face {
-	font-family: "saxi-icons-pro-linear";
-	src: url(saxi-icons-pro-linear.eot?ca7c2768ce7b66818bc930c9e8f9e956?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-linear.woff2?ca7c2768ce7b66818bc930c9e8f9e956) format("woff2"),
-url(saxi-icons-pro-linear.woff?ca7c2768ce7b66818bc930c9e8f9e956) format("woff"),
-url(saxi-icons-pro-linear.ttf?ca7c2768ce7b66818bc930c9e8f9e956) format("truetype"),
-url(saxi-icons-pro-linear.svg?ca7c2768ce7b66818bc930c9e8f9e956#saxi-icons-pro-linear) format("svg");
+  font-family: 'saxi-icons-pro-linear';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-linear.woff2') format('woff2'),
+       url('saxi-icons-pro-linear.woff') format('woff');
 }
 
 .saxi-regular {
@@ -11266,12 +11266,12 @@ url(saxi-icons-pro-linear.svg?ca7c2768ce7b66818bc930c9e8f9e956#saxi-icons-pro-li
 
 /* saxi-icons-pro-outline.css */
 @font-face {
-	font-family: "saxi-icons-pro-outline";
-	src: url(saxi-icons-pro-outline.eot?bfe8982f800b102368e9119d13d3e91f?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-outline.woff2?bfe8982f800b102368e9119d13d3e91f) format("woff2"),
-url(saxi-icons-pro-outline.woff?bfe8982f800b102368e9119d13d3e91f) format("woff"),
-url(saxi-icons-pro-outline.ttf?bfe8982f800b102368e9119d13d3e91f) format("truetype"),
-url(saxi-icons-pro-outline.svg?bfe8982f800b102368e9119d13d3e91f#saxi-icons-pro-outline) format("svg");
+  font-family: 'saxi-icons-pro-outline';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-outline.woff2') format('woff2'),
+       url('saxi-icons-pro-outline.woff') format('woff');
 }
 
 .saxi-light {
@@ -14106,12 +14106,12 @@ url(saxi-icons-pro-outline.svg?bfe8982f800b102368e9119d13d3e91f#saxi-icons-pro-o
 
 /* saxi-icons-pro-twotone.css */
 @font-face {
-	font-family: "saxi-icons-pro-twotone";
-	src: url(saxi-icons-pro-twotone.eot?8f5d258d034f17b79801139d7c1a980b?#iefix) format("embedded-opentype"),
-url(saxi-icons-pro-twotone.woff2?8f5d258d034f17b79801139d7c1a980b) format("woff2"),
-url(saxi-icons-pro-twotone.woff?8f5d258d034f17b79801139d7c1a980b) format("woff"),
-url(saxi-icons-pro-twotone.ttf?8f5d258d034f17b79801139d7c1a980b) format("truetype"),
-url(saxi-icons-pro-twotone.svg?8f5d258d034f17b79801139d7c1a980b#saxi-icons-pro-twotone) format("svg");
+  font-family: 'saxi-icons-pro-twotone';
+  font-style: normal !important;
+  font-weight: 400;
+  font-display: block;
+  src: url('saxi-icons-pro-twotone.woff2') format('woff2'),
+       url('saxi-icons-pro-twotone.woff') format('woff');
 }
 
 .saxi-twotone {
@@ -16850,7 +16850,7 @@ url(saxi-icons-pro-twotone.svg?8f5d258d034f17b79801139d7c1a980b#saxi-icons-pro-t
 
 /* Utility Classes */
 .saxi {
-  font-family: 'saxi-icons-pro' !important;
+  font-family: 'saxi-icons-pro', Arial, sans-serif !important;
   font-style: normal !important;
   speak: never;
   font-variant: normal;
@@ -16863,23 +16863,39 @@ url(saxi-icons-pro-twotone.svg?8f5d258d034f17b79801139d7c1a980b#saxi-icons-pro-t
 /* Font-weight utilities */
 .saxi-bold, .saxi-solid {
   font-weight: 700 !important;
+  font-style: normal !important;
 }
 
-.saxi-regular, .saxi-linear, .saxi-broken, .saxi-twotone {
+.saxi-regular, .saxi-linear {
   font-weight: 400 !important;
+  font-style: normal !important;
 }
 
 .saxi-light, .saxi-outline {
   font-weight: 300 !important;
+  font-style: normal !important;
+}
+
+.saxi-broken {
+  font-weight: 400 !important;
+  font-style: normal !important;
+}
+
+.saxi-twotone {
+  font-weight: 400 !important;
+  font-family: 'saxi-icons-pro-twotone', Arial, sans-serif !important;
+  font-style: normal !important;
 }
 
 .saxi-bulk {
   font-weight: 700 !important;
-  font-family: 'saxi-icons-pro-twotone' !important;
+  font-family: 'saxi-icons-pro-twotone', Arial, sans-serif !important;
+  font-style: normal !important;
 }
 
 /* Ensure all icons have the correct baseline */
 [class^="saxi-"], [class*=" saxi-"] {
   font-style: normal !important;
   line-height: 1;
+  display: inline-block;
 }

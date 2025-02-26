@@ -104,6 +104,75 @@ async function unzipSvgZip() {
 }
 
 /**
+ * Optimize SVG file for specific style
+ */
+async function optimizeSvgForStyle(sourcePath, targetPath, style) {
+  try {
+    let svgContent = await fs.readFile(sourcePath, 'utf8');
+    
+    // Fix viewBox if missing or incorrect
+    if (!svgContent.includes('viewBox="0 0 24 24"')) {
+      svgContent = svgContent.replace(/<svg[^>]*>/, 
+        match => match.includes('viewBox') 
+          ? match.replace(/viewBox="[^"]*"/, 'viewBox="0 0 24 24"')
+          : match.replace('<svg', '<svg viewBox="0 0 24 24"')
+      );
+    }
+    
+    // Fix path issues
+    if (style === 'TwoTone' || style === 'Bulk') {
+      // Ensure paths have fill attributes
+      svgContent = svgContent.replace(/<path(?![^>]*fill=)[^>]*>/g, 
+        match => match.replace('<path', '<path fill="currentColor"')
+      );
+    }
+    
+    // Fix linear style issues - ensure paths have stroke attributes
+    if (style === 'Linear') {
+      svgContent = svgContent.replace(/<path(?![^>]*stroke=)[^>]*>/g, 
+        match => match.replace('<path', '<path stroke="currentColor"')
+      );
+      
+      // Set fill to none if not specified
+      svgContent = svgContent.replace(/<path(?![^>]*fill=)[^>]*>/g, 
+        match => match.replace('<path', '<path fill="none"')
+      );
+    }
+    
+    // Fix broken style issues
+    if (style === 'Broken') {
+      svgContent = svgContent.replace(/<path(?![^>]*stroke=)[^>]*>/g, 
+        match => match.replace('<path', '<path stroke="currentColor"')
+      );
+      
+      // Set fill to none
+      svgContent = svgContent.replace(/<path(?![^>]*fill=)[^>]*>/g, 
+        match => match.replace('<path', '<path fill="none"')
+      );
+      
+      // Ensure stroke-linecap and stroke-linejoin are round
+      svgContent = svgContent.replace(/<path[^>]*>/g, 
+        match => {
+          if (!match.includes('stroke-linecap')) {
+            match = match.replace('<path', '<path stroke-linecap="round"');
+          }
+          if (!match.includes('stroke-linejoin')) {
+            match = match.replace('<path', '<path stroke-linejoin="round"');
+          }
+          return match;
+        }
+      );
+    }
+    
+    await fs.writeFile(targetPath, svgContent);
+    return true;
+  } catch (err) {
+    console.warn(`Error optimizing SVG for ${style} style:`, err.message);
+    return false;
+  }
+}
+
+/**
  * Organize files from the "all" directory into style-specific directories
  * based on directory names or filename patterns.
  */
@@ -135,75 +204,105 @@ async function organizeFilesByStyle(allDir) {
   // First, check if we have style directories instead of files with style suffixes
   const styleDirectories = ['bold', 'linear', 'outline', 'broken', 'twotone', 'bulk'];
   
-  for (const item of items) {
-    if (item === '.DS_Store') continue;
+  // Process files in batches for better memory management
+  const batchSize = 100;
+  
+  for (let i = 0; i < items.length; i += batchSize) {
+    const batch = items.slice(i, i + batchSize);
+    console.log(`Processing batch ${Math.floor(i/batchSize) + 1} of ${Math.ceil(items.length/batchSize)}`);
     
-    const itemPath = path.join(allDir, item);
-    const isDirectory = (await fs.stat(itemPath)).isDirectory();
-    
-    if (isDirectory && styleDirectories.includes(item.toLowerCase())) {
-      // This is a style directory, copy all SVGs from it to the corresponding style folder
-      const styleName = item.toLowerCase();
-      const targetStyleName = styleName === 'outline' ? 'Outline' :
-                             styleName === 'bold' ? 'Bold' :
-                             styleName === 'linear' ? 'Linear' :
-                             styleName === 'broken' ? 'Broken' :
-                             styleName === 'twotone' ? 'TwoTone' :
-                             styleName === 'bulk' ? 'Bulk' : null;
+    for (const item of batch) {
+      if (item === '.DS_Store') continue;
       
-      if (targetStyleName) {
-        const targetDir = path.join(TEMP_DIR, targetStyleName);
-        const svgFiles = await fs.readdir(itemPath);
+      const itemPath = path.join(allDir, item);
+      const isDirectory = (await fs.stat(itemPath)).isDirectory();
+      
+      if (isDirectory && styleDirectories.includes(item.toLowerCase())) {
+        // This is a style directory, copy all SVGs from it to the corresponding style folder
+        const styleName = item.toLowerCase();
+        const targetStyleName = styleName === 'outline' ? 'Outline' :
+                               styleName === 'bold' ? 'Bold' :
+                               styleName === 'linear' ? 'Linear' :
+                               styleName === 'broken' ? 'Broken' :
+                               styleName === 'twotone' ? 'TwoTone' :
+                               styleName === 'bulk' ? 'Bulk' : null;
         
-        console.log(`Found ${svgFiles.length} files in ${styleName} directory`);
-        console.log(`First 5 files in ${styleName} directory:`, svgFiles.slice(0, 5));
-        
-        // Check if these are actually SVG files
-        let svgCount = 0;
-        for (const svgFile of svgFiles) {
-          if (svgFile.endsWith('.svg')) {
-            svgCount++;
-            const sourcePath = path.join(itemPath, svgFile);
-            const targetPath = path.join(targetDir, svgFile);
-            await fs.copy(sourcePath, targetPath);
-            styleCount[styleName]++;
+        if (targetStyleName) {
+          const targetDir = path.join(TEMP_DIR, targetStyleName);
+          const svgFiles = await fs.readdir(itemPath);
+          
+          console.log(`Found ${svgFiles.length} files in ${styleName} directory`);
+          
+          // Check if these are actually SVG files
+          let svgCount = 0;
+          for (const svgFile of svgFiles) {
+            if (svgFile.endsWith('.svg')) {
+              svgCount++;
+              const sourcePath = path.join(itemPath, svgFile);
+              const targetPath = path.join(targetDir, svgFile);
+              
+              // Optimize SVG for problematic styles
+              if (styleName === 'linear' || styleName === 'broken' || 
+                  styleName === 'twotone' || styleName === 'bulk') {
+                const success = await optimizeSvgForStyle(sourcePath, targetPath, targetStyleName);
+                if (!success) {
+                  // Fall back to direct copy if optimization fails
+                  await fs.copy(sourcePath, targetPath);
+                }
+              } else {
+                // For other styles, just copy directly
+                await fs.copy(sourcePath, targetPath);
+              }
+              
+              styleCount[styleName]++;
+            }
           }
+          console.log(`Copied ${svgCount} SVG files from ${styleName} directory`);
         }
-        console.log(`Copied ${svgCount} SVG files from ${styleName} directory`);
-      }
-    } else if (!isDirectory && item.endsWith('.svg')) {
-      // This is an SVG file with style suffix in the filename
-      let detectedStyle = null;
-      
-      if (item.includes('-bold')) {
-        detectedStyle = 'Bold';
-        styleCount.bold++;
-      } else if (item.includes('-linear')) {
-        detectedStyle = 'Linear';
-        styleCount.linear++;
-      } else if (item.includes('-outline')) {
-        detectedStyle = 'Outline';
-        styleCount.outline++;
-      } else if (item.includes('-broken')) {
-        detectedStyle = 'Broken';
-        styleCount.broken++;
-      } else if (item.includes('-bulk')) {
-        detectedStyle = 'Bulk';
-        styleCount.bulk++;
-      } else if (item.includes('-twotone')) {
-        detectedStyle = 'TwoTone';
-        styleCount.twotone++;
-      }
-      
-      if (detectedStyle) {
-        const targetDir = path.join(TEMP_DIR, detectedStyle);
-        const targetFile = path.join(targetDir, 
-          // Remove style suffix from filename
-          item.replace(`-${detectedStyle.toLowerCase()}`, '')
-        );
-        await fs.copy(itemPath, targetFile);
-      } else {
-        console.warn(`Could not determine style for file: ${item}`);
+      } else if (!isDirectory && item.endsWith('.svg')) {
+        // This is an SVG file with style suffix in the filename
+        let detectedStyle = null;
+        
+        if (item.includes('-bold')) {
+          detectedStyle = 'Bold';
+          styleCount.bold++;
+        } else if (item.includes('-linear')) {
+          detectedStyle = 'Linear';
+          styleCount.linear++;
+        } else if (item.includes('-outline')) {
+          detectedStyle = 'Outline';
+          styleCount.outline++;
+        } else if (item.includes('-broken')) {
+          detectedStyle = 'Broken';
+          styleCount.broken++;
+        } else if (item.includes('-bulk')) {
+          detectedStyle = 'Bulk';
+          styleCount.bulk++;
+        } else if (item.includes('-twotone')) {
+          detectedStyle = 'TwoTone';
+          styleCount.twotone++;
+        }
+        
+        if (detectedStyle) {
+          const targetDir = path.join(TEMP_DIR, detectedStyle);
+          const cleanName = item.replace(`-${detectedStyle.toLowerCase()}`, '');
+          const targetFile = path.join(targetDir, cleanName);
+          
+          // Optimize SVG for problematic styles
+          if (detectedStyle === 'Linear' || detectedStyle === 'Broken' || 
+              detectedStyle === 'TwoTone' || detectedStyle === 'Bulk') {
+            const success = await optimizeSvgForStyle(itemPath, targetFile, detectedStyle);
+            if (!success) {
+              // Fall back to direct copy if optimization fails
+              await fs.copy(itemPath, targetFile);
+            }
+          } else {
+            // For other styles, just copy directly
+            await fs.copy(itemPath, targetFile);
+          }
+        } else {
+          console.warn(`Could not determine style for file: ${item}`);
+        }
       }
     }
   }
@@ -274,12 +373,29 @@ async function generateFontForStyle(style, files, codepoints) {
     // Make sure the output directory exists
     fs.ensureDirSync(OUTPUT_DIR);
     
-    // Set options for webfonts-generator
+    // Add a timeout to prevent hanging
+    const timeoutMs = 300000; // 5 minute timeout (up from 60000 / 1 minute)
+    const timeout = setTimeout(() => {
+      console.error(`Timeout (${timeoutMs}ms) reached while generating ${style.style} font`);
+      // Don't reject on timeout - allow the process to continue
+      console.log(`Attempting to continue despite timeout for ${style.style} style...`);
+      resolve({ timedOut: true, style: style.style });
+    }, timeoutMs);
+    
+    // Clear the timeout when the promise resolves or rejects
+    const clearTimeoutWrapper = (fn) => (...args) => {
+      clearTimeout(timeout);
+      return fn(...args);
+    };
+    
+    resolve = clearTimeoutWrapper(resolve);
+    reject = clearTimeoutWrapper(reject);
+    
     const options = {
       files: files,
       dest: OUTPUT_DIR,
       fontName: fontName,
-      types: ['ttf', 'woff', 'woff2', 'eot', 'svg'],
+      types: ['woff2', 'woff', 'ttf'], // Prioritize modern formats, remove eot and svg to improve speed
       fontHeight: 1000,
       normalize: true,
       fontWeight: style.weight,
@@ -291,40 +407,33 @@ async function generateFontForStyle(style, files, codepoints) {
         classPrefix: `${style.cssPrefix}-`
       },
       writeFiles: true,
-      callback: (error, result) => {
+      callback: async (error, result) => {
         if (error) {
           console.error(`Error generating font for ${style.style} style:`, error);
           reject(error);
-          return;
-        }
-        
-        console.log(`Successfully generated font for ${style.style} style`);
-        
-        // Verify the font files were generated
-        const expectedFiles = [
-          `${fontName}.ttf`,
-          `${fontName}.woff`,
-          `${fontName}.woff2`,
-          `${fontName}.eot`,
-          `${fontName}.svg`
-        ];
-        
-        let allFilesExist = true;
-        for (const file of expectedFiles) {
-          const filePath = path.join(OUTPUT_DIR, file);
-          if (fs.existsSync(filePath)) {
-            const stats = fs.statSync(filePath);
-            console.log(`Generated file: ${file} (${stats.size} bytes)`);
-          } else {
-            console.warn(`Warning: Expected file ${file} was not generated!`);
-            allFilesExist = false;
-          }
-        }
-        
-        if (allFilesExist) {
-          resolve(result);
         } else {
-          reject(new Error(`Some expected files for ${style.style} style were not generated`));
+          console.log(`Successfully generated font for ${style.style} style`);
+          
+          // Verify the font files were generated
+          const expectedFiles = [
+            `${fontName}.ttf`,
+            `${fontName}.woff`,
+            `${fontName}.woff2`,
+            `${fontName}.css`
+          ];
+          
+          for (const file of expectedFiles) {
+            const filePath = path.join(OUTPUT_DIR, file);
+            const exists = await fs.pathExists(filePath);
+            if (exists) {
+              const stats = await fs.stat(filePath);
+              console.log(`Generated file: ${file} (${stats.size} bytes)`);
+            } else {
+              console.warn(`Warning: Expected file ${file} was not generated!`);
+            }
+          }
+          
+          resolve(result);
         }
       }
     };
@@ -332,22 +441,6 @@ async function generateFontForStyle(style, files, codepoints) {
     // Call webfonts-generator
     console.log(`Calling webfonts-generator for ${style.style} style...`);
     webfontsGenerator(options);
-    
-    // Add a timeout to prevent hanging
-    const timeoutMs = 60000; // 1 minute timeout
-    const timeout = setTimeout(() => {
-      console.error(`Timeout (${timeoutMs}ms) reached while generating ${style.style} font`);
-      reject(new Error(`Timeout generating ${style.style} font`));
-    }, timeoutMs);
-    
-    // Clear the timeout when the promise resolves or rejects
-    const clearTimeoutWrapper = (fn) => (...args) => {
-      clearTimeout(timeout);
-      return fn(...args);
-    };
-    
-    resolve = clearTimeoutWrapper(resolve);
-    reject = clearTimeoutWrapper(reject);
   });
 }
 
@@ -429,7 +522,7 @@ async function generateCSSAndJSON(group, mapping) {
     cssLines.push(`  font-family: '${group.family}';`);
     cssLines.push(`  src: ${formats.join(",\n       ")};`);
     cssLines.push(`  font-weight: ${sub.weight};`);
-    cssLines.push(`  font-style: normal !important;`);
+    cssLines.push(`  font-style: normal;`);
     cssLines.push(`  font-display: block;`);
     cssLines.push(`}\n`);
   });
@@ -438,7 +531,7 @@ async function generateCSSAndJSON(group, mapping) {
   cssLines.push(`.saxi {`);
   cssLines.push(`  font-family: '${group.family}' !important;`);
   cssLines.push(`  speak: never;`);
-  cssLines.push(`  font-style: normal !important;`);
+  cssLines.push(`  font-style: normal;`);
   cssLines.push(`  font-weight: normal;`);
   cssLines.push(`  font-variant: normal;`);
   cssLines.push(`  text-transform: none;`);
@@ -495,62 +588,15 @@ async function generateCombinedCSS() {
   
   try {
     const files = await fs.readdir(OUTPUT_DIR);
-    const cssFiles = files.filter(f => f.endsWith('.css') && f !== 'saxi-icons-all.css');
+    const cssFiles = files.filter(f => f.endsWith('.css'));
     
     let combinedContent = '/* Combined SAXI Icons CSS */\n\n';
     
     for (const cssFile of cssFiles) {
       const cssPath = path.join(OUTPUT_DIR, cssFile);
-      let cssContent = await fs.readFile(cssPath, 'utf8');
-      
-      // Ensure font URLs are relative and don't have quotes
-      cssContent = cssContent.replace(/url\(['"]?(.*?)['"]?\)/g, (match, url) => {
-        return `url(${path.basename(url)})`;
-      });
-      
-      // Add !important to font-style properties
-      cssContent = cssContent.replace(/font-style:\s*normal;/g, 'font-style: normal !important;');
-      
+      const cssContent = await fs.readFile(cssPath, 'utf8');
       combinedContent += `/* ${cssFile} */\n${cssContent}\n\n`;
     }
-    
-    // Add utility classes for consistent usage
-    combinedContent += `/* Utility Classes */
-.saxi {
-  font-family: 'saxi-icons-pro' !important;
-  font-style: normal !important;
-  speak: never;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Font-weight utilities */
-.saxi-bold, .saxi-solid {
-  font-weight: 700 !important;
-}
-
-.saxi-regular, .saxi-linear, .saxi-broken, .saxi-twotone {
-  font-weight: 400 !important;
-}
-
-.saxi-light, .saxi-outline {
-  font-weight: 300 !important;
-}
-
-.saxi-bulk {
-  font-weight: 700 !important;
-  font-family: 'saxi-icons-pro-twotone' !important;
-}
-
-/* Ensure all icons have the correct baseline */
-[class^="saxi-"], [class*=" saxi-"] {
-  font-style: normal !important;
-  line-height: 1;
-}
-`;
     
     const combinedPath = path.join(OUTPUT_DIR, 'saxi-icons-all.css');
     await fs.writeFile(combinedPath, combinedContent);

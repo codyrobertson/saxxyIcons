@@ -4,97 +4,198 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Single Icon Test</title>
-  <link rel="stylesheet" href="saxi-icons-all.css">
   <style>
+    /* Critical CSS to prevent layout shifts */
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 800px;
+      margin: 0;
+      padding: 0;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .fonts-loaded body {
+      opacity: 1;
+    }
+    .page-container {
+      max-width: 1200px;
       margin: 0 auto;
       padding: 20px;
     }
-    .test-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
+    .test-section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #f5f5f5;
     }
-    .test-item {
+    .icon-row {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: white;
+    }
+    .icon-demo {
+      font-size: 32px;
+      margin-right: 20px;
+      min-width: 40px;
       text-align: center;
     }
-    .icon {
-      font-size: 48px;
-      margin-bottom: 16px;
+    .icon-code {
+      font-family: monospace;
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin-left: auto;
     }
-    .size-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 40px;
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
     }
-    .size-row {
-      display: flex;
-      align-items: center;
+    
+    /* Ensure all icons have normal font-style */
+    [class^="saxi-"], [class*=" saxi-"] {
+      font-style: normal !important;
+      line-height: 1;
     }
-    .size-label {
-      width: 100px;
+    
+    .debug-info {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-height: 200px;
+      overflow: auto;
     }
   </style>
+  <link rel="stylesheet" href="saxi-icons-all.css">
+  <script>
+    // Font loading detection
+    document.fonts.ready.then(() => {
+      document.documentElement.classList.add('fonts-loaded');
+      
+      // Debug font information
+      const debugInfo = document.getElementById('debug-fonts');
+      if (debugInfo) {
+        const loadedFonts = [];
+        document.fonts.forEach(font => {
+          loadedFonts.push(font.family + ' - ' + font.style + ' - ' + font.weight + ' - ' + font.status);
+        });
+        debugInfo.textContent = loadedFonts.join('\n');
+      }
+    });
+  </script>
 </head>
 <body>
-  <h1>Single Icon Test: "24-support"</h1>
-  
-  <h2>Icon in Different Styles</h2>
-  <div class="test-grid">
-    <div class="test-item">
-      <i class="saxi-solid saxi-24-support icon"></i>
-      <div>Solid</div>
+  <div class="page-container">
+    <h1>Single Icon Test</h1>
+    <p>This page tests a single icon across all available styles and formats.</p>
+    
+    <h2>Font Loading Debug</h2>
+    <div id="debug-fonts" class="debug-info">Loading font information...</div>
+    
+    <h2>Using Class-Based Approach</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-solid saxi-home"></i></div>
+        <div>Bold Style (saxi-solid)</div>
+        <div class="icon-code">&lt;i class="saxi-solid saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-regular saxi-home"></i></div>
+        <div>Linear Style (saxi-regular)</div>
+        <div class="icon-code">&lt;i class="saxi-regular saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-light saxi-home"></i></div>
+        <div>Outline Style (saxi-light)</div>
+        <div class="icon-code">&lt;i class="saxi-light saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-broken saxi-home"></i></div>
+        <div>Broken Style (saxi-broken)</div>
+        <div class="icon-code">&lt;i class="saxi-broken saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-twotone saxi-home"></i></div>
+        <div>TwoTone Style (saxi-twotone)</div>
+        <div class="icon-code">&lt;i class="saxi-twotone saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-bulk saxi-home"></i></div>
+        <div>Bulk Style (saxi-bulk)</div>
+        <div class="icon-code">&lt;i class="saxi-bulk saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
-    <div class="test-item">
-      <i class="saxi-regular saxi-24-support icon"></i>
-      <div>Regular</div>
+    
+    <h2>Using Font Weight Approach</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-bold saxi-home"></i></div>
+        <div>Bold Style (font-weight: 700)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-bold saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-regular saxi-home"></i></div>
+        <div>Linear Style (font-weight: 400)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-regular saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-light saxi-home"></i></div>
+        <div>Outline Style (font-weight: 300)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-light saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-broken saxi-home"></i></div>
+        <div>Broken Style (font-weight: 100)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-broken saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-twotone saxi-home"></i></div>
+        <div>TwoTone Style (font-weight: 500)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-twotone saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i class="saxi-fw-bulk saxi-home"></i></div>
+        <div>Bulk Style (font-weight: 600)</div>
+        <div class="icon-code">&lt;i class="saxi-fw-bulk saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
-    <div class="test-item">
-      <i class="saxi-light saxi-24-support icon"></i>
-      <div>Light</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-broken saxi-24-support icon"></i>
-      <div>Broken</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-twotone saxi-24-support icon"></i>
-      <div>TwoTone</div>
-    </div>
-    <div class="test-item">
-      <i class="saxi-bulk saxi-24-support icon"></i>
-      <div>Bulk</div>
-    </div>
-  </div>
-  
-  <h2>Size Variations (Regular Style)</h2>
-  <div class="size-grid">
-    <div class="size-row">
-      <div class="size-label">16px</div>
-      <i class="saxi-regular saxi-24-support" style="font-size: 16px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">24px</div>
-      <i class="saxi-regular saxi-24-support" style="font-size: 24px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">32px</div>
-      <i class="saxi-regular saxi-24-support" style="font-size: 32px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">48px</div>
-      <i class="saxi-regular saxi-24-support" style="font-size: 48px;"></i>
-    </div>
-    <div class="size-row">
-      <div class="size-label">64px</div>
-      <i class="saxi-regular saxi-24-support" style="font-size: 64px;"></i>
+    
+    <h2>Using Inline Styles</h2>
+    <div class="test-section">
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 700;" class="saxi-home"></i></div>
+        <div>Bold Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 700;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 400;" class="saxi-home"></i></div>
+        <div>Linear Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 400;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
+      
+      <div class="icon-row">
+        <div class="icon-demo"><i style="font-family: 'saxi-icons-pro'; font-weight: 300;" class="saxi-home"></i></div>
+        <div>Outline Style (inline)</div>
+        <div class="icon-code">&lt;i style="font-family: 'saxi-icons-pro'; font-weight: 300;" class="saxi-home"&gt;&lt;/i&gt;</div>
+      </div>
     </div>
   </div>
 </body>
